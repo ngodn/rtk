@@ -9,6 +9,7 @@ pub mod json_cmd;
 pub mod local_llm;
 pub mod log_cmd;
 pub mod ls;
+pub mod pptx_cmd;
 pub mod read;
 pub mod summary;
 pub mod tree;

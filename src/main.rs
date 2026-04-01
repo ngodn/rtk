@@ -19,8 +19,8 @@ use cmds::python::{mypy_cmd, pip_cmd, pytest_cmd, ruff_cmd};
 use cmds::ruby::{rake_cmd, rspec_cmd, rubocop_cmd};
 use cmds::rust::{cargo_cmd, runner};
 use cmds::system::{
-    deps, env_cmd, find_cmd, format_cmd, grep_cmd, json_cmd, local_llm, log_cmd, ls, read, summary,
-    tree, wc_cmd,
+    deps, env_cmd, find_cmd, format_cmd, grep_cmd, json_cmd, local_llm, log_cmd, ls, pptx_cmd,
+    read, summary, tree, wc_cmd,
 };
 
 use anyhow::{Context, Result};
@@ -381,6 +381,12 @@ enum Commands {
         /// Arguments passed to wc (files, flags like -l, -w, -c)
         #[arg(trailing_var_arg = true, allow_hyphen_values = true)]
         args: Vec<String>,
+    },
+
+    /// Inspect PowerPoint (.pptx) files - slides, shapes, text
+    Pptx {
+        #[command(subcommand)]
+        command: PptxCommands,
     },
 
     /// Show token savings summary and history
@@ -828,6 +834,34 @@ enum PnpmCommands {
     /// Passthrough: runs any unsupported pnpm subcommand directly
     #[command(external_subcommand)]
     Other(Vec<OsString>),
+}
+
+#[derive(Subcommand)]
+enum PptxCommands {
+    /// Show slide count, dimensions, metadata
+    Info {
+        /// PPTX file to inspect
+        file: PathBuf,
+    },
+    /// List all slides with titles
+    Slides {
+        /// PPTX file to inspect
+        file: PathBuf,
+    },
+    /// Read slide details (shapes, text, positions). Slide can be "3" or "3-5"
+    Read {
+        /// PPTX file to inspect
+        file: PathBuf,
+        /// Slide number or range (e.g. "3" or "3-5")
+        slide: String,
+    },
+    /// Find shapes containing text across all slides
+    Find {
+        /// PPTX file to inspect
+        file: PathBuf,
+        /// Text to search for
+        query: String,
+    },
 }
 
 #[derive(Subcommand)]
@@ -1747,6 +1781,21 @@ fn main() -> Result<()> {
             wc_cmd::run(&args, cli.verbose)?;
         }
 
+        Commands::Pptx { command } => match command {
+            PptxCommands::Info { file } => {
+                pptx_cmd::run_info(&file, cli.verbose)?;
+            }
+            PptxCommands::Slides { file } => {
+                pptx_cmd::run_slides(&file, cli.verbose)?;
+            }
+            PptxCommands::Read { file, slide } => {
+                pptx_cmd::run_read(&file, &slide, cli.verbose)?;
+            }
+            PptxCommands::Find { file, query } => {
+                pptx_cmd::run_find(&file, &query, cli.verbose)?;
+            }
+        },
+
         Commands::Gain {
             project, // added
             graph,
@@ -2297,6 +2346,7 @@ fn is_operational_command(cmd: &Commands) -> bool {
             | Commands::Go { .. }
             | Commands::GolangciLint { .. }
             | Commands::Gt { .. }
+            | Commands::Pptx { .. }
     )
 }
 
