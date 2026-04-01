@@ -34,7 +34,7 @@ getrandom = "0.4"
 flate2 = "1.0"
 quick-xml = "0.37"
 which = "8"
-zip = "2"
+pptx = "0.1"
 
 [build-dependencies]
 toml = "0.8"

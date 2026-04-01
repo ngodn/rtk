@@ -900,6 +900,78 @@ enum PptxCommands {
         /// Destination position
         to: u32,
     },
+    /// Add a textbox to a slide
+    AddTextbox {
+        /// PPTX file to modify
+        file: PathBuf,
+        /// Slide number
+        slide: usize,
+        /// Left position in EMU
+        #[arg(long)]
+        left: i64,
+        /// Top position in EMU
+        #[arg(long)]
+        top: i64,
+        /// Width in EMU
+        #[arg(long)]
+        width: i64,
+        /// Height in EMU
+        #[arg(long)]
+        height: i64,
+        /// Optional text content
+        #[arg(long)]
+        text: Option<String>,
+    },
+    /// Add a shape to a slide (rectangle, oval, arrow, etc.)
+    AddShape {
+        /// PPTX file to modify
+        file: PathBuf,
+        /// Slide number
+        slide: usize,
+        /// Shape type (rectangle, oval, diamond, arrow, etc.)
+        shape_type: String,
+        /// Left position in EMU
+        #[arg(long)]
+        left: i64,
+        /// Top position in EMU
+        #[arg(long)]
+        top: i64,
+        /// Width in EMU
+        #[arg(long)]
+        width: i64,
+        /// Height in EMU
+        #[arg(long)]
+        height: i64,
+        /// Optional fill color (hex, e.g. "#FF0000" or "FF0000")
+        #[arg(long)]
+        fill: Option<String>,
+        /// Optional text content
+        #[arg(long)]
+        text: Option<String>,
+    },
+    /// Add a table to a slide
+    AddTable {
+        /// PPTX file to modify
+        file: PathBuf,
+        /// Slide number
+        slide: usize,
+        /// Number of rows
+        rows: u32,
+        /// Number of columns
+        cols: u32,
+        /// Left position in EMU
+        #[arg(long)]
+        left: i64,
+        /// Top position in EMU
+        #[arg(long)]
+        top: i64,
+        /// Width in EMU
+        #[arg(long)]
+        width: i64,
+        /// Height in EMU
+        #[arg(long)]
+        height: i64,
+    },
 }
 
 #[derive(Subcommand)]
@@ -1853,6 +1925,72 @@ fn main() -> Result<()> {
             }
             PptxCommands::MoveSlide { file, from, to } => {
                 pptx_cmd::run_move_slide(&file, from, to, cli.verbose)?;
+            }
+            PptxCommands::AddTextbox {
+                file,
+                slide,
+                left,
+                top,
+                width,
+                height,
+                text,
+            } => {
+                pptx_cmd::run_add_textbox(
+                    &file,
+                    slide,
+                    left,
+                    top,
+                    width,
+                    height,
+                    text.as_deref(),
+                    cli.verbose,
+                )?;
+            }
+            PptxCommands::AddShape {
+                file,
+                slide,
+                shape_type,
+                left,
+                top,
+                width,
+                height,
+                fill,
+                text,
+            } => {
+                pptx_cmd::run_add_shape(
+                    &file,
+                    slide,
+                    &shape_type,
+                    left,
+                    top,
+                    width,
+                    height,
+                    fill.as_deref(),
+                    text.as_deref(),
+                    cli.verbose,
+                )?;
+            }
+            PptxCommands::AddTable {
+                file,
+                slide,
+                rows,
+                cols,
+                left,
+                top,
+                width,
+                height,
+            } => {
+                pptx_cmd::run_add_table(
+                    &file,
+                    slide,
+                    rows,
+                    cols,
+                    left,
+                    top,
+                    width,
+                    height,
+                    cli.verbose,
+                )?;
             }
         },
 
