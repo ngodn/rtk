@@ -1,0 +1,16 @@
+[filters.sqlite3]
+description = "Compact sqlite3 query output"
+match_command = "^sqlite3"
+strip_ansi = true
+max_lines = 50
+on_empty = "No results"
+
+[[tests.sqlite3]]
+name = "short output passes through"
+input = "id|name|value\n1|test|42\n2|demo|100"
+expected = "id|name|value\n1|test|42\n2|demo|100"
+
+[[tests.sqlite3]]
+name = "empty input shows on_empty message"
+input = ""
+expected = ""

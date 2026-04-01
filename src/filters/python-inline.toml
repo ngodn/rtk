@@ -1,0 +1,16 @@
+[filters.python-inline]
+description = "Truncate large python3 -c output"
+match_command = "^python3?\\s+-c"
+strip_ansi = true
+max_lines = 100
+on_empty = "python: completed with no output"
+
+[[tests.python-inline]]
+name = "short output passes through"
+input = "Hello, World!"
+expected = "Hello, World!"
+
+[[tests.python-inline]]
+name = "empty input shows on_empty message"
+input = ""
+expected = ""
