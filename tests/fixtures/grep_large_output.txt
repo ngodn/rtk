@@ -1,0 +1,2033 @@
+src/main.rs:1068:fn run_fallback(parse_error: clap::Error) -> Result<()> {
+src/main.rs:1225:fn shell_split(input: &str) -> Vec<String> {
+src/main.rs:1250:fn main() -> Result<()> {
+src/main.rs:2256:fn is_operational_command(cmd: &Commands) -> bool {
+src/main.rs:2309:    fn test_git_commit_single_message() {
+src/main.rs:2323:    fn test_git_commit_multiple_messages() {
+src/main.rs:2350:    fn test_git_commit_am_flag() {
+src/main.rs:2364:    fn test_git_commit_amend() {
+src/main.rs:2379:    fn test_git_global_options_parsing() {
+src/main.rs:2401:    fn test_git_commit_long_flag_multiple() {
+src/main.rs:2436:    fn test_try_parse_valid_git_status() {
+src/main.rs:2442:    fn test_try_parse_help_is_display_help() {
+src/main.rs:2450:    fn test_try_parse_version_is_display_version() {
+src/main.rs:2458:    fn test_try_parse_unknown_subcommand_is_error() {
+src/main.rs:2469:    fn test_try_parse_git_with_dash_c_succeeds() {
+src/main.rs:2486:    fn test_gain_failures_flag_parses() {
+src/main.rs:2498:    fn test_gain_failures_short_flag_parses() {
+src/main.rs:2510:    fn test_meta_commands_reject_bad_flags() {
+src/main.rs:2527:    fn test_meta_command_list_is_complete() {
+src/main.rs:2550:    fn test_shell_split_simple() {
+src/main.rs:2558:    fn test_shell_split_double_quotes() {
+src/main.rs:2566:    fn test_shell_split_single_quotes() {
+src/main.rs:2574:    fn test_shell_split_single_word() {
+src/main.rs:2579:    fn test_shell_split_empty() {
+src/main.rs:2585:    fn test_rewrite_clap_multi_args() {
+src/main.rs:2616:    fn test_rewrite_clap_quoted_single_arg() {
+src/parser/error.rs:40:    fn from(err: serde_json::Error) -> Self {
+src/parser/mod.rs:33:    pub fn unwrap(self) -> T {
+src/parser/mod.rs:43:    pub fn tier(&self) -> u8 {
+src/parser/mod.rs:53:    pub fn is_ok(&self) -> bool {
+src/parser/mod.rs:59:    pub fn map<U, F>(self, f: F) -> ParseResult<U>
+src/parser/mod.rs:72:    pub fn warnings(&self) -> Vec<String> {
+src/parser/mod.rs:90:    fn parse(input: &str) -> ParseResult<Self::Output>;
+src/parser/mod.rs:94:    fn parse_with_tier(input: &str, max_tier: u8) -> ParseResult<Self::Output> {
+src/parser/mod.rs:105:pub fn truncate_passthrough(output: &str) -> String {
+src/parser/mod.rs:111:pub fn truncate_output(output: &str, max_chars: usize) -> String {
+src/parser/mod.rs:127:pub fn emit_degradation_warning(tool: &str, reason: &str) {
+src/parser/mod.rs:132:pub fn emit_passthrough_warning(tool: &str, reason: &str) {
+src/parser/mod.rs:146:pub fn extract_json_object(input: &str) -> Option<&str> {
+src/parser/mod.rs:207:    fn test_parse_result_tier() {
+src/parser/mod.rs:223:    fn test_parse_result_map() {
+src/parser/mod.rs:237:    fn test_truncate_output() {
+src/parser/mod.rs:248:    fn test_truncate_output_multibyte() {
+src/parser/mod.rs:259:    fn test_truncate_output_emoji() {
+src/parser/mod.rs:266:    fn test_extract_json_object_clean() {
+src/parser/mod.rs:273:    fn test_extract_json_object_with_pnpm_prefix() {
+src/parser/mod.rs:287:    fn test_extract_json_object_with_dotenv_prefix() {
+src/parser/mod.rs:299:    fn test_extract_json_object_nested_braces() {
+src/parser/mod.rs:310:    fn test_extract_json_object_no_json() {
+src/parser/mod.rs:317:    fn test_extract_json_object_string_with_braces() {
+src/discover/report.rs:17:    pub fn as_str(&self) -> &'static str {
+src/discover/report.rs:61:    pub fn total_saveable_tokens(&self) -> usize {
+src/discover/report.rs:68:    pub fn total_supported_count(&self) -> usize {
+src/discover/report.rs:74:pub fn format_text(report: &DiscoverReport, limit: usize, verbose: bool) -> String {
+src/discover/report.rs:186:pub fn format_json(report: &DiscoverReport) -> String {
+src/discover/report.rs:190:fn format_tokens(tokens: usize) -> String {
+src/discover/report.rs:200:fn truncate_str(s: &str, max: usize) -> String {
+src/hooks/verify_cmd.rs:11:pub fn run(filter: Option<String>, require_all: bool) -> Result<()> {
+src/parser/formatter.rs:16:    pub fn from_verbosity(verbosity: u8) -> Self {
+src/parser/formatter.rs:28:    fn format_compact(&self) -> String;
+src/parser/formatter.rs:31:    fn format_verbose(&self) -> String;
+src/parser/formatter.rs:34:    fn format_ultra(&self) -> String;
+src/parser/formatter.rs:37:    fn format(&self, mode: FormatMode) -> String {
+src/parser/formatter.rs:47:    fn format_compact(&self) -> String {
+src/parser/formatter.rs:71:    fn format_verbose(&self) -> String {
+src/parser/formatter.rs:102:    fn format_ultra(&self) -> String {
+src/parser/formatter.rs:114:    fn format_compact(&self) -> String {
+src/parser/formatter.rs:150:    fn format_verbose(&self) -> String {
+src/parser/formatter.rs:183:    fn format_ultra(&self) -> String {
+src/parser/formatter.rs:192:    fn format_compact(&self) -> String {
+src/parser/formatter.rs:220:    fn format_verbose(&self) -> String {
+src/parser/formatter.rs:249:    fn format_ultra(&self) -> String {
+src/parser/formatter.rs:255:    fn format_compact(&self) -> String {
+src/parser/formatter.rs:282:    fn format_verbose(&self) -> String {
+src/parser/formatter.rs:322:    fn format_ultra(&self) -> String {
+src/parser/formatter.rs:339:    fn make_failure(name: &str, error: &str) -> TestFailure {
+src/parser/formatter.rs:348:    fn make_result(passed: usize, failures: Vec<TestFailure>) -> TestResult {
+src/parser/formatter.rs:363:    fn test_compact_shows_full_error_message() {
+src/parser/formatter.rs:385:    fn test_compact_summary_line_is_concise() {
+src/parser/formatter.rs:397:    fn test_compact_all_pass_is_one_line() {
+src/parser/formatter.rs:409:    fn test_compact_single_line_error_no_trailing_noise() {
+src/discover/mod.rs:35:pub fn run(
+src/discover/mod.rs:257:fn extract_subcmd(cmd: &str) -> &str {
+src/discover/mod.rs:267:fn truncate_command(cmd: &str) -> String {
+src/hooks/trust.rs:48:fn store_path() -> Result<PathBuf> {
+src/hooks/trust.rs:53:fn read_store() -> Result<TrustStore> {
+src/hooks/trust.rs:64:fn write_store(store: &TrustStore) -> Result<()> {
+src/hooks/trust.rs:79:fn canonical_key(filter_path: &Path) -> Result<String> {
+src/hooks/trust.rs:95:pub fn check_trust(filter_path: &Path) -> Result<TrustStatus> {
+src/hooks/trust.rs:144:pub fn trust_filter(filter_path: &Path) -> Result<()> {
+src/hooks/trust.rs:151:pub fn trust_filter_with_hash(filter_path: &Path, hash: &str) -> Result<()> {
+src/hooks/trust.rs:167:pub fn untrust_filter(filter_path: &Path) -> Result<bool> {
+src/hooks/trust.rs:178:pub fn list_trusted() -> Result<HashMap<String, TrustEntry>> {
+src/hooks/trust.rs:188:pub fn run_trust(list: bool) -> Result<()> {
+src/hooks/trust.rs:243:pub fn run_untrust() -> Result<()> {
+src/hooks/trust.rs:261:fn print_risk_summary(content: &str) {
+src/hooks/trust.rs:296:    fn setup_test_env(temp: &TempDir) -> PathBuf {
+src/hooks/trust.rs:301:    fn check_trust_with_store(filter_path: &Path, store_file: &Path) -> Result<TrustStatus> {
+src/hooks/trust.rs:330:    fn trust_with_store(filter_path: &Path, store_file: &Path) -> Result<()> {
+src/hooks/trust.rs:358:    fn untrust_with_store(filter_path: &Path, store_file: &Path) -> Result<bool> {
+src/hooks/trust.rs:377:    fn test_untrusted_by_default() {
+src/hooks/trust.rs:388:    fn test_trust_then_check() {
+src/hooks/trust.rs:400:    fn test_content_change_detected() {
+src/hooks/trust.rs:427:    fn test_untrust_revokes() {
+src/hooks/trust.rs:442:    fn test_env_override_with_ci() {
+src/hooks/trust.rs:462:    fn test_env_override_without_ci_is_ignored() {
+src/hooks/trust.rs:477:    fn test_missing_store_is_untrusted() {
+src/hooks/trust.rs:488:    fn test_risk_summary_detects_replace() {
+src/hooks/trust.rs:495:    fn test_risk_summary_detects_match_output() {
+src/hooks/trust.rs:501:    fn test_canonical_key_works() {
+src/discover/provider.rs:33:    fn discover_sessions(
+src/discover/provider.rs:38:    fn extract_commands(&self, path: &Path) -> Result<Vec<ExtractedCommand>>;
+src/discover/provider.rs:45:    fn projects_dir() -> Result<PathBuf> {
+src/discover/provider.rs:59:    pub fn encode_project_path(path: &str) -> String {
+src/discover/provider.rs:65:    fn discover_sessions(
+src/discover/provider.rs:126:    fn extract_commands(&self, path: &Path) -> Result<Vec<ExtractedCommand>> {
+src/discover/provider.rs:249:    fn make_jsonl(lines: &[&str]) -> tempfile::NamedTempFile {
+src/discover/provider.rs:259:    fn test_extract_assistant_bash() {
+src/discover/provider.rs:277:    fn test_extract_non_bash_ignored() {
+src/discover/provider.rs:288:    fn test_extract_non_message_ignored() {
+src/discover/provider.rs:298:    fn test_extract_multiple_tools() {
+src/discover/provider.rs:311:    fn test_extract_malformed_line() {
+src/discover/provider.rs:324:    fn test_encode_project_path() {
+src/discover/provider.rs:332:    fn test_encode_project_path_trailing_slash() {
+src/discover/provider.rs:340:    fn test_match_project_filter() {
+src/discover/provider.rs:347:    fn test_extract_output_content() {
+src/discover/provider.rs:366:    fn test_extract_is_error_flag() {
+src/discover/provider.rs:380:    fn test_extract_sequence_ordering() {
+src/learn/report.rs:9:pub fn format_console_report(
+src/learn/report.rs:54:pub fn write_rules_file(rules: &[CorrectionRule], path: &str) -> Result<()> {
+src/learn/report.rs:112:fn capitalize_first(s: &str) -> String {
+src/learn/report.rs:126:    fn test_format_console_report_empty() {
+src/learn/report.rs:134:    fn test_format_console_report_with_rules() {
+src/learn/report.rs:164:    fn test_write_rules_file_markdown() {
+src/hooks/rewrite_cmd.rs:18:pub fn run(cmd: &str) -> anyhow::Result<()> {
+src/hooks/rewrite_cmd.rs:57:    fn test_run_supported_command_succeeds() {
+src/hooks/rewrite_cmd.rs:62:    fn test_run_unsupported_returns_none() {
+src/hooks/rewrite_cmd.rs:67:    fn test_run_already_rtk_returns_some() {
+src/hooks/hook_cmd.rs:23:pub fn run_copilot() -> Result<()> {
+src/hooks/hook_cmd.rs:49:fn detect_format(v: &Value) -> HookFormat {
+src/hooks/hook_cmd.rs:89:fn get_rewritten(cmd: &str) -> Option<String> {
+src/hooks/hook_cmd.rs:107:fn handle_vscode(cmd: &str) -> Result<()> {
+src/hooks/hook_cmd.rs:125:fn handle_copilot_cli(cmd: &str) -> Result<()> {
+src/hooks/hook_cmd.rs:147:pub fn run_gemini() -> Result<()> {
+src/hooks/hook_cmd.rs:181:fn print_allow() {
+src/hooks/hook_cmd.rs:185:fn print_rewrite(cmd: &str) {
+src/hooks/hook_cmd.rs:203:    fn vscode_input(tool: &str, cmd: &str) -> Value {
+src/hooks/hook_cmd.rs:210:    fn copilot_cli_input(cmd: &str) -> Value {
+src/hooks/hook_cmd.rs:216:    fn test_detect_vscode_bash() {
+src/hooks/hook_cmd.rs:224:    fn test_detect_vscode_run_terminal_command() {
+src/hooks/hook_cmd.rs:232:    fn test_detect_copilot_cli_bash() {
+src/hooks/hook_cmd.rs:240:    fn test_detect_non_bash_is_passthrough() {
+src/hooks/hook_cmd.rs:246:    fn test_detect_unknown_is_passthrough() {
+src/hooks/hook_cmd.rs:251:    fn test_get_rewritten_supported() {
+src/hooks/hook_cmd.rs:256:    fn test_get_rewritten_unsupported() {
+src/hooks/hook_cmd.rs:261:    fn test_get_rewritten_already_rtk() {
+src/hooks/hook_cmd.rs:266:    fn test_get_rewritten_heredoc() {
+src/hooks/hook_cmd.rs:273:    fn test_print_allow_format() {
+src/hooks/hook_cmd.rs:280:    fn test_print_rewrite_format() {
+src/hooks/hook_cmd.rs:298:    fn test_gemini_hook_uses_rewrite_command() {
+src/hooks/hook_cmd.rs:318:    fn test_gemini_hook_excluded_commands() {
+src/hooks/hook_cmd.rs:329:    fn test_gemini_hook_env_prefix_preserved() {
+src/learn/mod.rs:11:pub fn run(
+src/discover/registry.rs:24:pub fn category_avg_tokens(category: &str, subcmd: &str) -> usize {
+src/discover/registry.rs:60:pub fn classify_command(cmd: &str) -> Classification {
+src/discover/registry.rs:164:fn extract_base_command(cmd: &str) -> &str {
+src/discover/registry.rs:195:pub fn split_command_chain(cmd: &str) -> Vec<&str> {
+src/discover/registry.rs:280:fn strip_git_global_opts(cmd: &str) -> String {
+src/discover/registry.rs:292:fn strip_absolute_path(cmd: &str) -> String {
+src/discover/registry.rs:314:pub fn has_rtk_disabled_prefix(cmd: &str) -> bool {
+src/discover/registry.rs:323:pub fn strip_disabled_prefix(cmd: &str) -> &str {
+src/discover/registry.rs:344:fn strip_trailing_redirects(cmd: &str) -> (&str, &str) {
+src/discover/registry.rs:364:pub fn rewrite_command(cmd: &str, excluded: &[String]) -> Option<String> {
+src/discover/registry.rs:391:fn rewrite_compound(cmd: &str, excluded: &[String]) -> Option<String> {
+src/discover/registry.rs:532:fn rewrite_head_numeric(cmd: &str) -> Option<String> {
+src/discover/registry.rs:558:fn rewrite_tail_lines(cmd: &str) -> Option<String> {
+src/discover/registry.rs:589:fn rewrite_segment(seg: &str, excluded: &[String]) -> Option<String> {
+src/discover/registry.rs:684:fn strip_word_prefix<'a>(cmd: &'a str, prefix: &str) -> Option<&'a str> {
+src/discover/registry.rs:703:    fn test_classify_git_status() {
+src/discover/registry.rs:716:    fn test_classify_git_diff_cached() {
+src/discover/registry.rs:729:    fn test_classify_cargo_test_filter() {
+src/discover/registry.rs:742:    fn test_classify_npx_tsc() {
+src/discover/registry.rs:755:    fn test_classify_cat_file() {
+src/discover/registry.rs:768:    fn test_classify_cat_redirect_not_supported() {
+src/discover/registry.rs:787:    fn test_classify_cd_ignored() {
+src/discover/registry.rs:792:    fn test_classify_rtk_already() {
+src/discover/registry.rs:797:    fn test_classify_echo_ignored() {
+src/discover/registry.rs:805:    fn test_classify_htop_unsupported() {
+src/discover/registry.rs:815:    fn test_classify_env_prefix_stripped() {
+src/discover/registry.rs:828:    fn test_classify_sudo_stripped() {
+src/discover/registry.rs:841:    fn test_classify_cargo_check() {
+src/discover/registry.rs:854:    fn test_classify_cargo_check_all_targets() {
+src/discover/registry.rs:867:    fn test_classify_cargo_fmt_passthrough() {
+src/discover/registry.rs:880:    fn test_classify_cargo_clippy_savings() {
+src/discover/registry.rs:893:    fn test_patterns_rules_length_match() {
+src/discover/registry.rs:902:    fn test_registry_covers_all_cargo_subcommands() {
+src/discover/registry.rs:915:    fn test_registry_covers_all_git_subcommands() {
+src/discover/registry.rs:930:    fn test_classify_find_not_blocked_by_fi() {
+src/discover/registry.rs:945:    fn test_fi_still_ignored_exact() {
+src/discover/registry.rs:951:    fn test_done_still_ignored_exact() {
+src/discover/registry.rs:957:    fn test_split_chain_and() {
+src/discover/registry.rs:962:    fn test_split_chain_semicolon() {
+src/discover/registry.rs:967:    fn test_split_pipe_first_only() {
+src/discover/registry.rs:972:    fn test_split_single() {
+src/discover/registry.rs:977:    fn test_split_quoted_and() {
+src/discover/registry.rs:985:    fn test_split_heredoc_no_split() {
+src/discover/registry.rs:991:    fn test_classify_mypy() {
+src/discover/registry.rs:1004:    fn test_classify_python_m_mypy() {
+src/discover/registry.rs:1019:    fn test_rewrite_git_status() {
+src/discover/registry.rs:1027:    fn test_rewrite_git_log() {
+src/discover/registry.rs:1037:    fn test_rewrite_git_dash_c_status() {
+src/discover/registry.rs:1045:    fn test_rewrite_git_dash_c_log() {
+src/discover/registry.rs:1053:    fn test_rewrite_git_dash_c_diff() {
+src/discover/registry.rs:1061:    fn test_classify_git_dash_c() {
+src/discover/registry.rs:1077:    fn test_rewrite_cargo_test() {
+src/discover/registry.rs:1085:    fn test_rewrite_compound_and() {
+src/discover/registry.rs:1093:    fn test_rewrite_compound_three_segments() {
+src/discover/registry.rs:1104:    fn test_rewrite_already_rtk() {
+src/discover/registry.rs:1112:    fn test_rewrite_background_single_amp() {
+src/discover/registry.rs:1120:    fn test_rewrite_background_unsupported_right() {
+src/discover/registry.rs:1128:    fn test_rewrite_background_does_not_affect_double_amp() {
+src/discover/registry.rs:1137:    fn test_rewrite_unsupported_returns_none() {
+src/discover/registry.rs:1142:    fn test_rewrite_ignored_cd() {
+src/discover/registry.rs:1147:    fn test_rewrite_with_env_prefix() {
+src/discover/registry.rs:1155:    fn test_rewrite_npx_tsc() {
+src/discover/registry.rs:1163:    fn test_rewrite_pnpm_tsc() {
+src/discover/registry.rs:1171:    fn test_rewrite_cat_file() {
+src/discover/registry.rs:1179:    fn test_rewrite_cat_with_incompatible_flags_skipped() {
+src/discover/registry.rs:1190:    fn test_rewrite_cat_with_compatible_flags() {
+src/discover/registry.rs:1199:    fn test_rewrite_rg_pattern() {
+src/discover/registry.rs:1201:            rewrite_command("rg \"fn main\"", &[]),
+src/discover/registry.rs:1202:            Some("rtk grep \"fn main\"".into())
+src/discover/registry.rs:1207:    fn test_rewrite_npx_playwright() {
+src/discover/registry.rs:1215:    fn test_rewrite_next_build() {
+src/discover/registry.rs:1223:    fn test_rewrite_pipe_first_only() {
+src/discover/registry.rs:1232:    fn test_rewrite_find_pipe_skipped() {
+src/discover/registry.rs:1236:            rewrite_command("find . -name '*.rs' | xargs grep 'fn run'", &[]),
+src/discover/registry.rs:1242:    fn test_rewrite_find_pipe_xargs_wc() {
+src/discover/registry.rs:1247:    fn test_rewrite_find_no_pipe_still_rewritten() {
+src/discover/registry.rs:1256:    fn test_rewrite_heredoc_returns_none() {
+src/discover/registry.rs:1261:    fn test_rewrite_empty_returns_none() {
+src/discover/registry.rs:1267:    fn test_rewrite_mixed_compound_partial() {
+src/discover/registry.rs:1278:    fn test_rewrite_rtk_disabled_curl() {
+src/discover/registry.rs:1286:    fn test_rewrite_rtk_disabled_git_status() {
+src/discover/registry.rs:1291:    fn test_rewrite_rtk_disabled_multi_env() {
+src/discover/registry.rs:1299:    fn test_rewrite_non_rtk_disabled_env_still_rewrites() {
+src/discover/registry.rs:1309:    fn test_rewrite_redirect_2_gt_amp_1_with_pipe() {
+src/discover/registry.rs:1317:    fn test_rewrite_redirect_2_gt_amp_1_trailing() {
+src/discover/registry.rs:1325:    fn test_rewrite_redirect_plain_2_devnull() {
+src/discover/registry.rs:1334:    fn test_rewrite_redirect_2_gt_amp_1_with_and() {
+src/discover/registry.rs:1342:    fn test_rewrite_redirect_amp_gt_devnull() {
+src/discover/registry.rs:1350:    fn test_rewrite_redirect_double() {
+src/discover/registry.rs:1359:    fn test_rewrite_redirect_fd_close() {
+src/discover/registry.rs:1368:    fn test_rewrite_redirect_quotes_not_stripped() {
+src/discover/registry.rs:1379:    fn test_rewrite_background_amp_non_regression() {
+src/discover/registry.rs:1390:    fn test_rewrite_head_numeric_flag() {
+src/discover/registry.rs:1399:    fn test_rewrite_head_lines_long_flag() {
+src/discover/registry.rs:1407:    fn test_rewrite_head_no_flag_still_rewrites() {
+src/discover/registry.rs:1416:    fn test_rewrite_head_other_flag_skipped() {
+src/discover/registry.rs:1422:    fn test_rewrite_tail_numeric_flag() {
+src/discover/registry.rs:1430:    fn test_rewrite_tail_n_space_flag() {
+src/discover/registry.rs:1438:    fn test_rewrite_tail_lines_long_flag() {
+src/discover/registry.rs:1446:    fn test_rewrite_tail_lines_space_flag() {
+src/discover/registry.rs:1454:    fn test_rewrite_tail_other_flag_skipped() {
+src/discover/registry.rs:1459:    fn test_rewrite_tail_plain_file_skipped() {
+src/discover/registry.rs:1466:    fn test_classify_gh_release() {
+src/discover/registry.rs:1477:    fn test_classify_cargo_install() {
+src/discover/registry.rs:1488:    fn test_classify_docker_run() {
+src/discover/registry.rs:1499:    fn test_classify_docker_exec() {
+src/discover/registry.rs:1510:    fn test_classify_docker_build() {
+src/discover/registry.rs:1521:    fn test_classify_kubectl_describe() {
+src/discover/registry.rs:1532:    fn test_classify_kubectl_apply() {
+src/discover/registry.rs:1543:    fn test_classify_tree() {
+src/discover/registry.rs:1554:    fn test_classify_diff() {
+src/discover/registry.rs:1565:    fn test_rewrite_tree() {
+src/discover/registry.rs:1573:    fn test_rewrite_diff() {
+src/discover/registry.rs:1581:    fn test_rewrite_gh_release() {
+src/discover/registry.rs:1589:    fn test_rewrite_cargo_install() {
+src/discover/registry.rs:1597:    fn test_rewrite_kubectl_describe() {
+src/discover/registry.rs:1605:    fn test_rewrite_docker_run() {
+src/discover/registry.rs:1613:    fn test_classify_swift_test() {
+src/discover/registry.rs:1626:    fn test_rewrite_swift_test() {
+src/discover/registry.rs:1636:    fn test_rewrite_docker_compose_ps() {
+src/discover/registry.rs:1644:    fn test_rewrite_docker_compose_logs() {
+src/discover/registry.rs:1652:    fn test_rewrite_docker_compose_build() {
+src/discover/registry.rs:1660:    fn test_rewrite_docker_compose_up_skipped() {
+src/discover/registry.rs:1665:    fn test_rewrite_docker_compose_down_skipped() {
+src/discover/registry.rs:1670:    fn test_rewrite_docker_compose_config_skipped() {
+src/discover/registry.rs:1680:    fn test_classify_aws() {
+src/discover/registry.rs:1691:    fn test_classify_aws_ec2() {
+src/discover/registry.rs:1702:    fn test_classify_psql() {
+src/discover/registry.rs:1713:    fn test_classify_psql_url() {
+src/discover/registry.rs:1724:    fn test_rewrite_aws() {
+src/discover/registry.rs:1732:    fn test_rewrite_aws_ec2() {
+src/discover/registry.rs:1740:    fn test_rewrite_psql() {
+src/discover/registry.rs:1750:    fn test_classify_ruff_check() {
+src/discover/registry.rs:1761:    fn test_classify_ruff_format() {
+src/discover/registry.rs:1772:    fn test_classify_pytest() {
+src/discover/registry.rs:1783:    fn test_classify_python_m_pytest() {
+src/discover/registry.rs:1794:    fn test_classify_pip_list() {
+src/discover/registry.rs:1805:    fn test_classify_uv_pip_list() {
+src/discover/registry.rs:1816:    fn test_rewrite_ruff_check() {
+src/discover/registry.rs:1824:    fn test_rewrite_ruff_format() {
+src/discover/registry.rs:1832:    fn test_rewrite_pytest() {
+src/discover/registry.rs:1840:    fn test_rewrite_python_m_pytest() {
+src/discover/registry.rs:1848:    fn test_rewrite_pip_list() {
+src/discover/registry.rs:1856:    fn test_rewrite_pip_outdated() {
+src/discover/registry.rs:1864:    fn test_rewrite_uv_pip_list() {
+src/discover/registry.rs:1874:    fn test_classify_go_test() {
+src/discover/registry.rs:1885:    fn test_classify_go_build() {
+src/discover/registry.rs:1896:    fn test_classify_go_vet() {
+src/discover/registry.rs:1907:    fn test_classify_golangci_lint() {
+src/discover/registry.rs:1918:    fn test_rewrite_go_test() {
+src/discover/registry.rs:1926:    fn test_rewrite_go_build() {
+src/discover/registry.rs:1934:    fn test_rewrite_go_vet() {
+src/discover/registry.rs:1942:    fn test_rewrite_golangci_lint() {
+src/discover/registry.rs:1952:    fn test_classify_vitest() {
+src/discover/registry.rs:1963:    fn test_rewrite_vitest() {
+src/discover/registry.rs:1971:    fn test_rewrite_pnpm_vitest() {
+src/discover/registry.rs:1979:    fn test_classify_prisma() {
+src/discover/registry.rs:1990:    fn test_rewrite_prisma() {
+src/discover/registry.rs:1998:    fn test_rewrite_prettier() {
+src/discover/registry.rs:2006:    fn test_rewrite_pnpm_list() {
+src/discover/registry.rs:2016:    fn test_rewrite_compound_or() {
+src/discover/registry.rs:2025:    fn test_rewrite_compound_semicolon() {
+src/discover/registry.rs:2033:    fn test_rewrite_compound_pipe_raw_filter() {
+src/discover/registry.rs:2042:    fn test_rewrite_compound_pipe_git_grep() {
+src/discover/registry.rs:2050:    fn test_rewrite_compound_four_segments() {
+src/discover/registry.rs:2064:    fn test_rewrite_compound_mixed_supported_unsupported() {
+src/discover/registry.rs:2073:    fn test_rewrite_compound_all_unsupported_returns_none() {
+src/discover/registry.rs:2081:    fn test_rewrite_sudo_docker() {
+src/discover/registry.rs:2089:    fn test_rewrite_env_var_prefix() {
+src/discover/registry.rs:2099:    fn test_rewrite_find_with_flags() {
+src/discover/registry.rs:2109:    fn test_patterns_rules_aligned_after_aws_psql() {
+src/discover/registry.rs:2123:    fn test_all_rules_have_valid_rtk_cmd() {
+src/discover/registry.rs:2142:    fn test_rewrite_excludes_curl() {
+src/discover/registry.rs:2151:    fn test_rewrite_exclude_does_not_affect_other_commands() {
+src/discover/registry.rs:2160:    fn test_rewrite_empty_excludes_rewrites_curl() {
+src/discover/registry.rs:2166:    fn test_rewrite_compound_partial_exclude() {
+src/discover/registry.rs:2178:    fn test_all_patterns_are_valid_regex() {
+src/discover/registry.rs:2191:    fn test_rewrite_gh_json_skipped() {
+src/discover/registry.rs:2196:    fn test_rewrite_gh_jq_skipped() {
+src/discover/registry.rs:2204:    fn test_rewrite_gh_template_skipped() {
+src/discover/registry.rs:2212:    fn test_rewrite_gh_api_json_skipped() {
+src/discover/registry.rs:2220:    fn test_rewrite_gh_without_json_still_works() {
+src/discover/registry.rs:2230:    fn test_has_rtk_disabled_prefix() {
+src/discover/registry.rs:2242:    fn test_strip_disabled_prefix() {
+src/discover/registry.rs:2257:    fn test_classify_absolute_path_grep() {
+src/discover/registry.rs:2270:    fn test_classify_absolute_path_ls() {
+src/discover/registry.rs:2283:    fn test_classify_absolute_path_git() {
+src/discover/registry.rs:2296:    fn test_classify_absolute_path_no_args() {
+src/discover/registry.rs:2310:    fn test_strip_absolute_path_helper() {
+src/discover/registry.rs:2320:    fn test_classify_git_with_dash_c_path() {
+src/discover/registry.rs:2333:    fn test_classify_git_no_pager_log() {
+src/discover/registry.rs:2346:    fn test_classify_git_git_dir() {
+src/discover/registry.rs:2359:    fn test_rewrite_git_dash_c() {
+src/discover/registry.rs:2367:    fn test_rewrite_git_no_pager() {
+src/discover/registry.rs:2375:    fn test_strip_git_global_opts_helper() {
+src/discover/registry.rs:2385:    fn test_classify_wc_supported() {
+src/discover/registry.rs:2400:    fn test_classify_wc_multi_file() {
+src/discover/registry.rs:2413:    fn test_rewrite_wc() {
+src/discover/registry.rs:2421:    fn test_rewrite_wc_multi_file() {
+src/learn/detector.rs:19:    pub fn as_str(&self) -> &str {
+src/learn/detector.rs:79:pub fn is_command_error(is_error: bool, output: &str) -> bool {
+src/learn/detector.rs:100:pub fn classify_error(output: &str) -> ErrorType {
+src/learn/detector.rs:127:pub fn extract_base_command(cmd: &str) -> String {
+src/learn/detector.rs:148:pub fn command_similarity(a: &str, b: &str) -> f64 {
+src/learn/detector.rs:185:fn is_tdd_cycle_error(error_type: &ErrorType, output: &str) -> bool {
+src/learn/detector.rs:202:fn differs_only_by_path(a: &str, b: &str) -> bool {
+src/learn/detector.rs:216:pub fn find_corrections(commands: &[CommandExecution]) -> Vec<CorrectionPair> {
+src/learn/detector.rs:284:fn extract_diff_token(wrong: &str, right: &str) -> String {
+src/learn/detector.rs:306:pub fn deduplicate_corrections(pairs: Vec<CorrectionPair>) -> Vec<CorrectionRule> {
+src/learn/detector.rs:358:    fn test_is_command_error_requires_error_flag() {
+src/learn/detector.rs:364:    fn test_is_command_error_filters_user_rejection() {
+src/learn/detector.rs:371:    fn test_is_command_error_requires_error_content() {
+src/learn/detector.rs:379:    fn test_classify_error_unknown_flag() {
+src/learn/detector.rs:395:    fn test_classify_error_command_not_found() {
+src/learn/detector.rs:407:    fn test_classify_error_all_types() {
+src/learn/detector.rs:427:    fn test_extract_base_command() {
+src/learn/detector.rs:441:    fn test_command_similarity_same_base() {
+src/learn/detector.rs:452:    fn test_find_corrections_basic() {
+src/learn/detector.rs:474:    fn test_find_corrections_window_limit() {
+src/learn/detector.rs:509:    fn test_find_corrections_excludes_tdd_cycle() {
+src/learn/detector.rs:528:    fn test_find_corrections_path_exploration() {
+src/learn/detector.rs:550:    fn test_find_corrections_min_confidence() {
+src/learn/detector.rs:572:    fn test_deduplicate_corrections_merges_same() {
+src/learn/detector.rs:606:    fn test_deduplicate_corrections_keeps_distinct() {
+src/hooks/permissions.rs:20:pub fn check_command(cmd: &str) -> PermissionVerdict {
+src/hooks/permissions.rs:26:pub(crate) fn check_command_with_rules(
+src/hooks/permissions.rs:72:fn load_deny_ask_rules() -> (Vec<String>, Vec<String>) {
+src/hooks/permissions.rs:97:fn append_bash_rules(rules_value: Option<&Value>, target: &mut Vec<String>) {
+src/hooks/permissions.rs:111:fn get_settings_paths() -> Vec<PathBuf> {
+src/hooks/permissions.rs:129:fn find_project_root() -> Option<PathBuf> {
+src/hooks/permissions.rs:158:pub(crate) fn extract_bash_pattern(rule: &str) -> &str {
+src/hooks/permissions.rs:174:pub(crate) fn command_matches_pattern(cmd: &str, pattern: &str) -> bool {
+src/hooks/permissions.rs:207:fn glob_matches(cmd: &str, pattern: &str) -> bool {
+src/hooks/permissions.rs:250:fn split_compound_command(cmd: &str) -> Vec<&str> {
+src/hooks/permissions.rs:262:    fn test_parse_bash_pattern() {
+src/hooks/permissions.rs:273:    fn test_exact_match() {
+src/hooks/permissions.rs:281:    fn test_wildcard_colon() {
+src/hooks/permissions.rs:286:    fn test_no_match() {
+src/hooks/permissions.rs:291:    fn test_deny_precedence_over_ask() {
+src/hooks/permissions.rs:301:    fn test_non_bash_rules_ignored() {
+src/hooks/permissions.rs:316:    fn test_empty_permissions() {
+src/hooks/permissions.rs:324:    fn test_prefix_match() {
+src/hooks/permissions.rs:332:    fn test_wildcard_all() {
+src/hooks/permissions.rs:338:    fn test_no_partial_word_match() {
+src/hooks/permissions.rs:347:    fn test_compound_command_deny() {
+src/hooks/permissions.rs:356:    fn test_compound_command_ask() {
+src/hooks/permissions.rs:365:    fn test_compound_command_deny_overrides_ask() {
+src/hooks/permissions.rs:376:    fn test_ask_verdict() {
+src/hooks/permissions.rs:385:    fn test_sudo_wildcard_no_false_positive() {
+src/hooks/permissions.rs:392:    fn test_star_colon_star_matches_everything() {
+src/hooks/permissions.rs:400:    fn test_leading_wildcard() {
+src/hooks/permissions.rs:407:    fn test_leading_wildcard_no_partial() {
+src/hooks/permissions.rs:414:    fn test_middle_wildcard() {
+src/hooks/permissions.rs:421:    fn test_middle_wildcard_no_match() {
+src/hooks/permissions.rs:427:    fn test_multiple_wildcards() {
+src/hooks/permissions.rs:440:    fn test_deny_with_leading_wildcard() {
+src/hooks/permissions.rs:454:    fn test_deny_star_colon_star() {
+src/hooks/hook_check.rs:21:pub fn status() -> HookStatus {
+src/hooks/hook_check.rs:45:pub fn maybe_warn() {
+src/hooks/hook_check.rs:51:fn check_and_warn() -> Option<()> {
+src/hooks/hook_check.rs:79:pub fn parse_hook_version(content: &str) -> u8 {
+src/hooks/hook_check.rs:91:fn hook_installed_path() -> Option<PathBuf> {
+src/hooks/hook_check.rs:101:fn warn_marker_path() -> Option<PathBuf> {
+src/hooks/hook_check.rs:111:    fn test_parse_hook_version_present() {
+src/hooks/hook_check.rs:117:    fn test_parse_hook_version_missing() {
+src/hooks/hook_check.rs:123:    fn test_parse_hook_version_future() {
+src/hooks/hook_check.rs:129:    fn test_parse_hook_version_no_tag() {
+src/hooks/hook_check.rs:135:    fn test_hook_status_enum() {
+src/hooks/hook_check.rs:145:    fn test_status_returns_valid_variant() {
+src/core/filter.rs:17:    fn from_str(s: &str) -> Result<Self, Self::Err> {
+src/core/filter.rs:28:    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+src/core/filter.rs:38:    fn filter(&self, content: &str, lang: &Language) -> String;
+src/core/filter.rs:40:    fn name(&self) -> &'static str;
+src/core/filter.rs:61:    pub fn from_extension(ext: &str) -> Self {
+src/core/filter.rs:81:    pub fn comment_patterns(&self) -> CommentPatterns {
+src/core/filter.rs:153:    fn filter(&self, content: &str, _lang: &Language) -> String {
+src/core/filter.rs:157:    fn name(&self) -> &'static str {
+src/core/filter.rs:170:    fn filter(&self, content: &str, lang: &Language) -> String {
+src/core/filter.rs:238:    fn name(&self) -> &'static str {
+src/core/filter.rs:255:    fn filter(&self, content: &str, lang: &Language) -> String {
+src/core/filter.rs:324:    fn name(&self) -> &'static str {
+src/core/filter.rs:329:pub fn get_filter(level: FilterLevel) -> Box<dyn FilterStrategy> {
+src/core/filter.rs:337:pub fn smart_truncate(content: &str, max_lines: usize, _lang: &Language) -> String {
+src/core/filter.rs:393:    fn test_filter_level_parsing() {
+src/core/filter.rs:406:    fn test_language_detection() {
+src/core/filter.rs:413:    fn test_language_detection_data_formats() {
+src/core/filter.rs:425:    fn test_json_no_comment_stripping() {
+src/core/filter.rs:465:    fn test_json_aggressive_filter_preserves_structure() {
+src/core/filter.rs:484:    fn test_minimal_filter_removes_comments() {
+src/core/filter.rs:487:fn main() {
+src/core/filter.rs:494:        assert!(result.contains("fn main()"));
+src/core/filter.rs:500:    fn test_smart_truncate_overflow_count_exact() {
+src/core/utils.rs:25:pub fn truncate(s: &str, max_len: usize) -> String {
+src/core/utils.rs:48:pub fn strip_ansi(text: &str) -> String {
+src/core/utils.rs:71:pub fn execute_command(cmd: &str, args: &[&str]) -> Result<(String, String, i32)> {
+src/core/utils.rs:99:pub fn format_tokens(n: usize) -> String {
+src/core/utils.rs:125:pub fn format_usd(amount: f64) -> String {
+src/core/utils.rs:151:pub fn format_cpt(cpt: f64) -> String {
+src/core/utils.rs:168:pub fn join_with_overflow(items: &[String], total: usize, max: usize, label: &str) -> String {
+src/core/utils.rs:185:pub fn truncate_iso_date(date: &str) -> &str {
+src/core/utils.rs:202:pub fn ok_confirmation(action: &str, detail: &str) -> String {
+src/core/utils.rs:213:pub fn exit_code_from_output(output: &std::process::Output, label: &str) -> i32 {
+src/core/utils.rs:233:pub fn fallback_tail(output: &str, label: &str, n: usize) -> String {
+src/core/utils.rs:246:pub fn ruby_exec(tool: &str) -> Command {
+src/core/utils.rs:258:pub fn count_tokens(text: &str) -> usize {
+src/core/utils.rs:272:pub fn detect_package_manager() -> &'static str {
+src/core/utils.rs:284:pub fn package_manager_exec(tool: &str) -> Command {
+src/core/utils.rs:322:pub fn resolve_binary(name: &str) -> Result<PathBuf> {
+src/core/utils.rs:339:pub fn resolved_command(name: &str) -> Command {
+src/core/utils.rs:367:pub fn tool_exists(name: &str) -> bool {
+src/core/utils.rs:376:    fn test_truncate_short_string() {
+src/core/utils.rs:381:    fn test_truncate_long_string() {
+src/core/utils.rs:387:    fn test_truncate_exact_length() {
+src/core/utils.rs:392:    fn test_truncate_edge_case() {
+src/core/utils.rs:402:    fn test_strip_ansi_simple() {
+src/core/utils.rs:408:    fn test_strip_ansi_multiple() {
+src/core/utils.rs:414:    fn test_strip_ansi_no_codes() {
+src/core/utils.rs:419:    fn test_strip_ansi_complex() {
+src/core/utils.rs:425:    fn test_execute_command_success() {
+src/core/utils.rs:434:    fn test_execute_command_failure() {
+src/core/utils.rs:440:    fn test_format_tokens_millions() {
+src/core/utils.rs:446:    fn test_format_tokens_thousands() {
+src/core/utils.rs:452:    fn test_format_tokens_small() {
+src/core/utils.rs:458:    fn test_format_usd_large() {
+src/core/utils.rs:464:    fn test_format_usd_medium() {
+src/core/utils.rs:470:    fn test_format_usd_small() {
+src/core/utils.rs:476:    fn test_format_usd_edge() {
+src/core/utils.rs:482:    fn test_ok_confirmation_with_detail() {
+src/core/utils.rs:491:    fn test_ok_confirmation_no_detail() {
+src/core/utils.rs:496:    fn test_format_cpt_normal() {
+src/core/utils.rs:503:    fn test_format_cpt_edge_cases() {
+src/core/utils.rs:511:    fn test_detect_package_manager_default() {
+src/core/utils.rs:519:    fn test_truncate_multibyte_thai() {
+src/core/utils.rs:529:    fn test_truncate_multibyte_emoji() {
+src/core/utils.rs:536:    fn test_truncate_multibyte_cjk() {
+src/core/utils.rs:545:    fn test_resolve_binary_finds_known_command() {
+src/core/utils.rs:556:    fn test_resolve_binary_returns_absolute_path() {
+src/core/utils.rs:566:    fn test_resolve_binary_fails_for_unknown() {
+src/core/utils.rs:575:    fn test_resolve_binary_path_contains_binary_name() {
+src/core/utils.rs:592:    fn test_resolved_command_executes_known_command() {
+src/core/utils.rs:606:    fn test_tool_exists_finds_cargo() {
+src/core/utils.rs:614:    fn test_tool_exists_rejects_unknown() {
+src/core/utils.rs:622:    fn test_tool_exists_finds_git() {
+src/core/utils.rs:634:        fn create_temp_cmd_wrapper(dir: &std::path::Path, name: &str) -> std::path::PathBuf {
+src/core/utils.rs:642:        fn path_with_dir(dir: &std::path::Path) -> std::ffi::OsString {
+src/core/utils.rs:651:        fn test_resolve_binary_finds_cmd_wrapper() {
+src/core/utils.rs:683:        fn test_resolve_binary_finds_bat_wrapper() {
+src/core/utils.rs:704:        fn test_resolved_command_executes_cmd_wrapper() {
+src/core/utils.rs:733:        fn test_resolved_command_fallback_on_unknown_binary() {
+src/core/utils.rs:749:        fn test_tool_exists_finds_cmd_wrapper() {
+src/core/display_helpers.rs:10:pub fn format_duration(ms: u64) -> String {
+src/core/display_helpers.rs:25:    fn icon() -> &'static str;
+src/core/display_helpers.rs:28:    fn label() -> &'static str;
+src/core/display_helpers.rs:31:    fn period(&self) -> String;
+src/core/display_helpers.rs:34:    fn commands(&self) -> usize;
+src/core/display_helpers.rs:37:    fn input_tokens(&self) -> usize;
+src/core/display_helpers.rs:40:    fn output_tokens(&self) -> usize;
+src/core/display_helpers.rs:43:    fn saved_tokens(&self) -> usize;
+src/core/display_helpers.rs:46:    fn savings_pct(&self) -> f64;
+src/core/display_helpers.rs:49:    fn total_time_ms(&self) -> u64;
+src/core/display_helpers.rs:52:    fn avg_time_ms(&self) -> u64;
+src/core/display_helpers.rs:55:    fn period_width() -> usize;
+src/core/display_helpers.rs:58:    fn separator_width() -> usize;
+src/core/display_helpers.rs:62:pub fn print_period_table<T: PeriodStats>(data: &[T]) {
+src/core/display_helpers.rs:145:    fn icon() -> &'static str {
+src/core/display_helpers.rs:149:    fn label() -> &'static str {
+src/core/display_helpers.rs:153:    fn period(&self) -> String {
+src/core/display_helpers.rs:157:    fn commands(&self) -> usize {
+src/core/display_helpers.rs:161:    fn input_tokens(&self) -> usize {
+src/core/display_helpers.rs:165:    fn output_tokens(&self) -> usize {
+src/core/display_helpers.rs:169:    fn saved_tokens(&self) -> usize {
+src/core/display_helpers.rs:173:    fn savings_pct(&self) -> f64 {
+src/core/display_helpers.rs:177:    fn total_time_ms(&self) -> u64 {
+src/core/display_helpers.rs:181:    fn avg_time_ms(&self) -> u64 {
+src/core/display_helpers.rs:185:    fn period_width() -> usize {
+src/core/display_helpers.rs:189:    fn separator_width() -> usize {
+src/core/display_helpers.rs:195:    fn icon() -> &'static str {
+src/core/display_helpers.rs:199:    fn label() -> &'static str {
+src/core/display_helpers.rs:203:    fn period(&self) -> String {
+src/core/display_helpers.rs:217:    fn commands(&self) -> usize {
+src/core/display_helpers.rs:221:    fn input_tokens(&self) -> usize {
+src/core/display_helpers.rs:225:    fn output_tokens(&self) -> usize {
+src/core/display_helpers.rs:229:    fn saved_tokens(&self) -> usize {
+src/core/display_helpers.rs:233:    fn savings_pct(&self) -> f64 {
+src/core/display_helpers.rs:237:    fn total_time_ms(&self) -> u64 {
+src/core/display_helpers.rs:241:    fn avg_time_ms(&self) -> u64 {
+src/core/display_helpers.rs:245:    fn period_width() -> usize {
+src/core/display_helpers.rs:249:    fn separator_width() -> usize {
+src/core/display_helpers.rs:255:    fn icon() -> &'static str {
+src/core/display_helpers.rs:259:    fn label() -> &'static str {
+src/core/display_helpers.rs:263:    fn period(&self) -> String {
+src/core/display_helpers.rs:267:    fn commands(&self) -> usize {
+src/core/display_helpers.rs:271:    fn input_tokens(&self) -> usize {
+src/core/display_helpers.rs:275:    fn output_tokens(&self) -> usize {
+src/core/display_helpers.rs:279:    fn saved_tokens(&self) -> usize {
+src/core/display_helpers.rs:283:    fn savings_pct(&self) -> f64 {
+src/core/display_helpers.rs:287:    fn total_time_ms(&self) -> u64 {
+src/core/display_helpers.rs:291:    fn avg_time_ms(&self) -> u64 {
+src/core/display_helpers.rs:295:    fn period_width() -> usize {
+src/core/display_helpers.rs:299:    fn separator_width() -> usize {
+src/core/display_helpers.rs:309:    fn test_day_stats_trait() {
+src/core/display_helpers.rs:330:    fn test_week_stats_trait() {
+src/core/display_helpers.rs:350:    fn test_month_stats_trait() {
+src/core/display_helpers.rs:369:    fn test_print_period_table_empty() {
+src/core/display_helpers.rs:376:    fn test_print_period_table_with_data() {
+src/hooks/hook_audit_cmd.rs:8:fn default_log_path() -> PathBuf {
+src/hooks/hook_audit_cmd.rs:28:fn parse_line(line: &str) -> Option<AuditEntry> {
+src/hooks/hook_audit_cmd.rs:42:fn base_command(cmd: &str) -> String {
+src/hooks/hook_audit_cmd.rs:57:fn filter_since_days(entries: &[AuditEntry], days: u64) -> Vec<&AuditEntry> {
+src/hooks/hook_audit_cmd.rs:71:pub fn run(since_days: u64, verbose: u8) -> Result<()> {
+src/hooks/hook_audit_cmd.rs:182:    fn test_parse_line_rewrite() {
+src/hooks/hook_audit_cmd.rs:191:    fn test_parse_line_skip() {
+src/hooks/hook_audit_cmd.rs:199:    fn test_parse_line_invalid() {
+src/hooks/hook_audit_cmd.rs:205:    fn test_base_command_simple() {
+src/hooks/hook_audit_cmd.rs:211:    fn test_base_command_with_env() {
+src/hooks/hook_audit_cmd.rs:217:    fn test_base_command_single_word() {
+src/hooks/hook_audit_cmd.rs:222:    fn make_entry(action: &str, cmd: &str) -> AuditEntry {
+src/hooks/hook_audit_cmd.rs:232:    fn test_filter_since_days_zero_returns_all() {
+src/hooks/hook_audit_cmd.rs:242:    fn test_token_savings() {
+src/hooks/integrity.rs:39:pub fn compute_hash(path: &Path) -> Result<String> {
+src/hooks/integrity.rs:48:fn hash_path(hook_path: &Path) -> PathBuf {
+src/hooks/integrity.rs:66:pub fn store_hash(hook_path: &Path) -> Result<()> {
+src/hooks/integrity.rs:98:pub fn remove_hash(hook_path: &Path) -> Result<bool> {
+src/hooks/integrity.rs:122:pub fn verify_hook() -> Result<IntegrityStatus> {
+src/hooks/integrity.rs:128:pub fn verify_hook_at(hook_path: &Path) -> Result<IntegrityStatus> {
+src/hooks/integrity.rs:155:fn read_stored_hash(path: &Path) -> Result<String> {
+src/hooks/integrity.rs:182:pub fn resolve_hook_path() -> Result<PathBuf> {
+src/hooks/integrity.rs:189:pub fn run_verify(verbose: u8) -> Result<()> {
+src/hooks/integrity.rs:245:pub fn runtime_check() -> Result<()> {
+src/hooks/integrity.rs:288:    fn test_compute_hash_deterministic() {
+src/hooks/integrity.rs:302:    fn test_compute_hash_changes_on_modification() {
+src/hooks/integrity.rs:316:    fn test_store_and_verify_ok() {
+src/hooks/integrity.rs:328:    fn test_verify_detects_tampering() {
+src/hooks/integrity.rs:350:    fn test_verify_no_baseline() {
+src/hooks/integrity.rs:361:    fn test_verify_not_installed() {
+src/hooks/integrity.rs:371:    fn test_verify_orphaned_hash() {
+src/hooks/integrity.rs:388:    fn test_store_hash_creates_sha256sum_format() {
+src/hooks/integrity.rs:408:    fn test_store_hash_overwrites_existing() {
+src/hooks/integrity.rs:429:    fn test_hash_file_permissions() {
+src/hooks/integrity.rs:444:    fn test_remove_hash() {
+src/hooks/integrity.rs:459:    fn test_remove_hash_not_found() {
+src/hooks/integrity.rs:468:    fn test_invalid_hash_file_rejected() {
+src/hooks/integrity.rs:481:    fn test_hash_only_no_filename_rejected() {
+src/hooks/integrity.rs:502:    fn test_wrong_separator_rejected() {
+src/hooks/integrity.rs:520:    fn test_hash_format_compatible_with_sha256sum() {
+src/core/tracking.rs:43:fn current_project_path_string() -> String {
+src/core/tracking.rs:54:fn project_filter_params(project_path: Option<&str>) -> (Option<String>, Option<String>) {
+src/core/tracking.rs:250:    pub fn new() -> Result<Self> {
+src/core/tracking.rs:352:    pub fn record(
+src/core/tracking.rs:389:    fn cleanup_old(&self) -> Result<()> {
+src/core/tracking.rs:403:    pub fn record_parse_failure(
+src/core/tracking.rs:424:    pub fn get_parse_failure_summary(&self) -> Result<ParseFailureSummary> {
+src/core/tracking.rs:501:    pub fn get_summary(&self) -> Result<GainSummary> {
+src/core/tracking.rs:509:    pub fn get_summary_filtered(&self, project_path: Option<&str>) -> Result<GainSummary> {
+src/core/tracking.rs:570:    fn get_by_command(
+src/core/tracking.rs:598:    fn get_by_day(
+src/core/tracking.rs:640:    pub fn get_all_days(&self) -> Result<Vec<DayStats>> {
+src/core/tracking.rs:645:    pub fn get_all_days_filtered(&self, project_path: Option<&str>) -> Result<Vec<DayStats>> {
+src/core/tracking.rs:713:    pub fn get_by_week(&self) -> Result<Vec<WeekStats>> {
+src/core/tracking.rs:718:    pub fn get_by_week_filtered(&self, project_path: Option<&str>) -> Result<Vec<WeekStats>> {
+src/core/tracking.rs:788:    pub fn get_by_month(&self) -> Result<Vec<MonthStats>> {
+src/core/tracking.rs:793:    pub fn get_by_month_filtered(&self, project_path: Option<&str>) -> Result<Vec<MonthStats>> {
+src/core/tracking.rs:865:    pub fn get_recent(&self, limit: usize) -> Result<Vec<CommandRecord>> {
+src/core/tracking.rs:870:    pub fn get_recent_filtered(
+src/core/tracking.rs:902:    pub fn count_commands_since(&self, since: chrono::DateTime<chrono::Utc>) -> Result<i64> {
+src/core/tracking.rs:913:    pub fn top_commands(&self, limit: usize) -> Result<Vec<String>> {
+src/core/tracking.rs:927:    pub fn overall_savings_pct(&self) -> Result<f64> {
+src/core/tracking.rs:941:    pub fn total_tokens_saved(&self) -> Result<i64> {
+src/core/tracking.rs:951:    pub fn tokens_saved_24h(&self, since: chrono::DateTime<chrono::Utc>) -> Result<i64> {
+src/core/tracking.rs:962:fn get_db_path() -> Result<PathBuf> {
+src/core/tracking.rs:1001:pub fn record_parse_failure_silent(raw_command: &str, error_message: &str, succeeded: bool) {
+src/core/tracking.rs:1026:pub fn estimate_tokens(text: &str) -> usize {
+src/core/tracking.rs:1068:    pub fn start() -> Self {
+src/core/tracking.rs:1098:    pub fn track(&self, original_cmd: &str, rtk_cmd: &str, input: &str, output: &str) {
+src/core/tracking.rs:1134:    pub fn track_passthrough(&self, original_cmd: &str, rtk_cmd: &str) {
+src/core/tracking.rs:1157:pub fn args_display(args: &[OsString]) -> String {
+src/core/tracking.rs:1191:pub fn track(original_cmd: &str, rtk_cmd: &str, input: &str, output: &str) {
+src/core/tracking.rs:1206:    fn test_estimate_tokens() {
+src/core/tracking.rs:1216:    fn test_args_display() {
+src/core/tracking.rs:1227:    fn test_tracker_record_and_recent() {
+src/core/tracking.rs:1251:    fn test_track_passthrough_no_dilution() {
+src/core/tracking.rs:1295:    fn test_timed_execution_records_time() {
+src/core/tracking.rs:1308:    fn test_timed_execution_passthrough() {
+src/core/tracking.rs:1327:    fn test_custom_db_path_env() {
+src/core/tracking.rs:1341:    fn test_default_db_path() {
+src/core/tracking.rs:1353:    fn test_project_filter_params_glob_pattern() {
+src/core/tracking.rs:1368:    fn test_project_filter_params_none() {
+src/core/tracking.rs:1376:    fn test_project_filter_params_underscore_safe() {
+src/core/tracking.rs:1391:    fn test_parse_failure_roundtrip() {
+src/core/tracking.rs:1409:    fn test_parse_failure_recovery_rate() {
+src/core/config.rs:42:    fn default() -> Self {
+src/core/config.rs:59:    fn default() -> Self {
+src/core/config.rs:75:    fn default() -> Self {
+src/core/config.rs:96:    fn default() -> Self {
+src/core/config.rs:116:    fn default() -> Self {
+src/core/config.rs:128:pub fn limits() -> LimitsConfig {
+src/core/config.rs:133:pub fn telemetry_enabled() -> Option<bool> {
+src/core/config.rs:138:    pub fn load() -> Result<Self> {
+src/core/config.rs:150:    pub fn save(&self) -> Result<()> {
+src/core/config.rs:162:    pub fn create_default() -> Result<PathBuf> {
+src/core/config.rs:169:fn get_config_path() -> Result<PathBuf> {
+src/core/config.rs:174:pub fn show_config() -> Result<()> {
+src/core/config.rs:197:    fn test_hooks_config_deserialize() {
+src/core/config.rs:207:    fn test_hooks_config_default_empty() {
+src/core/config.rs:213:    fn test_config_without_hooks_section_is_valid() {
+src/core/tee.rs:18:fn sanitize_slug(slug: &str) -> String {
+src/core/tee.rs:37:fn get_tee_dir(config: &Config) -> Option<PathBuf> {
+src/core/tee.rs:53:fn cleanup_old_files(dir: &std::path::Path, max_files: usize) {
+src/core/tee.rs:77:fn should_tee(
+src/core/tee.rs:106:fn write_tee_file(
+src/core/tee.rs:144:pub fn tee_raw(raw: &str, command_slug: &str, exit_code: i32) -> Option<PathBuf> {
+src/core/tee.rs:165:fn format_hint(path: &std::path::Path) -> String {
+src/core/tee.rs:181:pub fn tee_and_hint(raw: &str, command_slug: &str, exit_code: i32) -> Option<String> {
+src/core/tee.rs:208:    fn default() -> Self {
+src/core/tee.rs:225:    fn test_sanitize_slug() {
+src/core/tee.rs:236:    fn test_should_tee_disabled() {
+src/core/tee.rs:246:    fn test_should_tee_never_mode() {
+src/core/tee.rs:256:    fn test_should_tee_skip_small_output() {
+src/core/tee.rs:264:    fn test_should_tee_skip_success_in_failures_mode() {
+src/core/tee.rs:271:    fn test_should_tee_proceed_on_failure() {
+src/core/tee.rs:278:    fn test_should_tee_always_mode_success() {
+src/core/tee.rs:288:    fn test_write_tee_file_creates_file() {
+src/core/tee.rs:307:    fn test_write_tee_file_truncation() {
+src/core/tee.rs:321:    fn test_cleanup_old_files() {
+src/core/tee.rs:349:    fn test_format_hint() {
+src/core/tee.rs:358:    fn test_tee_config_default() {
+src/core/tee.rs:368:    fn test_tee_config_deserialize() {
+src/core/tee.rs:391:    fn test_tee_mode_serde() {
+src/core/toml_filter.rs:181:    fn load() -> Self {
+src/core/toml_filter.rs:232:    fn parse_and_compile(content: &str, source: &str) -> Result<Vec<CompiledFilter>, String> {
+src/core/toml_filter.rs:309:fn compile_filter(name: String, def: TomlFilterDef) -> Result<CompiledFilter, String> {
+src/core/toml_filter.rs:410:pub fn find_filter_in<'a>(
+src/core/toml_filter.rs:428:pub fn apply_filter(filter: &CompiledFilter, stdout: &str) -> String {
+src/core/toml_filter.rs:536:pub fn run_filter_tests(filter_name_opt: Option<&str>) -> VerifyResults {
+src/core/toml_filter.rs:590:fn collect_test_outcomes(
+src/core/toml_filter.rs:660:pub fn find_matching_filter(command: &str) -> Option<&'static CompiledFilter> {
+src/core/toml_filter.rs:688:    fn make_filters(toml: &str) -> Vec<CompiledFilter> {
+src/core/toml_filter.rs:692:    fn first_filter(toml: &str) -> CompiledFilter {
+src/core/toml_filter.rs:702:    fn test_strip_ansi_removes_codes() {
+src/core/toml_filter.rs:716:    fn test_strip_lines_matching_basic() {
+src/core/toml_filter.rs:731:    fn test_keep_lines_matching_basic() {
+src/core/toml_filter.rs:746:    fn test_truncate_lines_at_unicode_safe() {
+src/core/toml_filter.rs:763:    fn test_head_lines() {
+src/core/toml_filter.rs:779:    fn test_tail_lines() {
+src/core/toml_filter.rs:795:    fn test_head_and_tail_combined() {
+src/core/toml_filter.rs:813:    fn test_max_lines_counts_omit_message() {
+src/core/toml_filter.rs:832:    fn test_on_empty_when_all_filtered() {
+src/core/toml_filter.rs:847:    fn test_on_empty_not_triggered_when_output_remains() {
+src/core/toml_filter.rs:862:    fn test_full_pipeline_order() {
+src/core/toml_filter.rs:889:    fn test_mutual_exclusion_strip_keep_errors() {
+src/core/toml_filter.rs:904:    fn test_invalid_regex_returns_err() {
+src/core/toml_filter.rs:916:    fn test_schema_version_mismatch_errors() {
+src/core/toml_filter.rs:928:    fn test_unknown_field_typo_errors() {
+src/core/toml_filter.rs:942:    fn test_empty_filter_passthrough() {
+src/core/toml_filter.rs:958:    fn test_builtin_filters_compile() {
+src/core/toml_filter.rs:971:    fn test_find_filter_matches_terraform() {
+src/core/toml_filter.rs:986:    fn test_find_filter_no_match_returns_none() {
+src/core/toml_filter.rs:999:    fn test_project_filters_priority_over_builtin() {
+src/core/toml_filter.rs:1024:    fn test_terraform_savings_above_60pct() {
+src/core/toml_filter.rs:1088:    fn test_make_savings_above_60pct() {
+src/core/toml_filter.rs:1136:    fn test_empty_input() {
+src/core/toml_filter.rs:1150:    fn test_unicode_preserved() {
+src/core/toml_filter.rs:1166:    fn test_match_output_basic_short_circuit() {
+src/core/toml_filter.rs:1182:    fn test_match_output_second_rule_matches() {
+src/core/toml_filter.rs:1199:    fn test_match_output_no_match_pipeline_continues() {
+src/core/toml_filter.rs:1217:    fn test_match_output_strip_ansi_before_match() {
+src/core/toml_filter.rs:1235:    fn test_match_output_no_match_then_on_empty() {
+src/core/toml_filter.rs:1254:    fn test_match_output_invalid_regex_rejected() {
+src/core/toml_filter.rs:1271:    fn test_match_output_unless_blocks_short_circuit_when_errors_present() {
+src/core/toml_filter.rs:1296:    fn test_match_output_unless_allows_short_circuit_when_no_errors() {
+src/core/toml_filter.rs:1314:    fn test_match_output_unless_falls_through_to_next_rule() {
+src/core/toml_filter.rs:1334:    fn test_match_output_unless_no_field_behaves_like_before() {
+src/core/toml_filter.rs:1351:    fn test_match_output_unless_invalid_regex_rejected() {
+src/core/toml_filter.rs:1368:    fn test_replace_basic_all_occurrences() {
+src/core/toml_filter.rs:1384:    fn test_replace_chaining_sequential() {
+src/core/toml_filter.rs:1402:    fn test_replace_backreferences() {
+src/core/toml_filter.rs:1418:    fn test_replace_then_strip_interaction() {
+src/core/toml_filter.rs:1436:    fn test_replace_empty_input_noop() {
+src/core/toml_filter.rs:1452:    fn test_replace_invalid_regex_rejected() {
+src/core/toml_filter.rs:1469:    fn test_run_filter_tests_passes_on_correct_expected() {
+src/core/toml_filter.rs:1501:    fn test_run_filter_tests_fails_on_wrong_expected() {
+src/core/toml_filter.rs:1523:    fn test_filters_without_tests_detected() {
+src/core/toml_filter.rs:1545:    fn test_builtin_toml_has_schema_version() {
+src/core/toml_filter.rs:1555:    fn test_builtin_all_expected_filters_present() {
+src/core/toml_filter.rs:1611:    fn test_builtin_filter_count() {
+src/core/toml_filter.rs:1625:    fn test_builtin_all_filters_have_inline_tests() {
+src/core/toml_filter.rs:1655:    fn test_new_filter_discoverable_after_concat() {
+src/hooks/init.rs:211:pub fn run(
+src/hooks/init.rs:299:fn prepare_hook_paths() -> Result<(PathBuf, PathBuf)> {
+src/hooks/init.rs:310:fn ensure_hook_installed(hook_path: &Path, verbose: u8) -> Result<bool> {
+src/hooks/init.rs:355:fn write_if_changed(path: &Path, content: &str, name: &str, verbose: u8) -> Result<bool> {
+src/hooks/init.rs:385:fn atomic_write(path: &Path, content: &str) -> Result<()> {
+src/hooks/init.rs:416:fn prompt_user_consent(settings_path: &Path) -> Result<bool> {
+src/hooks/init.rs:439:fn print_manual_instructions(hook_path: &Path, include_opencode: bool) {
+src/hooks/init.rs:458:fn remove_hook_from_json(root: &mut serde_json::Value) -> bool {
+src/hooks/init.rs:489:fn remove_hook_from_settings(verbose: u8) -> Result<bool> {
+src/hooks/init.rs:532:pub fn uninstall(global: bool, gemini: bool, codex: bool, cursor: bool, verbose: u8) -> Result<()> {
+src/hooks/init.rs:651:fn uninstall_codex(global: bool, verbose: u8) -> Result<()> {
+src/hooks/init.rs:673:fn uninstall_codex_at(codex_dir: &Path, verbose: u8) -> Result<Vec<String>> {
+src/hooks/init.rs:696:fn patch_settings_json(
+src/hooks/init.rs:784:fn clean_double_blanks(content: &str) -> String {
+src/hooks/init.rs:814:fn insert_hook_entry(root: &mut serde_json::Value, hook_command: &str) {
+src/hooks/init.rs:850:fn hook_already_present(root: &serde_json::Value, hook_command: &str) -> bool {
+src/hooks/init.rs:874:fn run_default_mode(
+src/hooks/init.rs:887:fn run_default_mode(
+src/hooks/init.rs:971:fn generate_project_filters_template(verbose: u8) -> Result<()> {
+src/hooks/init.rs:995:fn generate_global_filters_template(verbose: u8) -> Result<()> {
+src/hooks/init.rs:1021:fn run_hook_only_mode(
+src/hooks/init.rs:1031:fn run_hook_only_mode(
+src/hooks/init.rs:1096:fn run_claude_md_mode(global: bool, verbose: u8, install_opencode: bool) -> Result<()> {
+src/hooks/init.rs:1189:fn run_cline_mode(verbose: u8) -> Result<()> {
+src/hooks/init.rs:1218:fn run_windsurf_mode(verbose: u8) -> Result<()> {
+src/hooks/init.rs:1248:fn run_codex_mode(global: bool, verbose: u8) -> Result<()> {
+src/hooks/init.rs:1310:fn upsert_rtk_block(content: &str, block: &str) -> (String, RtkBlockUpsert) {
+src/hooks/init.rs:1356:fn patch_claude_md(path: &Path, verbose: u8) -> Result<bool> {
+src/hooks/init.rs:1405:fn patch_agents_md(path: &Path, verbose: u8) -> Result<bool> {
+src/hooks/init.rs:1451:fn remove_rtk_reference_from_agents(path: &Path, verbose: u8) -> Result<bool> {
+src/hooks/init.rs:1482:fn remove_rtk_block(content: &str) -> (String, bool) {
+src/hooks/init.rs:1520:fn resolve_claude_dir() -> Result<PathBuf> {
+src/hooks/init.rs:1527:fn resolve_codex_dir() -> Result<PathBuf> {
+src/hooks/init.rs:1535:fn resolve_opencode_dir() -> Result<PathBuf> {
+src/hooks/init.rs:1542:fn opencode_plugin_path(opencode_dir: &Path) -> PathBuf {
+src/hooks/init.rs:1547:fn prepare_opencode_plugin_path() -> Result<PathBuf> {
+src/hooks/init.rs:1562:fn ensure_opencode_plugin_installed(path: &Path, verbose: u8) -> Result<bool> {
+src/hooks/init.rs:1567:fn remove_opencode_plugin(verbose: u8) -> Result<Vec<PathBuf>> {
+src/hooks/init.rs:1587:fn resolve_cursor_dir() -> Result<PathBuf> {
+src/hooks/init.rs:1594:fn install_cursor_hooks(verbose: u8) -> Result<()> {
+src/hooks/init.rs:1646:fn patch_cursor_hooks_json(path: &Path, verbose: u8) -> Result<bool> {
+src/hooks/init.rs:1690:fn cursor_hook_already_present(root: &serde_json::Value) -> bool {
+src/hooks/init.rs:1709:fn insert_cursor_hook_entry(root: &mut serde_json::Value) {
+src/hooks/init.rs:1741:fn remove_cursor_hooks(verbose: u8) -> Result<Vec<String>> {
+src/hooks/init.rs:1784:fn remove_cursor_hook_from_json(root: &mut serde_json::Value) -> bool {
+src/hooks/init.rs:1806:pub fn show_config(codex: bool) -> Result<()> {
+src/hooks/init.rs:1814:fn show_claude_config() -> Result<()> {
+src/hooks/init.rs:2042:fn show_codex_config() -> Result<()> {
+src/hooks/init.rs:2097:fn run_opencode_only_mode(verbose: u8) -> Result<()> {
+src/hooks/init.rs:2114:fn resolve_gemini_dir() -> Result<PathBuf> {
+src/hooks/init.rs:2120:pub fn run_gemini(global: bool, hook_only: bool, patch_mode: PatchMode, verbose: u8) -> Result<()> {
+src/hooks/init.rs:2167:fn patch_gemini_settings(
+src/hooks/init.rs:2264:fn uninstall_gemini(verbose: u8) -> Result<Vec<String>> {
+src/hooks/init.rs:2362:pub fn run_copilot(verbose: u8) -> Result<()> {
+src/hooks/init.rs:2403:    fn test_init_mentions_all_top_level_commands() {
+src/hooks/init.rs:2429:    fn test_init_has_version_marker() {
+src/hooks/init.rs:2437:    fn test_hook_has_guards() {
+src/hooks/init.rs:2451:    fn test_migration_removes_old_block() {
+src/hooks/init.rs:2468:    fn test_opencode_plugin_install_and_update() {
+src/hooks/init.rs:2489:    fn test_opencode_plugin_remove() {
+src/hooks/init.rs:2502:    fn test_migration_warns_on_missing_end_marker() {
+src/hooks/init.rs:2511:    fn test_default_mode_creates_hook_and_rtk_md() {
+src/hooks/init.rs:2530:    fn test_claude_md_mode_creates_full_injection() {
+src/hooks/init.rs:2541:    fn test_upsert_rtk_block_appends_when_missing() {
+src/hooks/init.rs:2550:    fn test_upsert_rtk_block_updates_stale_block() {
+src/hooks/init.rs:2569:    fn test_upsert_rtk_block_noop_when_already_current() {
+src/hooks/init.rs:2580:    fn test_upsert_rtk_block_detects_malformed_block() {
+src/hooks/init.rs:2588:    fn test_init_is_idempotent() {
+src/hooks/init.rs:2600:    fn test_patch_agents_md_adds_reference_once() {
+src/hooks/init.rs:2616:    fn test_codex_mode_rejects_auto_patch() {
+src/hooks/init.rs:2638:    fn test_codex_mode_rejects_no_patch() {
+src/hooks/init.rs:2660:    fn test_patch_agents_md_creates_missing_file() {
+src/hooks/init.rs:2672:    fn test_patch_agents_md_migrates_inline_block() {
+src/hooks/init.rs:2690:    fn test_uninstall_codex_at_is_idempotent() {
+src/hooks/init.rs:2712:    fn test_local_init_unchanged() {
+src/hooks/init.rs:2725:    fn test_hook_already_present_exact_match() {
+src/hooks/init.rs:2743:    fn test_hook_already_present_different_path() {
+src/hooks/init.rs:2762:    fn test_hook_not_present_empty() {
+src/hooks/init.rs:2769:    fn test_hook_not_present_other_hooks() {
+src/hooks/init.rs:2788:    fn test_insert_hook_entry_empty_root() {
+src/hooks/init.rs:2810:    fn test_insert_hook_entry_preserves_existing() {
+src/hooks/init.rs:2839:    fn test_insert_hook_preserves_other_keys() {
+src/hooks/init.rs:2860:    fn test_atomic_write() {
+src/hooks/init.rs:2874:    fn test_preserve_order_round_trip() {
+src/hooks/init.rs:2892:    fn test_clean_double_blanks() {
+src/hooks/init.rs:2904:    fn test_clean_double_blanks_preserves_single() {
+src/hooks/init.rs:2911:    fn test_remove_hook_from_json() {
+src/hooks/init.rs:2946:    fn test_remove_hook_when_not_present() {
+src/hooks/init.rs:2966:    fn test_cursor_hook_already_present_true() {
+src/hooks/init.rs:2980:    fn test_cursor_hook_already_present_false_empty() {
+src/hooks/init.rs:2986:    fn test_cursor_hook_already_present_false_other_hooks() {
+src/hooks/init.rs:3000:    fn test_insert_cursor_hook_entry_empty() {
+src/hooks/init.rs:3012:    fn test_insert_cursor_hook_preserves_existing() {
+src/hooks/init.rs:3038:    fn test_remove_cursor_hook_from_json() {
+src/hooks/init.rs:3058:    fn test_remove_cursor_hook_not_present() {
+src/hooks/init.rs:3073:    fn test_cursor_hook_script_has_guards() {
+src/hooks/init.rs:3085:    fn test_cursor_hook_outputs_cursor_format() {
+src/core/telemetry.rs:18:pub fn maybe_ping() {
+src/core/telemetry.rs:55:fn send_ping() -> Result<(), Box<dyn std::error::Error>> {
+src/core/telemetry.rs:93:fn generate_device_hash() -> String {
+src/core/telemetry.rs:111:fn get_or_create_salt() -> String {
+src/core/telemetry.rs:143:fn random_salt() -> String {
+src/core/telemetry.rs:154:fn salt_file_path() -> PathBuf {
+src/core/telemetry.rs:161:fn get_stats() -> (i64, Vec<String>, Option<f64>, i64, i64) {
+src/core/telemetry.rs:189:fn detect_install_method() -> &'static str {
+src/core/telemetry.rs:201:fn install_method_from_path(path: &str) -> &'static str {
+src/core/telemetry.rs:215:fn telemetry_marker_path() -> PathBuf {
+src/core/telemetry.rs:223:fn touch_marker(path: &PathBuf) {
+src/core/telemetry.rs:232:    fn test_device_hash_is_stable() {
+src/core/telemetry.rs:240:    fn test_device_hash_is_valid_hex() {
+src/core/telemetry.rs:246:    fn test_salt_is_persisted() {
+src/core/telemetry.rs:255:    fn test_random_salt_uniqueness() {
+src/core/telemetry.rs:264:    fn test_salt_file_path_is_in_rtk_dir() {
+src/core/telemetry.rs:271:    fn test_marker_path_exists() {
+src/core/telemetry.rs:277:    fn test_install_method_unix_paths() {
+src/core/telemetry.rs:302:    fn test_install_method_windows_paths() {
+src/core/telemetry.rs:318:    fn test_detect_install_method_returns_known_value() {
+src/core/telemetry.rs:328:    fn test_get_stats_returns_tuple() {
+src/cmds/system/deps.rs:10:pub fn run(path: &Path, verbose: u8) -> Result<()> {
+src/cmds/system/deps.rs:76:fn summarize_cargo_str(path: &Path) -> Result<String> {
+src/cmds/system/deps.rs:129:fn summarize_package_json_str(path: &Path) -> Result<String> {
+src/cmds/system/deps.rs:165:fn summarize_requirements_str(path: &Path) -> Result<String> {
+src/cmds/system/deps.rs:193:fn summarize_pyproject_str(path: &Path) -> Result<String> {
+src/cmds/system/deps.rs:229:fn summarize_gomod_str(path: &Path) -> Result<String> {
+src/cmds/system/grep_cmd.rs:11:pub fn run(
+src/cmds/system/grep_cmd.rs:167:fn clean_line(line: &str, max_len: usize, context_re: Option<&Regex>, pattern: &str) -> String {
+src/cmds/system/grep_cmd.rs:213:fn compact_path(path: &str) -> String {
+src/cmds/system/grep_cmd.rs:236:    fn test_clean_line() {
+src/cmds/system/grep_cmd.rs:244:    fn test_compact_path() {
+src/cmds/system/grep_cmd.rs:251:    fn test_extra_args_accepted() {
+src/cmds/system/grep_cmd.rs:259:    fn test_clean_line_multibyte() {
+src/cmds/system/grep_cmd.rs:268:    fn test_clean_line_emoji() {
+src/cmds/system/grep_cmd.rs:276:    fn test_bre_alternation_translated() {
+src/cmds/system/grep_cmd.rs:277:        let pattern = r"fn foo\|pub.*bar";
+src/cmds/system/grep_cmd.rs:279:        assert_eq!(rg_pattern, "fn foo|pub.*bar");
+src/cmds/system/grep_cmd.rs:284:    fn test_recursive_flag_stripped() {
+src/cmds/system/grep_cmd.rs:296:    fn test_combined_r_flag_stripped() {
+src/cmds/system/grep_cmd.rs:297:        fn strip_r_from_extra_args(extra_args: &[String]) -> Vec<String> {
+src/cmds/system/grep_cmd.rs:355:    fn test_grep_overflow_uses_uncapped_total() {
+src/cmds/system/grep_cmd.rs:376:    fn test_rg_always_has_line_numbers() {
+src/cmds/system/wc_cmd.rs:13:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/system/wc_cmd.rs:73:fn detect_mode(args: &[String]) -> WcMode {
+src/cmds/system/wc_cmd.rs:135:fn filter_wc_output(raw: &str, mode: &WcMode) -> String {
+src/cmds/system/wc_cmd.rs:152:fn format_single_line(line: &str, mode: &WcMode) -> String {
+src/cmds/system/wc_cmd.rs:184:fn format_multi_line(lines: &[&str], mode: &WcMode) -> String {
+src/cmds/system/wc_cmd.rs:258:fn find_common_prefix(paths: &[&str]) -> String {
+src/cmds/system/wc_cmd.rs:290:fn strip_prefix<'a>(path: &'a str, prefix: &str) -> &'a str {
+src/cmds/system/wc_cmd.rs:302:    fn test_single_file_full() {
+src/cmds/system/wc_cmd.rs:309:    fn test_single_file_lines_only() {
+src/cmds/system/wc_cmd.rs:316:    fn test_single_file_words_only() {
+src/cmds/system/wc_cmd.rs:323:    fn test_stdin_full() {
+src/cmds/system/wc_cmd.rs:330:    fn test_stdin_lines() {
+src/cmds/system/wc_cmd.rs:337:    fn test_multi_file_lines() {
+src/cmds/system/wc_cmd.rs:344:    fn test_multi_file_full() {
+src/cmds/system/wc_cmd.rs:354:    fn test_detect_mode_full() {
+src/cmds/system/wc_cmd.rs:360:    fn test_detect_mode_lines() {
+src/cmds/system/wc_cmd.rs:366:    fn test_detect_mode_mixed() {
+src/cmds/system/wc_cmd.rs:372:    fn test_detect_mode_separate_flags() {
+src/cmds/system/wc_cmd.rs:378:    fn test_common_prefix() {
+src/cmds/system/wc_cmd.rs:384:    fn test_no_common_prefix() {
+src/cmds/system/wc_cmd.rs:390:    fn test_deep_common_prefix() {
+src/cmds/system/wc_cmd.rs:396:    fn test_empty() {
+src/cmds/rust/runner.rs:9:pub fn run_err(command: &str, verbose: u8) -> Result<()> {
+src/cmds/rust/runner.rs:68:pub fn run_test(command: &str, verbose: u8) -> Result<()> {
+src/cmds/rust/runner.rs:108:fn filter_errors(output: &str) -> String {
+src/cmds/rust/runner.rs:165:fn extract_test_summary(output: &str, command: &str) -> String {
+src/cmds/rust/runner.rs:267:    fn test_filter_errors() {
+src/cmds/system/tree.rs:43:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/system/tree.rs:104:fn filter_tree_output(raw: &str) -> String {
+src/cmds/system/tree.rs:140:    fn test_filter_removes_summary() {
+src/cmds/system/tree.rs:150:    fn test_filter_preserves_structure() {
+src/cmds/system/tree.rs:161:    fn test_filter_handles_empty() {
+src/cmds/system/tree.rs:168:    fn test_filter_removes_trailing_empty_lines() {
+src/cmds/system/tree.rs:175:    fn test_filter_summary_variations() {
+src/cmds/system/tree.rs:198:    fn test_noise_dirs_constant() {
+src/cmds/system/summary.rs:10:pub fn run(command: &str, verbose: u8) -> Result<()> {
+src/cmds/system/summary.rs:42:fn summarize_output(output: &str, command: &str, success: bool) -> String {
+src/cmds/system/summary.rs:81:fn detect_output_type(output: &str, command: &str) -> OutputType {
+src/cmds/system/summary.rs:113:fn summarize_tests(output: &str, result: &mut Vec<String>) {
+src/cmds/system/summary.rs:164:fn summarize_build(output: &str, result: &mut Vec<String>) {
+src/cmds/system/summary.rs:210:fn summarize_logs_quick(output: &str, result: &mut Vec<String>) {
+src/cmds/system/summary.rs:233:fn summarize_list(output: &str, result: &mut Vec<String>) {
+src/cmds/system/summary.rs:245:fn summarize_json(output: &str, result: &mut Vec<String>) {
+src/cmds/system/summary.rs:272:fn summarize_generic(output: &str, result: &mut Vec<String>) {
+src/cmds/system/summary.rs:295:fn extract_number(text: &str, after: &str) -> Option<usize> {
+src/cmds/rust/cargo_cmd.rs:20:pub fn run(cmd: CargoCommand, args: &[String], verbose: u8) -> Result<()> {
+src/cmds/rust/cargo_cmd.rs:34:fn restore_double_dash(args: &[String]) -> Vec<String> {
+src/cmds/rust/cargo_cmd.rs:40:fn restore_double_dash_with_raw(args: &[String], raw_args: &[String]) -> Vec<String> {
+src/cmds/rust/cargo_cmd.rs:71:fn run_cargo_filtered<F>(subcommand: &str, args: &[String], verbose: u8, filter_fn: F) -> Result<()>
+src/cmds/rust/cargo_cmd.rs:124:fn run_build(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/rust/cargo_cmd.rs:128:fn run_test(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/rust/cargo_cmd.rs:132:fn run_clippy(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/rust/cargo_cmd.rs:136:fn run_check(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/rust/cargo_cmd.rs:140:fn run_install(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/rust/cargo_cmd.rs:144:fn run_nextest(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/rust/cargo_cmd.rs:149:fn format_crate_info(name: &str, version: &str, fallback: &str) -> String {
+src/cmds/rust/cargo_cmd.rs:160:fn filter_cargo_install(output: &str) -> String {
+src/cmds/rust/cargo_cmd.rs:329:fn flush_failure_block(header: &mut String, body: &mut Vec<String>, failures: &mut Vec<String>) {
+src/cmds/rust/cargo_cmd.rs:344:fn filter_cargo_nextest(output: &str) -> String {
+src/cmds/rust/cargo_cmd.rs:563:fn filter_cargo_build(output: &str) -> String {
+src/cmds/rust/cargo_cmd.rs:675:    fn parse_line(line: &str) -> Option<Self> {
+src/cmds/rust/cargo_cmd.rs:716:    fn merge(&mut self, other: &Self) {
+src/cmds/rust/cargo_cmd.rs:728:    fn format_compact(&self) -> String {
+src/cmds/rust/cargo_cmd.rs:758:fn filter_cargo_test(output: &str) -> String {
+src/cmds/rust/cargo_cmd.rs:888:fn filter_cargo_clippy(output: &str) -> String {
+src/cmds/rust/cargo_cmd.rs:997:pub fn run_passthrough(args: &[OsString], verbose: u8) -> Result<()> {
+src/cmds/rust/cargo_cmd.rs:1025:    fn test_restore_double_dash_with_separator() {
+src/cmds/rust/cargo_cmd.rs:1040:    fn test_restore_double_dash_with_test_name() {
+src/cmds/rust/cargo_cmd.rs:1056:    fn test_restore_double_dash_without_separator() {
+src/cmds/rust/cargo_cmd.rs:1070:    fn test_restore_double_dash_empty_args() {
+src/cmds/rust/cargo_cmd.rs:1078:    fn test_restore_double_dash_clippy() {
+src/cmds/rust/cargo_cmd.rs:1094:    fn test_restore_double_dash_clippy_with_package_flags() {
+src/cmds/rust/cargo_cmd.rs:1130:    fn test_filter_cargo_build_success() {
+src/cmds/rust/cargo_cmd.rs:1142:    fn test_filter_cargo_build_errors() {
+src/cmds/rust/cargo_cmd.rs:1159:    fn test_filter_cargo_test_all_pass() {
+src/cmds/rust/cargo_cmd.rs:1182:    fn test_filter_cargo_test_failures() {
+src/cmds/rust/cargo_cmd.rs:1205:    fn test_filter_cargo_test_multi_suite_all_pass() {
+src/cmds/rust/cargo_cmd.rs:1238:    fn test_filter_cargo_test_multi_suite_with_failures() {
+src/cmds/rust/cargo_cmd.rs:1273:    fn test_filter_cargo_test_all_suites_zero_tests() {
+src/cmds/rust/cargo_cmd.rs:1301:    fn test_filter_cargo_test_with_ignored_and_filtered() {
+src/cmds/rust/cargo_cmd.rs:1321:    fn test_filter_cargo_test_single_suite_compact() {
+src/cmds/rust/cargo_cmd.rs:1336:    fn test_filter_cargo_test_regex_fallback() {
+src/cmds/rust/cargo_cmd.rs:1352:    fn test_filter_cargo_test_compile_error_preserves_error_header() {
+src/cmds/rust/cargo_cmd.rs:1375:    fn test_filter_cargo_clippy_clean() {
+src/cmds/rust/cargo_cmd.rs:1384:    fn test_filter_cargo_clippy_warnings() {
+src/cmds/rust/cargo_cmd.rs:1395:16| pub fn run(a: i32, b: i32, c: i32, d: i32, e: i32, f: i32, g: i32, h: i32) {}
+src/cmds/rust/cargo_cmd.rs:1408:    fn test_filter_cargo_clippy_includes_error_details() {
+src/cmds/rust/cargo_cmd.rs:1421:    fn test_filter_cargo_install_success() {
+src/cmds/rust/cargo_cmd.rs:1445:    fn test_filter_cargo_install_replace() {
+src/cmds/rust/cargo_cmd.rs:1459:    fn test_filter_cargo_install_error() {
+src/cmds/rust/cargo_cmd.rs:1478:    fn test_filter_cargo_install_already_installed() {
+src/cmds/rust/cargo_cmd.rs:1487:    fn test_filter_cargo_install_up_to_date() {
+src/cmds/rust/cargo_cmd.rs:1496:    fn test_filter_cargo_install_empty_output() {
+src/cmds/rust/cargo_cmd.rs:1503:    fn test_filter_cargo_install_path_warning() {
+src/cmds/rust/cargo_cmd.rs:1522:    fn test_filter_cargo_install_multiple_errors() {
+src/cmds/rust/cargo_cmd.rs:1551:    fn test_filter_cargo_install_locking_and_blocking() {
+src/cmds/rust/cargo_cmd.rs:1569:    fn test_filter_cargo_install_from_path() {
+src/cmds/rust/cargo_cmd.rs:1581:    fn test_format_crate_info() {
+src/cmds/rust/cargo_cmd.rs:1589:    fn test_filter_cargo_nextest_all_pass() {
+src/cmds/rust/cargo_cmd.rs:1609:    fn test_filter_cargo_nextest_with_failures() {
+src/cmds/rust/cargo_cmd.rs:1678:    fn test_filter_cargo_nextest_with_skipped() {
+src/cmds/rust/cargo_cmd.rs:1694:    fn test_filter_cargo_nextest_single_failure_detail() {
+src/cmds/rust/cargo_cmd.rs:1730:    fn test_filter_cargo_nextest_multiple_binaries() {
+src/cmds/rust/cargo_cmd.rs:1745:    fn test_filter_cargo_nextest_compilation_stripped() {
+src/cmds/rust/cargo_cmd.rs:1780:    fn test_filter_cargo_nextest_empty() {
+src/cmds/rust/cargo_cmd.rs:1786:    fn test_filter_cargo_nextest_cancellation_notice() {
+src/cmds/rust/cargo_cmd.rs:1821:    fn test_filter_cargo_nextest_summary_regex_fallback() {
+src/cmds/system/read.rs:9:pub fn run(
+src/cmds/system/read.rs:83:pub fn run_stdin(
+src/cmds/system/read.rs:143:fn format_with_line_numbers(content: &str) -> String {
+src/cmds/system/read.rs:153:fn apply_line_window(
+src/cmds/system/read.rs:186:    fn test_read_rust_file() -> Result<()> {
+src/cmds/system/read.rs:191:fn main() {{
+src/cmds/system/read.rs:202:    fn test_stdin_support_signature() {
+src/cmds/system/read.rs:209:    fn test_apply_line_window_tail_lines() {
+src/cmds/system/read.rs:216:    fn test_apply_line_window_tail_lines_no_trailing_newline() {
+src/cmds/system/read.rs:223:    fn test_apply_line_window_max_lines_still_works() {
+src/cmds/python/ruff_cmd.rs:37:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/python/ruff_cmd.rs:121:pub fn filter_ruff_check_json(output: &str) -> String {
+src/cmds/python/ruff_cmd.rs:223:pub fn filter_ruff_format(output: &str) -> String {
+src/cmds/python/ruff_cmd.rs:309:fn compact_path(path: &str) -> String {
+src/cmds/python/ruff_cmd.rs:330:    fn test_filter_ruff_check_no_issues() {
+src/cmds/python/ruff_cmd.rs:338:    fn test_filter_ruff_check_with_issues() {
+src/cmds/python/ruff_cmd.rs:376:    fn test_filter_ruff_format_all_formatted() {
+src/cmds/python/ruff_cmd.rs:384:    fn test_filter_ruff_format_needs_formatting() {
+src/cmds/python/ruff_cmd.rs:396:    fn test_compact_path() {
+src/cmds/go/golangci_cmd.rs:49:pub(crate) fn parse_major_version(version_output: &str) -> u32 {
+src/cmds/go/golangci_cmd.rs:65:pub(crate) fn detect_major_version() -> u32 {
+src/cmds/go/golangci_cmd.rs:83:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/go/golangci_cmd.rs:166:pub(crate) fn filter_golangci_json(output: &str, version: u32) -> String {
+src/cmds/go/golangci_cmd.rs:273:fn compact_path(path: &str) -> String {
+src/cmds/go/golangci_cmd.rs:294:    fn test_filter_golangci_no_issues() {
+src/cmds/go/golangci_cmd.rs:302:    fn test_filter_golangci_with_issues() {
+src/cmds/go/golangci_cmd.rs:333:    fn test_compact_path() {
+src/cmds/go/golangci_cmd.rs:350:    fn test_parse_version_v1_format() {
+src/cmds/go/golangci_cmd.rs:355:    fn test_parse_version_v2_format() {
+src/cmds/go/golangci_cmd.rs:363:    fn test_parse_version_empty_returns_1() {
+src/cmds/go/golangci_cmd.rs:368:    fn test_parse_version_malformed_returns_1() {
+src/cmds/go/golangci_cmd.rs:373:    fn test_filter_golangci_v2_fields_parse_cleanly() {
+src/cmds/go/golangci_cmd.rs:392:    fn test_filter_v2_shows_source_lines() {
+src/cmds/go/golangci_cmd.rs:413:    fn test_filter_v1_does_not_show_source_lines() {
+src/cmds/go/golangci_cmd.rs:430:    fn test_filter_v2_empty_source_lines_graceful() {
+src/cmds/go/golangci_cmd.rs:451:    fn test_filter_v2_source_line_truncated_to_80_chars() {
+src/cmds/go/golangci_cmd.rs:478:    fn test_filter_v2_source_line_truncated_non_ascii() {
+src/cmds/go/golangci_cmd.rs:509:    fn count_tokens(text: &str) -> usize {
+src/cmds/go/golangci_cmd.rs:514:    fn test_golangci_v2_token_savings() {
+src/cmds/js/vitest_cmd.rs:55:    fn parse(input: &str) -> ParseResult<TestResult> {
+src/cmds/js/vitest_cmd.rs:102:fn extract_failures_from_json(json: &VitestJsonOutput) -> Vec<TestFailure> {
+src/cmds/js/vitest_cmd.rs:123:fn extract_stats_regex(output: &str) -> Option<TestResult> {
+src/cmds/js/vitest_cmd.rs:180:fn extract_failures_regex(output: &str) -> Vec<TestFailure> {
+src/cmds/js/vitest_cmd.rs:218:pub fn run(cmd: VitestCommand, args: &[String], verbose: u8) -> Result<()> {
+src/cmds/js/vitest_cmd.rs:224:fn run_vitest(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/js/vitest_cmd.rs:283:    fn test_vitest_parser_json() {
+src/cmds/js/vitest_cmd.rs:306:    fn test_vitest_parser_regex_fallback() {
+src/cmds/js/vitest_cmd.rs:323:    fn test_vitest_parser_passthrough() {
+src/cmds/js/vitest_cmd.rs:331:    fn test_strip_ansi() {
+src/cmds/js/vitest_cmd.rs:339:    fn test_vitest_parser_with_pnpm_prefix() {
+src/cmds/js/vitest_cmd.rs:357:    fn test_vitest_parser_with_dotenv_prefix() {
+src/cmds/js/vitest_cmd.rs:375:    fn test_vitest_parser_with_nested_json() {
+src/cmds/ruby/rubocop_cmd.rs:53:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/ruby/rubocop_cmd.rs:123:fn severity_rank(severity: &str) -> u8 {
+src/cmds/ruby/rubocop_cmd.rs:132:fn filter_rubocop_json(output: &str) -> String {
+src/cmds/ruby/rubocop_cmd.rs:243:fn filter_rubocop_text(output: &str) -> String {
+src/cmds/ruby/rubocop_cmd.rs:298:fn extract_leading_number(s: &str) -> usize {
+src/cmds/ruby/rubocop_cmd.rs:306:fn extract_autocorrect_count(s: &str) -> usize {
+src/cmds/ruby/rubocop_cmd.rs:320:fn compact_ruby_path(path: &str) -> String {
+src/cmds/ruby/rubocop_cmd.rs:358:    fn no_offenses_json() -> &'static str {
+src/cmds/ruby/rubocop_cmd.rs:370:    fn with_offenses_json() -> &'static str {
+src/cmds/ruby/rubocop_cmd.rs:429:    fn test_filter_rubocop_no_offenses() {
+src/cmds/ruby/rubocop_cmd.rs:435:    fn test_filter_rubocop_with_offenses_per_file() {
+src/cmds/ruby/rubocop_cmd.rs:449:    fn test_filter_rubocop_severity_ordering() {
+src/cmds/ruby/rubocop_cmd.rs:469:    fn test_filter_rubocop_within_file_line_ordering() {
+src/cmds/ruby/rubocop_cmd.rs:481:    fn test_filter_rubocop_correctable_hint() {
+src/cmds/ruby/rubocop_cmd.rs:488:    fn test_filter_rubocop_text_fallback() {
+src/cmds/ruby/rubocop_cmd.rs:498:    fn test_filter_rubocop_text_autocorrect() {
+src/cmds/ruby/rubocop_cmd.rs:508:    fn test_filter_rubocop_empty_output() {
+src/cmds/ruby/rubocop_cmd.rs:514:    fn test_filter_rubocop_invalid_json_falls_back() {
+src/cmds/ruby/rubocop_cmd.rs:521:    fn test_compact_ruby_path() {
+src/cmds/ruby/rubocop_cmd.rs:541:    fn test_filter_rubocop_caps_offenses_per_file() {
+src/cmds/ruby/rubocop_cmd.rs:568:    fn test_filter_rubocop_text_bundler_error() {
+src/cmds/ruby/rubocop_cmd.rs:580:    fn test_filter_rubocop_text_load_error() {
+src/cmds/ruby/rubocop_cmd.rs:592:    fn test_filter_rubocop_text_with_offenses() {
+src/cmds/ruby/rubocop_cmd.rs:602:    fn test_severity_rank() {
+src/cmds/ruby/rubocop_cmd.rs:609:    fn test_token_savings() {
+src/cmds/ruby/rubocop_cmd.rs:629:    fn test_filter_rubocop_json_with_ansi_prefix() {
+src/cmds/ruby/rubocop_cmd.rs:639:    fn test_filter_rubocop_caps_at_ten_files() {
+src/cmds/python/pytest_cmd.rs:15:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/python/pytest_cmd.rs:88:fn filter_pytest_output(output: &str) -> String {
+src/cmds/python/pytest_cmd.rs:167:fn build_pytest_summary(summary: &str, _test_files: &[String], failures: &[String]) -> String {
+src/cmds/python/pytest_cmd.rs:246:fn parse_summary_line(summary: &str) -> (usize, usize, usize) {
+src/cmds/python/pytest_cmd.rs:283:    fn test_filter_pytest_all_pass() {
+src/cmds/python/pytest_cmd.rs:298:    fn test_filter_pytest_with_failures() {
+src/cmds/python/pytest_cmd.rs:324:    fn test_filter_pytest_multiple_failures() {
+src/cmds/python/pytest_cmd.rs:351:    fn test_filter_pytest_no_tests() {
+src/cmds/python/pytest_cmd.rs:362:    fn test_parse_summary_line() {
+src/cmds/js/tsc_cmd.rs:9:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/js/tsc_cmd.rs:60:fn filter_tsc_output(output: &str) -> String {
+src/cmds/js/tsc_cmd.rs:182:    fn test_filter_tsc_output() {
+src/cmds/js/tsc_cmd.rs:200:    fn test_every_error_message_shown() {
+src/cmds/js/tsc_cmd.rs:217:    fn test_continuation_lines_preserved() {
+src/cmds/js/tsc_cmd.rs:230:    fn test_no_file_limit() {
+src/cmds/js/tsc_cmd.rs:251:    fn test_filter_no_errors() {
+src/cmds/system/ls.rs:36:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/system/ls.rs:135:fn human_size(bytes: u64) -> String {
+src/cmds/system/ls.rs:149:fn compact_ls(raw: &str, show_all: bool) -> (String, String) {
+src/cmds/system/ls.rs:243:    fn test_compact_basic() {
+src/cmds/system/ls.rs:264:    fn test_compact_filters_noise() {
+src/cmds/system/ls.rs:280:    fn test_compact_show_all() {
+src/cmds/system/ls.rs:290:    fn test_compact_empty() {
+src/cmds/system/ls.rs:298:    fn test_compact_summary() {
+src/cmds/system/ls.rs:311:    fn test_human_size() {
+src/cmds/system/ls.rs:321:    fn test_compact_handles_filenames_with_spaces() {
+src/cmds/system/ls.rs:329:    fn test_compact_symlinks() {
+src/cmds/system/ls.rs:337:    fn test_entries_no_summary() {
+src/cmds/system/ls.rs:354:    fn test_pipe_line_count() {
+src/cmds/python/pip_cmd.rs:16:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/python/pip_cmd.rs:53:fn run_list(base_cmd: &str, args: &[String], verbose: u8) -> Result<(String, String)> {
+src/cmds/python/pip_cmd.rs:88:fn run_outdated(base_cmd: &str, args: &[String], verbose: u8) -> Result<(String, String)> {
+src/cmds/python/pip_cmd.rs:123:fn run_passthrough(base_cmd: &str, args: &[String], verbose: u8) -> Result<(String, String)> {
+src/cmds/python/pip_cmd.rs:157:fn filter_pip_list(output: &str) -> String {
+src/cmds/python/pip_cmd.rs:202:fn filter_pip_outdated(output: &str) -> String {
+src/cmds/python/pip_cmd.rs:243:    fn test_filter_pip_list() {
+src/cmds/python/pip_cmd.rs:258:    fn test_filter_pip_list_empty() {
+src/cmds/python/pip_cmd.rs:265:    fn test_filter_pip_outdated_none() {
+src/cmds/python/pip_cmd.rs:272:    fn test_filter_pip_outdated_some() {
+src/cmds/go/go_cmd.rs:42:pub fn run_test(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/go/go_cmd.rs:101:pub fn run_build(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/go/go_cmd.rs:154:pub fn run_vet(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/go/go_cmd.rs:207:pub fn run_other(args: &[OsString], verbose: u8) -> Result<()> {
+src/cmds/go/go_cmd.rs:261:fn detect_go_tool_golangci_version() -> u32 {
+src/cmds/go/go_cmd.rs:283:fn has_golangci_format_flag(args: &[OsString]) -> bool {
+src/cmds/go/go_cmd.rs:300:    fn from_name(name: &str) -> Option<Self> {
+src/cmds/go/go_cmd.rs:309:fn match_go_tool(args: &[OsString]) -> Option<(GoTool, &[OsString])> {
+src/cmds/go/go_cmd.rs:322:fn run_go_tool_golangci_lint(args: &[OsString], verbose: u8) -> Result<()> {
+src/cmds/go/go_cmd.rs:400:fn filter_go_test_json(output: &str) -> String {
+src/cmds/go/go_cmd.rs:581:fn filter_go_build(output: &str) -> String {
+src/cmds/go/go_cmd.rs:624:fn filter_go_vet(output: &str) -> String {
+src/cmds/go/go_cmd.rs:656:fn compact_package_name(package: &str) -> String {
+src/cmds/go/go_cmd.rs:670:    fn test_filter_go_test_all_pass() {
+src/cmds/go/go_cmd.rs:683:    fn test_filter_go_test_with_failures() {
+src/cmds/go/go_cmd.rs:697:    fn test_filter_go_build_success() {
+src/cmds/go/go_cmd.rs:705:    fn test_filter_go_build_errors() {
+src/cmds/go/go_cmd.rs:717:    fn test_filter_go_vet_no_issues() {
+src/cmds/go/go_cmd.rs:725:    fn test_filter_go_vet_with_issues() {
+src/cmds/go/go_cmd.rs:736:    fn test_compact_package_name() {
+src/cmds/go/go_cmd.rs:742:    fn os(args: &[&str]) -> Vec<OsString> {
+src/cmds/go/go_cmd.rs:747:    fn test_match_go_tool_golangci_lint() {
+src/cmds/go/go_cmd.rs:755:    fn test_match_go_tool_bare() {
+src/cmds/go/go_cmd.rs:763:    fn test_match_go_tool_rejects_unknown() {
+src/cmds/go/go_cmd.rs:771:    fn test_has_golangci_format_flag_v1() {
+src/cmds/go/go_cmd.rs:781:    fn test_has_golangci_format_flag_v2() {
+src/cmds/go/go_cmd.rs:792:    fn test_has_golangci_format_flag_absent() {
+src/cmds/js/prisma_cmd.rs:22:pub fn run(cmd: PrismaCommand, args: &[String], verbose: u8) -> Result<()> {
+src/cmds/js/prisma_cmd.rs:31:fn create_prisma_command() -> Command {
+src/cmds/js/prisma_cmd.rs:41:fn run_generate(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/js/prisma_cmd.rs:82:fn run_migrate(subcommand: MigrateSubcommand, args: &[String], verbose: u8) -> Result<()> {
+src/cmds/js/prisma_cmd.rs:144:fn run_db_push(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/js/prisma_cmd.rs:184:fn filter_prisma_generate(output: &str) -> String {
+src/cmds/js/prisma_cmd.rs:243:fn filter_migrate_dev(output: &str) -> String {
+src/cmds/js/prisma_cmd.rs:315:fn filter_migrate_status(output: &str) -> String {
+src/cmds/js/prisma_cmd.rs:349:fn filter_migrate_deploy(output: &str) -> String {
+src/cmds/js/prisma_cmd.rs:377:fn filter_db_push(output: &str) -> String {
+src/cmds/js/prisma_cmd.rs:408:fn extract_number(line: &str) -> Option<usize> {
+src/cmds/js/prisma_cmd.rs:414:fn extract_table_name(line: &str) -> Option<String> {
+src/cmds/js/prisma_cmd.rs:431:fn extract_index_name(line: &str) -> Option<String> {
+src/cmds/js/prisma_cmd.rs:452:    fn test_filter_generate() {
+src/cmds/js/prisma_cmd.rs:472:    fn test_filter_migrate_dev() {
+src/cmds/js/prisma_cmd.rs:493:    fn test_extract_number() {
+src/cmds/python/mypy_cmd.rs:9:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/python/mypy_cmd.rs:62:pub fn filter_mypy_output(output: &str) -> String {
+src/cmds/python/mypy_cmd.rs:239:    fn test_filter_mypy_errors_grouped_by_file() {
+src/cmds/python/mypy_cmd.rs:262:    fn test_filter_mypy_with_column_numbers() {
+src/cmds/python/mypy_cmd.rs:273:    fn test_filter_mypy_top_codes_summary() {
+src/cmds/python/mypy_cmd.rs:290:    fn test_filter_mypy_single_code_no_summary() {
+src/cmds/python/mypy_cmd.rs:305:    fn test_filter_mypy_every_error_shown() {
+src/cmds/python/mypy_cmd.rs:321:    fn test_filter_mypy_note_continuation() {
+src/cmds/python/mypy_cmd.rs:337:    fn test_filter_mypy_fileless_errors() {
+src/cmds/python/mypy_cmd.rs:356:    fn test_filter_mypy_no_errors() {
+src/cmds/python/mypy_cmd.rs:363:    fn test_filter_mypy_no_file_limit() {
+src/cmds/ruby/rspec_cmd.rs:65:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/ruby/rspec_cmd.rs:138:fn strip_noise(output: &str) -> String {
+src/cmds/ruby/rspec_cmd.rs:188:fn filter_rspec_output(output: &str) -> String {
+src/cmds/ruby/rspec_cmd.rs:213:fn build_rspec_summary(rspec: &RspecOutput) -> String {
+src/cmds/ruby/rspec_cmd.rs:299:fn filter_rspec_text(output: &str) -> String {
+src/cmds/ruby/rspec_cmd.rs:407:fn is_numbered_failure(line: &str) -> bool {
+src/cmds/ruby/rspec_cmd.rs:418:fn is_gem_backtrace(line: &str) -> bool {
+src/cmds/ruby/rspec_cmd.rs:426:fn compact_failure_block(block: &str) -> String {
+src/cmds/ruby/rspec_cmd.rs:462:    fn all_pass_json() -> &'static str {
+src/cmds/ruby/rspec_cmd.rs:500:    fn with_failures_json() -> &'static str {
+src/cmds/ruby/rspec_cmd.rs:545:    fn with_pending_json() -> &'static str {
+src/cmds/ruby/rspec_cmd.rs:583:    fn large_suite_json() -> &'static str {
+src/cmds/ruby/rspec_cmd.rs:610:    fn test_filter_rspec_all_pass() {
+src/cmds/ruby/rspec_cmd.rs:618:    fn test_filter_rspec_with_failures() {
+src/cmds/ruby/rspec_cmd.rs:628:    fn test_filter_rspec_with_pending() {
+src/cmds/ruby/rspec_cmd.rs:636:    fn test_filter_rspec_empty_output() {
+src/cmds/ruby/rspec_cmd.rs:642:    fn test_filter_rspec_no_examples() {
+src/cmds/ruby/rspec_cmd.rs:659:    fn test_filter_rspec_errors_outside_examples() {
+src/cmds/ruby/rspec_cmd.rs:681:    fn test_filter_rspec_text_fallback() {
+src/cmds/ruby/rspec_cmd.rs:701:    fn test_filter_rspec_text_fallback_extracts_failures() {
+src/cmds/ruby/rspec_cmd.rs:729:    fn test_filter_rspec_backtrace_filters_gems() {
+src/cmds/ruby/rspec_cmd.rs:737:    fn test_filter_rspec_exception_class_shortened() {
+src/cmds/ruby/rspec_cmd.rs:745:    fn test_filter_rspec_many_failures_caps_at_five() {
+src/cmds/ruby/rspec_cmd.rs:777:    fn test_filter_rspec_text_fallback_no_summary() {
+src/cmds/ruby/rspec_cmd.rs:785:    fn test_filter_rspec_invalid_json_falls_back() {
+src/cmds/ruby/rspec_cmd.rs:794:    fn test_strip_noise_spring() {
+src/cmds/ruby/rspec_cmd.rs:802:    fn test_strip_noise_simplecov() {
+src/cmds/ruby/rspec_cmd.rs:811:    fn test_strip_noise_deprecation() {
+src/cmds/ruby/rspec_cmd.rs:819:    fn test_strip_noise_finished_in() {
+src/cmds/ruby/rspec_cmd.rs:827:    fn test_strip_noise_capybara_screenshot() {
+src/cmds/ruby/rspec_cmd.rs:838:    fn test_token_savings_all_pass() {
+src/cmds/ruby/rspec_cmd.rs:856:    fn test_token_savings_with_failures() {
+src/cmds/ruby/rspec_cmd.rs:874:    fn test_token_savings_text_fallback() {
+src/cmds/ruby/rspec_cmd.rs:924:    fn test_filter_rspec_ansi_wrapped_json() {
+src/cmds/ruby/rspec_cmd.rs:934:    fn test_filter_rspec_text_many_failures_caps_at_five() {
+src/cmds/ruby/rspec_cmd.rs:984:    fn test_filter_rspec_text_header_to_failed_examples() {
+src/cmds/ruby/rspec_cmd.rs:1011:    fn test_has_format_flag_none() {
+src/cmds/ruby/rspec_cmd.rs:1022:    fn test_has_format_flag_long() {
+src/cmds/ruby/rspec_cmd.rs:1028:    fn test_has_format_flag_short_combined() {
+src/cmds/ruby/rspec_cmd.rs:1042:    fn test_has_format_flag_equals() {
+src/cmds/js/prettier_cmd.rs:7:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/js/prettier_cmd.rs:68:pub fn filter_prettier_output(output: &str) -> String {
+src/cmds/js/prettier_cmd.rs:172:    fn test_filter_all_formatted() {
+src/cmds/js/prettier_cmd.rs:183:    fn test_filter_files_need_formatting() {
+src/cmds/js/prettier_cmd.rs:198:    fn test_filter_many_files() {
+src/cmds/js/prettier_cmd.rs:211:    fn test_filter_empty_output() {
+src/cmds/js/prettier_cmd.rs:218:    fn test_filter_whitespace_only_output() {
+src/cmds/system/log_cmd.rs:24:pub fn run_file(file: &Path, verbose: u8) -> Result<()> {
+src/cmds/system/log_cmd.rs:44:pub fn run_stdin(_verbose: u8) -> Result<()> {
+src/cmds/system/log_cmd.rs:63:pub fn run_stdin_str(content: &str) -> String {
+src/cmds/system/log_cmd.rs:67:fn analyze_logs(content: &str) -> String {
+src/cmds/system/log_cmd.rs:208:fn normalize_log_line(
+src/cmds/system/log_cmd.rs:229:    fn test_analyze_logs() {
+src/cmds/system/log_cmd.rs:243:    fn test_analyze_logs_multibyte() {
+src/cmds/ruby/rake_cmd.rs:17:fn select_runner(args: &[String]) -> (&'static str, Vec<String>) {
+src/cmds/ruby/rake_cmd.rs:40:fn looks_like_test_path(arg: &str) -> bool {
+src/cmds/ruby/rake_cmd.rs:49:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/ruby/rake_cmd.rs:129:fn filter_minitest_output(output: &str) -> String {
+src/cmds/ruby/rake_cmd.rs:190:fn is_failure_header(line: &str) -> bool {
+src/cmds/ruby/rake_cmd.rs:198:fn build_minitest_summary(summary: &str, failures: &[String]) -> String {
+src/cmds/ruby/rake_cmd.rs:257:fn parse_minitest_summary(summary: &str) -> (usize, usize, usize, usize, usize) {
+src/cmds/ruby/rake_cmd.rs:290:    fn test_filter_minitest_all_pass() {
+src/cmds/ruby/rake_cmd.rs:308:    fn test_filter_minitest_with_failures() {
+src/cmds/ruby/rake_cmd.rs:331:    fn test_filter_minitest_with_errors() {
+src/cmds/ruby/rake_cmd.rs:354:    fn test_filter_minitest_empty() {
+src/cmds/ruby/rake_cmd.rs:360:    fn test_filter_minitest_skip() {
+src/cmds/ruby/rake_cmd.rs:377:    fn test_token_savings() {
+src/cmds/ruby/rake_cmd.rs:408:    fn test_parse_minitest_summary() {
+src/cmds/ruby/rake_cmd.rs:425:    fn test_filter_minitest_multiple_failures() {
+src/cmds/ruby/rake_cmd.rs:459:    fn test_filter_minitest_reporters_format() {
+src/cmds/ruby/rake_cmd.rs:472:    fn test_filter_minitest_with_ansi() {
+src/cmds/ruby/rake_cmd.rs:486:    fn args(s: &str) -> Vec<String> {
+src/cmds/ruby/rake_cmd.rs:491:    fn test_select_runner_single_file_uses_rake() {
+src/cmds/ruby/rake_cmd.rs:497:    fn test_select_runner_no_files_uses_rake() {
+src/cmds/ruby/rake_cmd.rs:503:    fn test_select_runner_multiple_files_uses_rails() {
+src/cmds/ruby/rake_cmd.rs:515:    fn test_select_runner_line_number_uses_rails() {
+src/cmds/ruby/rake_cmd.rs:521:    fn test_select_runner_multiple_with_line_numbers() {
+src/cmds/ruby/rake_cmd.rs:529:    fn test_select_runner_non_test_subcommand_uses_rake() {
+src/cmds/ruby/rake_cmd.rs:535:    fn test_select_runner_single_positional_file_uses_rails() {
+src/cmds/ruby/rake_cmd.rs:541:    fn test_select_runner_flags_not_counted_as_files() {
+src/cmds/ruby/rake_cmd.rs:547:    fn test_looks_like_test_path() {
+src/cmds/js/pnpm_cmd.rs:53:    fn parse(input: &str) -> ParseResult<DependencyState> {
+src/cmds/js/pnpm_cmd.rs:89:fn collect_dependencies(
+src/cmds/js/pnpm_cmd.rs:117:fn extract_list_text(output: &str) -> Option<DependencyState> {
+src/cmds/js/pnpm_cmd.rs:170:    fn parse(input: &str) -> ParseResult<DependencyState> {
+src/cmds/js/pnpm_cmd.rs:216:fn extract_outdated_text(output: &str) -> Option<DependencyState> {
+src/cmds/js/pnpm_cmd.rs:266:fn is_valid_package_name(name: &str) -> bool {
+src/cmds/js/pnpm_cmd.rs:288:pub fn run(cmd: PnpmCommand, args: &[String], verbose: u8) -> Result<()> {
+src/cmds/js/pnpm_cmd.rs:296:fn run_list(depth: usize, args: &[String], verbose: u8) -> Result<()> {
+src/cmds/js/pnpm_cmd.rs:353:fn run_outdated(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/js/pnpm_cmd.rs:404:fn run_install(packages: &[String], args: &[String], verbose: u8) -> Result<()> {
+src/cmds/js/pnpm_cmd.rs:457:fn filter_pnpm_install(output: &str) -> String {
+src/cmds/js/pnpm_cmd.rs:496:pub fn run_passthrough(args: &[OsString], verbose: u8) -> Result<()> {
+src/cmds/js/pnpm_cmd.rs:524:    fn test_pnpm_list_parser_json() {
+src/cmds/js/pnpm_cmd.rs:545:    fn test_pnpm_outdated_parser_json() {
+src/cmds/js/pnpm_cmd.rs:564:    fn test_package_name_validation() {
+src/cmds/js/pnpm_cmd.rs:572:    fn test_run_passthrough_accepts_args() {
+src/cmds/system/local_llm.rs:11:pub fn run(file: &Path, _model: &str, _force_download: bool, verbose: u8) -> Result<()> {
+src/cmds/system/local_llm.rs:38:fn analyze_code(content: &str, lang: &Language) -> CodeSummary {
+src/cmds/system/local_llm.rs:114:fn lang_display_name(lang: &Language) -> &'static str {
+src/cmds/system/local_llm.rs:131:fn extract_imports(content: &str, lang: &Language) -> Vec<String> {
+src/cmds/system/local_llm.rs:162:fn is_std_import(name: &str, lang: &Language) -> bool {
+src/cmds/system/local_llm.rs:170:fn extract_functions(content: &str, lang: &Language) -> Vec<String> {
+src/cmds/system/local_llm.rs:198:fn extract_structs(content: &str, lang: &Language) -> Vec<String> {
+src/cmds/system/local_llm.rs:215:fn extract_traits(content: &str, lang: &Language) -> Vec<String> {
+src/cmds/system/local_llm.rs:229:fn detect_patterns(content: &str, lang: &Language) -> Vec<String> {
+src/cmds/system/local_llm.rs:282:    fn test_rust_analysis() {
+src/cmds/system/local_llm.rs:291:pub fn load_config() -> Result<Config> {
+src/cmds/system/local_llm.rs:295:fn helper() {}
+src/cmds/system/local_llm.rs:303:    fn test_python_analysis() {
+src/cmds/system/format_cmd.rs:11:fn detect_formatter(args: &[String]) -> String {
+src/cmds/system/format_cmd.rs:16:fn detect_formatter_in_dir(args: &[String], dir: &Path) -> String {
+src/cmds/system/format_cmd.rs:55:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/system/format_cmd.rs:149:fn filter_black_output(output: &str) -> String {
+src/cmds/system/format_cmd.rs:276:fn compact_path(path: &str) -> String {
+src/cmds/system/format_cmd.rs:300:    fn test_detect_formatter_from_explicit_arg() {
+src/cmds/system/format_cmd.rs:315:    fn test_detect_formatter_from_pyproject_black() {
+src/cmds/system/format_cmd.rs:326:    fn test_detect_formatter_from_pyproject_ruff() {
+src/cmds/system/format_cmd.rs:337:    fn test_detect_formatter_from_package_json() {
+src/cmds/system/format_cmd.rs:348:    fn test_filter_black_all_formatted() {
+src/cmds/system/format_cmd.rs:357:    fn test_filter_black_needs_formatting() {
+src/cmds/system/format_cmd.rs:372:    fn test_compact_path() {
+src/cmds/git/gt_cmd.rs:22:fn run_gt_filtered(
+src/cmds/git/gt_cmd.rs:89:fn filter_identity(input: &str) -> String {
+src/cmds/git/gt_cmd.rs:93:pub fn run_log(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/git/gt_cmd.rs:113:pub fn run_submit(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/git/gt_cmd.rs:117:pub fn run_sync(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/git/gt_cmd.rs:121:pub fn run_restack(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/git/gt_cmd.rs:125:pub fn run_create(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/git/gt_cmd.rs:129:pub fn run_branch(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/git/gt_cmd.rs:133:pub fn run_other(args: &[OsString], verbose: u8) -> Result<()> {
+src/cmds/git/gt_cmd.rs:172:fn passthrough_gt(subcommand: &str, args: &[String], verbose: u8) -> Result<()> {
+src/cmds/git/gt_cmd.rs:208:fn filter_gt_log_entries(input: &str) -> String {
+src/cmds/git/gt_cmd.rs:239:fn filter_gt_submit(input: &str) -> String {
+src/cmds/git/gt_cmd.rs:298:fn filter_gt_sync(input: &str) -> String {
+src/cmds/git/gt_cmd.rs:353:fn filter_gt_restack(input: &str) -> String {
+src/cmds/git/gt_cmd.rs:374:fn filter_gt_create(input: &str) -> String {
+src/cmds/git/gt_cmd.rs:400:fn is_graph_node(line: &str) -> bool {
+src/cmds/git/gt_cmd.rs:414:fn extract_branch_name(line: &str) -> String {
+src/cmds/git/gt_cmd.rs:426:    fn count_tokens(text: &str) -> usize {
+src/cmds/git/gt_cmd.rs:431:    fn test_filter_gt_log_exact_format() {
+src/cmds/git/gt_cmd.rs:457:    fn test_filter_gt_submit_exact_format() {
+src/cmds/git/gt_cmd.rs:472:    fn test_filter_gt_sync_exact_format() {
+src/cmds/git/gt_cmd.rs:485:    fn test_filter_gt_restack_exact_format() {
+src/cmds/git/gt_cmd.rs:495:    fn test_filter_gt_create_exact_format() {
+src/cmds/git/gt_cmd.rs:502:    fn test_filter_gt_log_truncation() {
+src/cmds/git/gt_cmd.rs:517:    fn test_filter_gt_log_empty() {
+src/cmds/git/gt_cmd.rs:523:    fn test_filter_gt_log_token_savings() {
+src/cmds/git/gt_cmd.rs:553:    fn test_filter_gt_log_long() {
+src/cmds/git/gt_cmd.rs:576:    fn test_filter_gt_submit_empty() {
+src/cmds/git/gt_cmd.rs:581:    fn test_filter_gt_submit_with_urls() {
+src/cmds/git/gt_cmd.rs:591:    fn test_filter_gt_submit_token_savings() {
+src/cmds/git/gt_cmd.rs:638:    fn test_filter_gt_sync() {
+src/cmds/git/gt_cmd.rs:651:    fn test_filter_gt_sync_empty() {
+src/cmds/git/gt_cmd.rs:656:    fn test_filter_gt_sync_no_deletes() {
+src/cmds/git/gt_cmd.rs:665:    fn test_filter_gt_restack() {
+src/cmds/git/gt_cmd.rs:677:    fn test_filter_gt_restack_empty() {
+src/cmds/git/gt_cmd.rs:682:    fn test_filter_gt_create() {
+src/cmds/git/gt_cmd.rs:689:    fn test_filter_gt_create_empty() {
+src/cmds/git/gt_cmd.rs:694:    fn test_filter_gt_create_no_branch_name() {
+src/cmds/git/gt_cmd.rs:701:    fn test_is_graph_node() {
+src/cmds/git/gt_cmd.rs:712:    fn test_extract_branch_name() {
+src/cmds/git/gt_cmd.rs:730:    fn test_filter_gt_log_pre_stripped_input() {
+src/cmds/git/gt_cmd.rs:738:    fn test_filter_gt_sync_token_savings() {
+src/cmds/git/gt_cmd.rs:766:    fn test_filter_gt_create_token_savings() {
+src/cmds/git/gt_cmd.rs:789:    fn test_filter_gt_restack_token_savings() {
+src/cmds/js/playwright_cmd.rs:88:    fn parse(input: &str) -> ParseResult<TestResult> {
+src/cmds/js/playwright_cmd.rs:123:fn collect_test_results(
+src/cmds/js/playwright_cmd.rs:164:fn extract_playwright_regex(output: &str) -> Option<TestResult> {
+src/cmds/js/playwright_cmd.rs:220:fn extract_failures_regex(output: &str) -> Vec<TestFailure> {
+src/cmds/js/playwright_cmd.rs:243:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/js/playwright_cmd.rs:346:    fn test_playwright_parser_json() {
+src/cmds/js/playwright_cmd.rs:396:    fn test_playwright_parser_json_float_duration() {
+src/cmds/js/playwright_cmd.rs:421:    fn test_playwright_parser_json_with_failure() {
+src/cmds/js/playwright_cmd.rs:468:    fn test_playwright_parser_regex_fallback() {
+src/cmds/js/playwright_cmd.rs:480:    fn test_playwright_parser_passthrough() {
+src/cmds/system/json_cmd.rs:11:fn validate_json_extension(file: &Path) -> Result<()> {
+src/cmds/system/json_cmd.rs:39:pub fn run(file: &Path, max_depth: usize, schema_only: bool, verbose: u8) -> Result<()> {
+src/cmds/system/json_cmd.rs:66:pub fn run_stdin(max_depth: usize, schema_only: bool, verbose: u8) -> Result<()> {
+src/cmds/system/json_cmd.rs:91:pub fn filter_json_compact(json_str: &str, max_depth: usize) -> Result<String> {
+src/cmds/system/json_cmd.rs:96:fn compact_json(value: &Value, depth: usize, max_depth: usize) -> String {
+src/cmds/system/json_cmd.rs:181:pub fn filter_json_string(json_str: &str, max_depth: usize) -> Result<String> {
+src/cmds/system/json_cmd.rs:186:fn extract_schema(value: &Value, depth: usize, max_depth: usize) -> String {
+src/cmds/system/json_cmd.rs:282:    fn test_toml_file_rejected() {
+src/cmds/system/json_cmd.rs:289:    fn test_cargo_toml_suggests_deps() {
+src/cmds/system/json_cmd.rs:295:    fn test_yaml_file_rejected() {
+src/cmds/system/json_cmd.rs:301:    fn test_json_file_accepted() {
+src/cmds/system/json_cmd.rs:306:    fn test_unknown_extension_accepted() {
+src/cmds/system/json_cmd.rs:311:    fn test_no_extension_accepted() {
+src/cmds/system/json_cmd.rs:316:    fn test_extract_schema_simple() {
+src/cmds/system/json_cmd.rs:325:    fn test_extract_schema_array() {
+src/cmds/system/find_cmd.rs:10:fn glob_match(pattern: &str, name: &str) -> bool {
+src/cmds/system/find_cmd.rs:14:fn glob_match_inner(pat: &[u8], name: &[u8]) -> bool {
+src/cmds/system/find_cmd.rs:40:    fn default() -> Self {
+src/cmds/system/find_cmd.rs:54:fn next_arg(args: &[String], i: &mut usize) -> Option<String> {
+src/cmds/system/find_cmd.rs:60:fn has_native_find_flags(args: &[String]) -> bool {
+src/cmds/system/find_cmd.rs:73:fn has_unsupported_find_flags(args: &[String]) -> bool {
+src/cmds/system/find_cmd.rs:82:fn parse_find_args(args: &[String]) -> Result<FindArgs> {
+src/cmds/system/find_cmd.rs:101:fn parse_native_find_args(args: &[String]) -> Result<FindArgs> {
+src/cmds/system/find_cmd.rs:146:fn parse_rtk_find_args(args: &[String]) -> Result<FindArgs> {
+src/cmds/system/find_cmd.rs:180:pub fn run_from_args(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/system/find_cmd.rs:193:pub fn run(
+src/cmds/system/find_cmd.rs:388:    fn args(values: &[&str]) -> Vec<String> {
+src/cmds/system/find_cmd.rs:395:    fn glob_match_star_rs() {
+src/cmds/system/find_cmd.rs:403:    fn glob_match_star_all() {
+src/cmds/system/find_cmd.rs:410:    fn glob_match_question_mark() {
+src/cmds/system/find_cmd.rs:416:    fn glob_match_exact() {
+src/cmds/system/find_cmd.rs:422:    fn glob_match_complex() {
+src/cmds/system/find_cmd.rs:431:    fn dot_becomes_star() {
+src/cmds/system/find_cmd.rs:440:    fn parse_native_find_name() {
+src/cmds/system/find_cmd.rs:449:    fn parse_native_find_name_and_type() {
+src/cmds/system/find_cmd.rs:457:    fn parse_native_find_type_d() {
+src/cmds/system/find_cmd.rs:464:    fn parse_native_find_maxdepth() {
+src/cmds/system/find_cmd.rs:472:    fn parse_native_find_iname() {
+src/cmds/system/find_cmd.rs:479:    fn parse_native_find_name_is_case_sensitive() {
+src/cmds/system/find_cmd.rs:485:    fn parse_native_find_no_path() {
+src/cmds/system/find_cmd.rs:495:    fn parse_native_find_rejects_not() {
+src/cmds/system/find_cmd.rs:503:    fn parse_native_find_rejects_exec() {
+src/cmds/system/find_cmd.rs:511:    fn parse_rtk_syntax_pattern_only() {
+src/cmds/system/find_cmd.rs:518:    fn parse_rtk_syntax_pattern_and_path() {
+src/cmds/system/find_cmd.rs:525:    fn parse_rtk_syntax_with_flags() {
+src/cmds/system/find_cmd.rs:534:    fn parse_empty_args() {
+src/cmds/system/find_cmd.rs:543:    fn run_from_args_native_find_syntax() {
+src/cmds/system/find_cmd.rs:550:    fn run_from_args_rtk_syntax() {
+src/cmds/system/find_cmd.rs:557:    fn run_from_args_iname_case_insensitive() {
+src/cmds/system/find_cmd.rs:566:    fn find_rs_files_in_src() {
+src/cmds/system/find_cmd.rs:573:    fn find_dot_pattern_works() {
+src/cmds/system/find_cmd.rs:580:    fn find_no_matches() {
+src/cmds/system/find_cmd.rs:586:    fn find_respects_max() {
+src/cmds/system/find_cmd.rs:593:    fn find_gitignored_excluded() {
+src/cmds/js/npm_cmd.rs:76:pub fn run(args: &[String], verbose: u8, skip_env: bool) -> Result<()> {
+src/cmds/js/npm_cmd.rs:137:fn filter_npm_output(output: &str) -> String {
+src/cmds/js/npm_cmd.rs:176:    fn test_filter_npm_output() {
+src/cmds/js/npm_cmd.rs:195:    fn test_npm_subcommand_routing() {
+src/cmds/js/npm_cmd.rs:197:        fn needs_run_injection(args: &[&str]) -> bool {
+src/cmds/js/npm_cmd.rs:233:    fn test_filter_npm_output_empty() {
+src/cmds/system/env_cmd.rs:9:pub fn run(filter: Option<&str>, show_all: bool, verbose: u8) -> Result<()> {
+src/cmds/system/env_cmd.rs:132:fn get_sensitive_patterns() -> HashSet<&'static str> {
+src/cmds/system/env_cmd.rs:148:fn mask_value(value: &str) -> String {
+src/cmds/system/env_cmd.rs:159:fn is_lang_var(key: &str) -> bool {
+src/cmds/system/env_cmd.rs:167:fn is_cloud_var(key: &str) -> bool {
+src/cmds/system/env_cmd.rs:185:fn is_tool_var(key: &str) -> bool {
+src/cmds/system/env_cmd.rs:203:fn is_interesting_var(key: &str) -> bool {
+src/cmds/js/next_cmd.rs:8:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/js/next_cmd.rs:55:fn filter_next_build(output: &str) -> String {
+src/cmds/js/next_cmd.rs:185:fn extract_time(line: &str) -> Option<String> {
+src/cmds/js/next_cmd.rs:200:    fn test_filter_next_build() {
+src/cmds/js/next_cmd.rs:230:    fn test_extract_time() {
+src/cmds/git/diff_cmd.rs:9:pub fn run(file1: &Path, file2: &Path, verbose: u8) -> Result<()> {
+src/cmds/git/diff_cmd.rs:66:pub fn run_stdin(_verbose: u8) -> Result<()> {
+src/cmds/git/diff_cmd.rs:96:fn compute_diff(lines1: &[&str], lines2: &[&str]) -> DiffResult {
+src/cmds/git/diff_cmd.rs:142:fn similarity(a: &str, b: &str) -> f64 {
+src/cmds/git/diff_cmd.rs:156:fn condense_unified_diff(diff: &str) -> String {
+src/cmds/git/diff_cmd.rs:217:    fn test_similarity_identical() {
+src/cmds/git/diff_cmd.rs:222:    fn test_similarity_completely_different() {
+src/cmds/git/diff_cmd.rs:227:    fn test_similarity_empty_strings() {
+src/cmds/git/diff_cmd.rs:233:    fn test_similarity_partial_overlap() {
+src/cmds/git/diff_cmd.rs:240:    fn test_similarity_threshold_for_modified() {
+src/cmds/git/diff_cmd.rs:248:    fn test_compute_diff_identical() {
+src/cmds/git/diff_cmd.rs:259:    fn test_compute_diff_added_lines() {
+src/cmds/git/diff_cmd.rs:268:    fn test_compute_diff_removed_lines() {
+src/cmds/git/diff_cmd.rs:277:    fn test_compute_diff_modified_line() {
+src/cmds/git/diff_cmd.rs:288:    fn test_compute_diff_completely_different_line() {
+src/cmds/git/diff_cmd.rs:299:    fn test_compute_diff_empty_inputs() {
+src/cmds/git/diff_cmd.rs:309:    fn test_condense_unified_diff_single_file() {
+src/cmds/git/diff_cmd.rs:314: fn main() {
+src/cmds/git/diff_cmd.rs:326:    fn test_condense_unified_diff_multiple_files() {
+src/cmds/git/diff_cmd.rs:342:    fn test_condense_unified_diff_empty() {
+src/cmds/git/diff_cmd.rs:349:    fn make_large_unified_diff(added: usize, removed: usize) -> String {
+src/cmds/git/diff_cmd.rs:366:    fn test_condense_unified_diff_overflow_count_accuracy() {
+src/cmds/git/diff_cmd.rs:384:    fn test_condense_unified_diff_no_false_overflow() {
+src/cmds/git/diff_cmd.rs:396:    fn test_no_truncation_large_diff() {
+src/cmds/git/diff_cmd.rs:421:    fn test_long_lines_not_truncated() {
+src/cmds/dotnet/dotnet_trx.rs:10:fn local_name(name: &[u8]) -> &[u8] {
+src/cmds/dotnet/dotnet_trx.rs:14:fn extract_attr_value(
+src/cmds/dotnet/dotnet_trx.rs:32:fn parse_usize_attr(reader: &Reader<&[u8]>, start: &BytesStart<'_>, key: &[u8]) -> usize {
+src/cmds/dotnet/dotnet_trx.rs:38:fn parse_trx_duration(start: &str, finish: &str) -> Option<String> {
+src/cmds/dotnet/dotnet_trx.rs:44:fn format_duration_between(
+src/cmds/dotnet/dotnet_trx.rs:62:fn parse_trx_time_bounds(content: &str) -> Option<(DateTime<FixedOffset>, DateTime<FixedOffset>)> {
+src/cmds/dotnet/dotnet_trx.rs:94:pub fn parse_trx_file(path: &Path) -> Option<TestSummary> {
+src/cmds/dotnet/dotnet_trx.rs:99:pub fn parse_trx_file_since(path: &Path, since: SystemTime) -> Option<TestSummary> {
+src/cmds/dotnet/dotnet_trx.rs:108:pub fn parse_trx_files_in_dir(dir: &Path) -> Option<TestSummary> {
+src/cmds/dotnet/dotnet_trx.rs:112:pub fn parse_trx_files_in_dir_since(dir: &Path, since: Option<SystemTime>) -> Option<TestSummary> {
+src/cmds/dotnet/dotnet_trx.rs:179:pub fn find_recent_trx_in_testresults() -> Option<PathBuf> {
+src/cmds/dotnet/dotnet_trx.rs:183:fn find_recent_trx_in_dir(dir: &Path) -> Option<PathBuf> {
+src/cmds/dotnet/dotnet_trx.rs:207:fn parse_trx_content(content: &str) -> Option<TestSummary> {
+src/cmds/dotnet/dotnet_trx.rs:399:    fn test_parse_trx_content_extracts_passed_counts() {
+src/cmds/dotnet/dotnet_trx.rs:417:    fn test_parse_trx_content_extracts_failed_tests_with_details() {
+src/cmds/dotnet/dotnet_trx.rs:443:    fn test_parse_trx_content_extracts_counters_when_attribute_order_varies() {
+src/cmds/dotnet/dotnet_trx.rs:458:    fn test_parse_trx_content_extracts_failed_tests_when_attribute_order_varies() {
+src/cmds/dotnet/dotnet_trx.rs:484:    fn test_parse_trx_content_returns_none_for_invalid_xml() {
+src/cmds/dotnet/dotnet_trx.rs:490:    fn test_find_recent_trx_in_dir_returns_none_when_missing() {
+src/cmds/dotnet/dotnet_trx.rs:499:    fn test_find_recent_trx_in_dir_picks_newest_trx() {
+src/cmds/dotnet/dotnet_trx.rs:515:    fn test_find_recent_trx_in_dir_ignores_non_trx_files() {
+src/cmds/dotnet/dotnet_trx.rs:528:    fn test_parse_trx_files_in_dir_aggregates_counts_and_wall_clock_duration() {
+src/cmds/dotnet/dotnet_trx.rs:560:    fn test_parse_trx_files_in_dir_since_ignores_older_files() {
+src/cmds/dotnet/dotnet_trx.rs:582:    fn test_parse_trx_files_in_dir_since_handles_uppercase_extension() {
+src/cmds/git/git.rs:28:fn git_cmd(global_args: &[String]) -> Command {
+src/cmds/git/git.rs:36:pub fn run(
+src/cmds/git/git.rs:61:fn run_diff(
+src/cmds/git/git.rs:171:fn run_show(
+src/cmds/git/git.rs:290:fn is_blob_show_arg(arg: &str) -> bool {
+src/cmds/git/git.rs:295:pub(crate) fn compact_diff(diff: &str, max_lines: usize) -> String {
+src/cmds/git/git.rs:384:fn run_log(
+src/cmds/git/git.rs:474:fn parse_user_limit(args: &[String]) -> Option<usize> {
+src/cmds/git/git.rs:516:fn filter_log_output(
+src/cmds/git/git.rs:583:fn truncate_line(line: &str, width: usize) -> String {
+src/cmds/git/git.rs:593:fn format_status_output(porcelain: &str) -> String {
+src/cmds/git/git.rs:707:fn filter_status_with_args(output: &str) -> String {
+src/cmds/git/git.rs:743:fn run_status(args: &[String], verbose: u8, global_args: &[String]) -> Result<()> {
+src/cmds/git/git.rs:822:fn run_add(args: &[String], verbose: u8, global_args: &[String]) -> Result<()> {
+src/cmds/git/git.rs:894:fn build_commit_command(args: &[String], global_args: &[String]) -> Command {
+src/cmds/git/git.rs:903:fn run_commit(args: &[String], verbose: u8, global_args: &[String]) -> Result<()> {
+src/cmds/git/git.rs:964:fn run_push(args: &[String], verbose: u8, global_args: &[String]) -> Result<()> {
+src/cmds/git/git.rs:1026:fn run_pull(args: &[String], verbose: u8, global_args: &[String]) -> Result<()> {
+src/cmds/git/git.rs:1112:fn run_branch(args: &[String], verbose: u8, global_args: &[String]) -> Result<()> {
+src/cmds/git/git.rs:1273:fn filter_branch_output(output: &str) -> String {
+src/cmds/git/git.rs:1327:fn run_fetch(args: &[String], verbose: u8, global_args: &[String]) -> Result<()> {
+src/cmds/git/git.rs:1371:fn run_stash(
+src/cmds/git/git.rs:1536:fn filter_stash_list(output: &str) -> String {
+src/cmds/git/git.rs:1557:fn run_worktree(args: &[String], verbose: u8, global_args: &[String]) -> Result<()> {
+src/cmds/git/git.rs:1621:fn filter_worktree_list(output: &str) -> String {
+src/cmds/git/git.rs:1649:pub fn run_passthrough(args: &[OsString], global_args: &[String], verbose: u8) -> Result<()> {
+src/cmds/git/git.rs:1677:    fn test_git_cmd_no_global_args() {
+src/cmds/git/git.rs:1692:    fn test_git_cmd_with_directory() {
+src/cmds/git/git.rs:1700:    fn test_git_cmd_with_multiple_global_args() {
+src/cmds/git/git.rs:1725:    fn test_git_cmd_with_boolean_flags() {
+src/cmds/git/git.rs:1733:    fn test_compact_diff() {
+src/cmds/git/git.rs:1738: fn main() {
+src/cmds/git/git.rs:1748:    fn test_compact_diff_increased_hunk_limit() {
+src/cmds/git/git.rs:1765:    fn test_compact_diff_increased_total_limit() {
+src/cmds/git/git.rs:1782:    fn test_is_blob_show_arg() {
+src/cmds/git/git.rs:1791:    fn test_filter_branch_output() {
+src/cmds/git/git.rs:1803:    fn test_filter_branch_no_remotes() {
+src/cmds/git/git.rs:1812:    fn test_filter_stash_list() {
+src/cmds/git/git.rs:1821:    fn test_filter_worktree_list() {
+src/cmds/git/git.rs:1831:    fn test_format_status_output_clean() {
+src/cmds/git/git.rs:1838:    fn test_format_status_output_modified_files() {
+src/cmds/git/git.rs:1850:    fn test_format_status_output_untracked_files() {
+src/cmds/git/git.rs:1862:    fn test_format_status_output_mixed_changes() {
+src/cmds/git/git.rs:1881:    fn test_format_status_output_truncation() {
+src/cmds/git/git.rs:1897:    fn test_format_status_modified_truncation() {
+src/cmds/git/git.rs:1912:    fn test_format_status_untracked_truncation() {
+src/cmds/git/git.rs:1927:    fn test_run_passthrough_accepts_args() {
+src/cmds/git/git.rs:1934:    fn test_filter_log_output() {
+src/cmds/git/git.rs:1943:    fn test_filter_log_output_with_body() {
+src/cmds/git/git.rs:1957:    fn test_filter_log_output_skips_trailers() {
+src/cmds/git/git.rs:1968:    fn test_filter_log_output_truncate_long() {
+src/cmds/git/git.rs:1977:    fn test_filter_log_output_cap_lines() {
+src/cmds/git/git.rs:1987:    fn test_filter_log_output_user_limit_no_cap() {
+src/cmds/git/git.rs:2002:    fn test_filter_log_output_user_limit_wider_truncation() {
+src/cmds/git/git.rs:2024:    fn test_parse_user_limit_combined() {
+src/cmds/git/git.rs:2030:    fn test_parse_user_limit_n_space() {
+src/cmds/git/git.rs:2036:    fn test_parse_user_limit_max_count_eq() {
+src/cmds/git/git.rs:2042:    fn test_parse_user_limit_max_count_space() {
+src/cmds/git/git.rs:2048:    fn test_parse_user_limit_none() {
+src/cmds/git/git.rs:2054:    fn test_filter_log_output_token_savings() {
+src/cmds/git/git.rs:2055:        fn count_tokens(text: &str) -> usize {
+src/cmds/git/git.rs:2078:    fn test_filter_status_with_args() {
+src/cmds/git/git.rs:2100:    fn test_filter_status_with_args_clean() {
+src/cmds/git/git.rs:2107:    fn test_filter_log_output_multibyte() {
+src/cmds/git/git.rs:2120:    fn test_filter_log_output_emoji() {
+src/cmds/git/git.rs:2129:    fn test_format_status_output_thai_filename() {
+src/cmds/git/git.rs:2139:    fn test_format_status_output_emoji_filename() {
+src/cmds/git/git.rs:2149:    fn test_filter_log_output_user_format_oneline() {
+src/cmds/git/git.rs:2164:    fn test_filter_log_output_user_format_with_limit() {
+src/cmds/git/git.rs:2185:    fn test_branch_creation_not_swallowed() {
+src/cmds/git/git.rs:2207:    fn test_branch_creation_from_commit() {
+src/cmds/git/git.rs:2225:    fn test_commit_single_message() {
+src/cmds/git/git.rs:2236:    fn test_commit_multiple_messages() {
+src/cmds/git/git.rs:2262:    fn test_commit_am_flag() {
+src/cmds/git/git.rs:2273:    fn test_commit_amend() {
+src/cmds/git/git.rs:2289:    fn test_git_status_not_a_repo_exits_nonzero() {
+src/cmds/git/git.rs:2333:    fn test_format_status_overflow_count_exact() {
+src/cmds/git/git.rs:2354:    fn test_compact_diff_recovery_hint_present() {
+src/cmds/git/git.rs:2374:    fn test_compact_diff_hunk_truncation_count_accurate() {
+src/cmds/git/git.rs:2392:    fn test_filter_log_output_body_omission_indicator() {
+src/cmds/dotnet/dotnet_format_report.rs:47:pub fn parse_format_report(path: &Path) -> Result<FormatSummary> {
+src/cmds/dotnet/dotnet_format_report.rs:99:    fn fixture(name: &str) -> PathBuf {
+src/cmds/dotnet/dotnet_format_report.rs:108:    fn test_parse_format_report_all_formatted() {
+src/cmds/dotnet/dotnet_format_report.rs:117:    fn test_parse_format_report_with_changes() {
+src/cmds/dotnet/dotnet_format_report.rs:128:    fn test_parse_format_report_empty() {
+src/cmds/js/lint_cmd.rs:54:fn is_python_linter(linter: &str) -> bool {
+src/cmds/js/lint_cmd.rs:60:fn strip_pm_prefix(args: &[String]) -> usize {
+src/cmds/js/lint_cmd.rs:75:fn detect_linter(args: &[String]) -> (&str, bool) {
+src/cmds/js/lint_cmd.rs:88:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/js/lint_cmd.rs:232:fn filter_eslint_json(output: &str) -> String {
+src/cmds/js/lint_cmd.rs:324:fn filter_pylint_json(output: &str) -> String {
+src/cmds/js/lint_cmd.rs:441:fn filter_generic_lint(output: &str) -> String {
+src/cmds/js/lint_cmd.rs:478:fn compact_path(path: &str) -> String {
+src/cmds/js/lint_cmd.rs:498:    fn test_filter_eslint_json() {
+src/cmds/js/lint_cmd.rs:545:    fn test_compact_path() {
+src/cmds/js/lint_cmd.rs:558:    fn test_filter_pylint_json_no_issues() {
+src/cmds/js/lint_cmd.rs:566:    fn test_filter_pylint_json_with_issues() {
+src/cmds/js/lint_cmd.rs:614:    fn test_strip_pm_prefix_npx() {
+src/cmds/js/lint_cmd.rs:620:    fn test_strip_pm_prefix_bunx() {
+src/cmds/js/lint_cmd.rs:626:    fn test_strip_pm_prefix_pnpm_exec() {
+src/cmds/js/lint_cmd.rs:632:    fn test_strip_pm_prefix_none() {
+src/cmds/js/lint_cmd.rs:638:    fn test_strip_pm_prefix_empty() {
+src/cmds/js/lint_cmd.rs:644:    fn test_detect_linter_eslint() {
+src/cmds/js/lint_cmd.rs:652:    fn test_detect_linter_default_on_path() {
+src/cmds/js/lint_cmd.rs:660:    fn test_detect_linter_default_on_flag() {
+src/cmds/js/lint_cmd.rs:668:    fn test_detect_linter_after_npx_strip() {
+src/cmds/js/lint_cmd.rs:678:    fn test_detect_linter_after_pnpm_exec_strip() {
+src/cmds/js/lint_cmd.rs:688:    fn test_is_python_linter() {
+src/cmds/cloud/wget_cmd.rs:6:pub fn run(url: &str, args: &[String], verbose: u8) -> Result<()> {
+src/cmds/cloud/wget_cmd.rs:55:pub fn run_stdout(url: &str, args: &[String], verbose: u8) -> Result<()> {
+src/cmds/cloud/wget_cmd.rs:117:fn extract_filename_from_output(stderr: &str, url: &str, args: &[String]) -> String {
+src/cmds/cloud/wget_cmd.rs:174:fn get_file_size(filename: &str) -> u64 {
+src/cmds/cloud/wget_cmd.rs:178:fn format_size(bytes: u64) -> String {
+src/cmds/cloud/wget_cmd.rs:193:fn compact_url(url: &str) -> String {
+src/cmds/cloud/wget_cmd.rs:212:fn parse_error(stderr: &str, stdout: &str) -> String {
+src/cmds/cloud/wget_cmd.rs:256:fn truncate_line(line: &str, max: usize) -> String {
+src/cmds/cloud/curl_cmd.rs:8:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/cloud/curl_cmd.rs:51:fn filter_curl_output(output: &str) -> String {
+src/cmds/cloud/curl_cmd.rs:92:    fn test_filter_curl_json() {
+src/cmds/cloud/curl_cmd.rs:102:    fn test_filter_curl_json_array() {
+src/cmds/cloud/curl_cmd.rs:109:    fn test_filter_curl_non_json() {
+src/cmds/cloud/curl_cmd.rs:117:    fn test_filter_curl_json_small_returns_original() {
+src/cmds/cloud/curl_cmd.rs:127:    fn test_filter_curl_long_output() {
+src/cmds/cloud/aws_cmd.rs:16:pub fn run(subcommand: &str, args: &[String], verbose: u8) -> Result<()> {
+src/cmds/cloud/aws_cmd.rs:55:fn is_structured_operation(args: &[String]) -> bool {
+src/cmds/cloud/aws_cmd.rs:61:fn run_generic(subcommand: &str, args: &[String], verbose: u8, full_sub: &str) -> Result<()> {
+src/cmds/cloud/aws_cmd.rs:123:fn run_aws_json(
+src/cmds/cloud/aws_cmd.rs:166:fn run_sts_identity(extra_args: &[String], verbose: u8) -> Result<()> {
+src/cmds/cloud/aws_cmd.rs:195:fn run_s3_ls(extra_args: &[String], verbose: u8) -> Result<()> {
+src/cmds/cloud/aws_cmd.rs:226:fn run_ec2_describe(extra_args: &[String], verbose: u8) -> Result<()> {
+src/cmds/cloud/aws_cmd.rs:255:fn run_ecs_list_services(extra_args: &[String], verbose: u8) -> Result<()> {
+src/cmds/cloud/aws_cmd.rs:284:fn run_ecs_describe_services(extra_args: &[String], verbose: u8) -> Result<()> {
+src/cmds/cloud/aws_cmd.rs:313:fn run_rds_describe(extra_args: &[String], verbose: u8) -> Result<()> {
+src/cmds/cloud/aws_cmd.rs:343:fn run_cfn_list_stacks(extra_args: &[String], verbose: u8) -> Result<()> {
+src/cmds/cloud/aws_cmd.rs:373:fn run_cfn_describe_stacks(extra_args: &[String], verbose: u8) -> Result<()> {
+src/cmds/cloud/aws_cmd.rs:405:fn filter_sts_identity(json_str: &str) -> Option<String> {
+src/cmds/cloud/aws_cmd.rs:412:fn filter_s3_ls(output: &str) -> String {
+src/cmds/cloud/aws_cmd.rs:430:fn filter_ec2_instances(json_str: &str) -> Option<String> {
+src/cmds/cloud/aws_cmd.rs:469:fn filter_ecs_list_services(json_str: &str) -> Option<String> {
+src/cmds/cloud/aws_cmd.rs:486:fn filter_ecs_describe_services(json_str: &str) -> Option<String> {
+src/cmds/cloud/aws_cmd.rs:508:fn filter_rds_instances(json_str: &str) -> Option<String> {
+src/cmds/cloud/aws_cmd.rs:530:fn filter_cfn_list_stacks(json_str: &str) -> Option<String> {
+src/cmds/cloud/aws_cmd.rs:550:fn filter_cfn_describe_stacks(json_str: &str) -> Option<String> {
+src/cmds/cloud/aws_cmd.rs:584:    fn test_snapshot_sts_identity() {
+src/cmds/cloud/aws_cmd.rs:598:    fn test_snapshot_ec2_instances() {
+src/cmds/cloud/aws_cmd.rs:607:    fn test_filter_sts_identity() {
+src/cmds/cloud/aws_cmd.rs:621:    fn test_filter_sts_identity_missing_fields() {
+src/cmds/cloud/aws_cmd.rs:628:    fn test_filter_sts_identity_invalid_json() {
+src/cmds/cloud/aws_cmd.rs:634:    fn test_filter_s3_ls_basic() {
+src/cmds/cloud/aws_cmd.rs:642:    fn test_filter_s3_ls_overflow() {
+src/cmds/cloud/aws_cmd.rs:653:    fn test_filter_ec2_instances() {
+src/cmds/cloud/aws_cmd.rs:678:    fn test_filter_ec2_no_name_tag() {
+src/cmds/cloud/aws_cmd.rs:695:    fn test_filter_ec2_invalid_json() {
+src/cmds/cloud/aws_cmd.rs:700:    fn test_filter_ecs_list_services() {
+src/cmds/cloud/aws_cmd.rs:714:    fn test_filter_ecs_describe_services() {
+src/cmds/cloud/aws_cmd.rs:729:    fn test_filter_rds_instances() {
+src/cmds/cloud/aws_cmd.rs:744:    fn test_filter_cfn_list_stacks() {
+src/cmds/cloud/aws_cmd.rs:763:    fn test_filter_cfn_describe_stacks_with_outputs() {
+src/cmds/cloud/aws_cmd.rs:782:    fn test_filter_cfn_describe_stacks_no_outputs() {
+src/cmds/cloud/aws_cmd.rs:795:    fn count_tokens(text: &str) -> usize {
+src/cmds/cloud/aws_cmd.rs:800:    fn test_ec2_token_savings() {
+src/cmds/cloud/aws_cmd.rs:849:    fn test_sts_token_savings() {
+src/cmds/cloud/aws_cmd.rs:867:    fn test_rds_overflow() {
+src/cmds/cloud/psql_cmd.rs:22:pub fn run(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/cloud/psql_cmd.rs:68:fn filter_psql_output(output: &str) -> String {
+src/cmds/cloud/psql_cmd.rs:83:fn is_table_format(output: &str) -> bool {
+src/cmds/cloud/psql_cmd.rs:90:fn is_expanded_format(output: &str) -> bool {
+src/cmds/cloud/psql_cmd.rs:99:fn filter_table(output: &str) -> String {
+src/cmds/cloud/psql_cmd.rs:149:fn filter_expanded(output: &str) -> String {
+src/cmds/cloud/psql_cmd.rs:210:    fn test_snapshot_table_format() {
+src/cmds/cloud/psql_cmd.rs:220:    fn test_snapshot_expanded_format() {
+src/cmds/cloud/psql_cmd.rs:230:    fn test_is_table_format_detects_separator() {
+src/cmds/cloud/psql_cmd.rs:236:    fn test_is_table_format_rejects_plain() {
+src/cmds/cloud/psql_cmd.rs:242:    fn test_is_expanded_format_detects_records() {
+src/cmds/cloud/psql_cmd.rs:248:    fn test_is_expanded_format_rejects_table() {
+src/cmds/cloud/psql_cmd.rs:254:    fn test_filter_table_basic() {
+src/cmds/cloud/psql_cmd.rs:265:    fn test_filter_table_overflow() {
+src/cmds/cloud/psql_cmd.rs:281:    fn test_filter_table_empty() {
+src/cmds/cloud/psql_cmd.rs:287:    fn test_filter_expanded_basic() {
+src/cmds/cloud/psql_cmd.rs:302:    fn test_filter_expanded_overflow() {
+src/cmds/cloud/psql_cmd.rs:316:    fn test_filter_psql_passthrough() {
+src/cmds/cloud/psql_cmd.rs:323:    fn test_filter_psql_routes_to_table() {
+src/cmds/cloud/psql_cmd.rs:331:    fn test_filter_psql_routes_to_expanded() {
+src/cmds/cloud/psql_cmd.rs:339:    fn test_filter_table_strips_row_count() {
+src/cmds/cloud/psql_cmd.rs:346:    fn test_filter_expanded_strips_row_count() {
+src/cmds/cloud/psql_cmd.rs:352:    fn count_tokens(text: &str) -> usize {
+src/cmds/cloud/psql_cmd.rs:357:    fn test_table_token_savings() {
+src/cmds/cloud/psql_cmd.rs:371:    fn test_expanded_token_savings() {
+src/cmds/README.md:43:pub fn run(args: MyArgs, verbose: u8) -> Result<()> {
+src/cmds/cloud/container.rs:18:pub fn run(cmd: ContainerCmd, args: &[String], verbose: u8) -> Result<()> {
+src/cmds/cloud/container.rs:29:fn docker_ps(_verbose: u8) -> Result<()> {
+src/cmds/cloud/container.rs:98:fn docker_images(_verbose: u8) -> Result<()> {
+src/cmds/cloud/container.rs:179:fn docker_logs(args: &[String], _verbose: u8) -> Result<()> {
+src/cmds/cloud/container.rs:222:fn kubectl_pods(args: &[String], _verbose: u8) -> Result<()> {
+src/cmds/cloud/container.rs:329:fn kubectl_services(args: &[String], _verbose: u8) -> Result<()> {
+src/cmds/cloud/container.rs:409:fn kubectl_logs(args: &[String], _verbose: u8) -> Result<()> {
+src/cmds/cloud/container.rs:456:pub fn format_compose_ps(raw: &str) -> String {
+src/cmds/cloud/container.rs:500:pub fn format_compose_logs(raw: &str) -> String {
+src/cmds/cloud/container.rs:512:pub fn format_compose_build(raw: &str) -> String {
+src/cmds/cloud/container.rs:568:fn compact_ports(ports: &str) -> String {
+src/cmds/cloud/container.rs:591:pub fn run_docker_passthrough(args: &[OsString], verbose: u8) -> Result<()> {
+src/cmds/cloud/container.rs:615:pub fn run_compose_ps(verbose: u8) -> Result<()> {
+src/cmds/cloud/container.rs:660:pub fn run_compose_logs(service: Option<&str>, verbose: u8) -> Result<()> {
+src/cmds/cloud/container.rs:698:pub fn run_compose_build(service: Option<&str>, verbose: u8) -> Result<()> {
+src/cmds/cloud/container.rs:736:pub fn run_compose_passthrough(args: &[OsString], verbose: u8) -> Result<()> {
+src/cmds/cloud/container.rs:761:pub fn run_kubectl_passthrough(args: &[OsString], verbose: u8) -> Result<()> {
+src/cmds/cloud/container.rs:791:    fn test_format_compose_ps_basic() {
+src/cmds/cloud/container.rs:806:    fn test_format_compose_ps_empty() {
+src/cmds/cloud/container.rs:812:    fn test_format_compose_ps_whitespace_only() {
+src/cmds/cloud/container.rs:818:    fn test_format_compose_ps_exited_service() {
+src/cmds/cloud/container.rs:827:    fn test_format_compose_ps_no_ports() {
+src/cmds/cloud/container.rs:841:    fn test_format_compose_ps_long_image_path() {
+src/cmds/cloud/container.rs:857:    fn test_format_compose_logs_basic() {
+src/cmds/cloud/container.rs:868:    fn test_format_compose_logs_empty() {
+src/cmds/cloud/container.rs:876:    fn test_format_compose_build_basic() {
+src/cmds/cloud/container.rs:894:    fn test_format_compose_build_empty() {
+src/cmds/cloud/container.rs:905:    fn test_compact_ports_empty() {
+src/cmds/cloud/container.rs:910:    fn test_compact_ports_single() {
+src/cmds/cloud/container.rs:916:    fn test_compact_ports_many() {
+src/cmds/dotnet/dotnet_cmd.rs:21:pub fn run_build(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/dotnet/dotnet_cmd.rs:25:pub fn run_test(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/dotnet/dotnet_cmd.rs:29:pub fn run_restore(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/dotnet/dotnet_cmd.rs:33:pub fn run_format(args: &[String], verbose: u8) -> Result<()> {
+src/cmds/dotnet/dotnet_cmd.rs:79:pub fn run_passthrough(args: &[OsString], verbose: u8) -> Result<()> {
+src/cmds/dotnet/dotnet_cmd.rs:123:fn run_dotnet_with_binlog(subcommand: &str, args: &[String], verbose: u8) -> Result<()> {
+src/cmds/dotnet/dotnet_cmd.rs:271:fn build_binlog_path(subcommand: &str) -> PathBuf {
+src/cmds/dotnet/dotnet_cmd.rs:279:fn build_trx_results_dir() -> PathBuf {
+src/cmds/dotnet/dotnet_cmd.rs:283:fn unique_temp_suffix() -> String {
+src/cmds/dotnet/dotnet_cmd.rs:295:fn resolve_trx_results_dir(subcommand: &str, args: &[String]) -> (Option<PathBuf>, bool) {
+src/cmds/dotnet/dotnet_cmd.rs:307:fn build_format_report_path() -> PathBuf {
+src/cmds/dotnet/dotnet_cmd.rs:311:fn resolve_format_report_path(args: &[String]) -> (Option<PathBuf>, bool) {
+src/cmds/dotnet/dotnet_cmd.rs:319:fn build_effective_dotnet_format_args(args: &[String], report_path: Option<&Path>) -> Vec<String> {
+src/cmds/dotnet/dotnet_cmd.rs:341:fn format_report_summary_or_raw(
+src/cmds/dotnet/dotnet_cmd.rs:361:fn is_fresh_report(path: &Path, command_started_at: SystemTime) -> bool {
+src/cmds/dotnet/dotnet_cmd.rs:373:fn format_dotnet_format_output(
+src/cmds/dotnet/dotnet_cmd.rs:424:fn cleanup_temp_file(path: &Path) {
+src/cmds/dotnet/dotnet_cmd.rs:430:fn cleanup_temp_dir(path: &Path) {
+src/cmds/dotnet/dotnet_cmd.rs:436:fn merge_test_summary_from_trx(
+src/cmds/dotnet/dotnet_cmd.rs:484:fn build_effective_dotnet_args(
+src/cmds/dotnet/dotnet_cmd.rs:553:fn has_binlog_arg(args: &[String]) -> bool {
+src/cmds/dotnet/dotnet_cmd.rs:560:fn has_verbosity_arg(args: &[String]) -> bool {
+src/cmds/dotnet/dotnet_cmd.rs:594:fn scan_mtp_kind_in_file(path: &Path) -> MtpProjectKind {
+src/cmds/dotnet/dotnet_cmd.rs:638:fn parse_global_json_mtp_mode(path: &Path) -> bool {
+src/cmds/dotnet/dotnet_cmd.rs:653:fn is_global_json_mtp_mode() -> bool {
+src/cmds/dotnet/dotnet_cmd.rs:674:fn detect_test_runner_mode(args: &[String]) -> TestRunnerMode {
+src/cmds/dotnet/dotnet_cmd.rs:742:fn has_nologo_arg(args: &[String]) -> bool {
+src/cmds/dotnet/dotnet_cmd.rs:747:fn has_trx_logger_arg(args: &[String]) -> bool {
+src/cmds/dotnet/dotnet_cmd.rs:773:fn has_results_directory_arg(args: &[String]) -> bool {
+src/cmds/dotnet/dotnet_cmd.rs:780:fn has_report_arg(args: &[String]) -> bool {
+src/cmds/dotnet/dotnet_cmd.rs:787:fn has_report_trx_arg(args: &[String]) -> bool {
+src/cmds/dotnet/dotnet_cmd.rs:793:fn inject_report_trx_into_args(args: &[String]) -> Vec<String> {
+src/cmds/dotnet/dotnet_cmd.rs:806:fn extract_report_arg(args: &[String]) -> Option<PathBuf> {
+src/cmds/dotnet/dotnet_cmd.rs:830:fn has_verify_no_changes_arg(args: &[String]) -> bool {
+src/cmds/dotnet/dotnet_cmd.rs:837:fn has_write_mode_override(args: &[String]) -> bool {
+src/cmds/dotnet/dotnet_cmd.rs:841:fn extract_results_directory_arg(args: &[String]) -> Option<PathBuf> {
+src/cmds/dotnet/dotnet_cmd.rs:865:fn normalize_build_summary(
+src/cmds/dotnet/dotnet_cmd.rs:879:fn merge_build_summaries(
+src/cmds/dotnet/dotnet_cmd.rs:900:fn normalize_test_summary(
+src/cmds/dotnet/dotnet_cmd.rs:918:fn merge_test_summaries(
+src/cmds/dotnet/dotnet_cmd.rs:944:fn normalize_restore_summary(
+src/cmds/dotnet/dotnet_cmd.rs:955:fn merge_restore_summaries(
+src/cmds/dotnet/dotnet_cmd.rs:975:fn format_issue(issue: &binlog::BinlogIssue, kind: &str) -> String {
+src/cmds/dotnet/dotnet_cmd.rs:1000:fn format_build_output(summary: &binlog::BuildSummary, _binlog_path: &Path) -> String {
+src/cmds/dotnet/dotnet_cmd.rs:1043:fn format_test_output(
+src/cmds/dotnet/dotnet_cmd.rs:1123:fn format_restore_output(
+src/cmds/dotnet/dotnet_cmd.rs:1169:    fn build_dotnet_args_for_test(
+src/cmds/dotnet/dotnet_cmd.rs:1184:    fn trx_with_counts(total: usize, passed: usize, failed: usize) -> String {
+src/cmds/dotnet/dotnet_cmd.rs:1196:    fn format_fixture(name: &str) -> PathBuf {
+src/cmds/dotnet/dotnet_cmd.rs:1205:    fn test_has_binlog_arg_detects_variants() {
+src/cmds/dotnet/dotnet_cmd.rs:1217:    fn test_format_build_output_includes_errors_and_warnings() {
+src/cmds/dotnet/dotnet_cmd.rs:1245:    fn test_format_test_output_shows_failures() {
+src/cmds/dotnet/dotnet_cmd.rs:1265:    fn test_format_test_output_surfaces_warnings() {
+src/cmds/dotnet/dotnet_cmd.rs:1291:    fn test_format_test_output_surfaces_errors() {
+src/cmds/dotnet/dotnet_cmd.rs:1320:    fn test_format_restore_output_success() {
+src/cmds/dotnet/dotnet_cmd.rs:1335:    fn test_format_restore_output_failure() {
+src/cmds/dotnet/dotnet_cmd.rs:1349:    fn test_format_restore_output_includes_error_details() {
+src/cmds/dotnet/dotnet_cmd.rs:1373:    fn test_format_test_output_handles_binlog_only_without_counts() {
+src/cmds/dotnet/dotnet_cmd.rs:1389:    fn test_normalize_build_summary_sets_success_floor() {
+src/cmds/dotnet/dotnet_cmd.rs:1404:    fn test_merge_build_summaries_keeps_structured_issues_when_present() {
+src/cmds/dotnet/dotnet_cmd.rs:1451:    fn test_merge_build_summaries_keeps_binlog_when_context_is_good() {
+src/cmds/dotnet/dotnet_cmd.rs:1485:    fn test_normalize_test_summary_sets_failure_floor() {
+src/cmds/dotnet/dotnet_cmd.rs:1502:    fn test_merge_test_summaries_keeps_structured_counts_and_fills_failed_tests() {
+src/cmds/dotnet/dotnet_cmd.rs:1537:    fn test_normalize_restore_summary_sets_error_floor_on_failed_command() {
+src/cmds/dotnet/dotnet_cmd.rs:1550:    fn test_merge_restore_summaries_prefers_raw_error_count() {
+src/cmds/dotnet/dotnet_cmd.rs:1571:    fn test_forwarding_args_with_spaces() {
+src/cmds/dotnet/dotnet_cmd.rs:1587:    fn test_forwarding_config_and_framework() {
+src/cmds/dotnet/dotnet_cmd.rs:1603:    fn test_forwarding_project_file() {
+src/cmds/dotnet/dotnet_cmd.rs:1615:    fn test_forwarding_no_build_and_no_restore() {
+src/cmds/dotnet/dotnet_cmd.rs:1624:    fn test_user_verbose_override() {
+src/cmds/dotnet/dotnet_cmd.rs:1635:    fn test_user_long_verbosity_override() {
+src/cmds/dotnet/dotnet_cmd.rs:1645:    fn test_test_subcommand_does_not_inject_minimal_verbosity_by_default() {
+src/cmds/dotnet/dotnet_cmd.rs:1653:    fn test_user_logger_override() {
+src/cmds/dotnet/dotnet_cmd.rs:1667:    fn test_trx_logger_and_results_directory_injected() {
+src/cmds/dotnet/dotnet_cmd.rs:1678:    fn test_user_trx_logger_does_not_duplicate() {
+src/cmds/dotnet/dotnet_cmd.rs:1687:    fn test_user_results_directory_prevents_extra_injection() {
+src/cmds/dotnet/dotnet_cmd.rs:1703:    fn test_scan_mtp_kind_detects_use_microsoft_testing_platform_runner() {
+src/cmds/dotnet/dotnet_cmd.rs:1720:    fn test_scan_mtp_kind_detects_use_testing_platform_runner() {
+src/cmds/dotnet/dotnet_cmd.rs:1737:    fn test_is_mtp_project_file_returns_false_for_classic_vstest() {
+src/cmds/dotnet/dotnet_cmd.rs:1757:    fn test_scan_mtp_kind_returns_none_when_value_is_false() {
+src/cmds/dotnet/dotnet_cmd.rs:1774:    fn test_scan_mtp_kind_detects_vstest_bridge() {
+src/cmds/dotnet/dotnet_cmd.rs:1791:    fn test_both_mtp_properties_in_same_file_still_vstest_bridge() {
+src/cmds/dotnet/dotnet_cmd.rs:1810:    fn test_detect_mode_mtp_csproj_is_vstest_bridge_injects_report_trx() {
+src/cmds/dotnet/dotnet_cmd.rs:1839:    fn test_detect_mode_vstest_bridge_injects_report_trx() {
+src/cmds/dotnet/dotnet_cmd.rs:1869:    fn test_parse_global_json_mtp_mode_detects_mtp_native() {
+src/cmds/dotnet/dotnet_cmd.rs:1882:    fn test_vstest_bridge_injects_report_trx_after_separator() {
+src/cmds/dotnet/dotnet_cmd.rs:1915:    fn test_vstest_bridge_existing_separator_inserts_report_trx_after_it() {
+src/cmds/dotnet/dotnet_cmd.rs:1943:    fn test_vstest_bridge_respects_existing_report_trx() {
+src/cmds/dotnet/dotnet_cmd.rs:1969:    fn test_detect_mode_classic_csproj_injects_trx() {
+src/cmds/dotnet/dotnet_cmd.rs:1993:    fn test_detect_mode_directory_build_props_vstest_bridge() {
+src/cmds/dotnet/dotnet_cmd.rs:2010:    fn test_is_global_json_mtp_mode_detects_mtp_runner() {
+src/cmds/dotnet/dotnet_cmd.rs:2023:    fn test_is_global_json_mtp_mode_returns_false_for_vstest_runner() {
+src/cmds/dotnet/dotnet_cmd.rs:2033:    fn test_merge_test_summary_from_trx_uses_primary_and_cleans_file() {
+src/cmds/dotnet/dotnet_cmd.rs:2051:    fn test_merge_test_summary_from_trx_falls_back_to_testresults() {
+src/cmds/dotnet/dotnet_cmd.rs:2070:    fn test_merge_test_summary_from_trx_returns_default_when_no_trx() {
+src/cmds/dotnet/dotnet_cmd.rs:2084:    fn test_merge_test_summary_from_trx_ignores_stale_fallback_file() {
+src/cmds/dotnet/dotnet_cmd.rs:2104:    fn test_merge_test_summary_from_trx_keeps_larger_existing_counts() {
+src/cmds/dotnet/dotnet_cmd.rs:2127:    fn test_merge_test_summary_from_trx_overrides_smaller_existing_counts() {
+src/cmds/dotnet/dotnet_cmd.rs:2150:    fn test_merge_test_summary_from_trx_uses_larger_project_count() {
+src/cmds/dotnet/dotnet_cmd.rs:2173:    fn test_has_results_directory_arg_detects_variants() {
+src/cmds/dotnet/dotnet_cmd.rs:2185:    fn test_extract_results_directory_arg_detects_variants() {
+src/cmds/dotnet/dotnet_cmd.rs:2200:    fn test_resolve_trx_results_dir_user_directory_is_not_marked_for_cleanup() {
+src/cmds/dotnet/dotnet_cmd.rs:2212:    fn test_resolve_trx_results_dir_generated_directory_is_marked_for_cleanup() {
+src/cmds/dotnet/dotnet_cmd.rs:2221:    fn test_format_all_formatted() {
+src/cmds/dotnet/dotnet_cmd.rs:2231:    fn test_format_needs_formatting() {
+src/cmds/dotnet/dotnet_cmd.rs:2243:    fn test_format_temp_file_cleanup() {
+src/cmds/dotnet/dotnet_cmd.rs:2255:    fn test_format_user_report_arg_no_cleanup() {
+src/cmds/dotnet/dotnet_cmd.rs:2270:    fn test_format_preserves_positional_project_argument_order() {
+src/cmds/dotnet/dotnet_cmd.rs:2282:    fn test_format_report_summary_ignores_stale_report_file() {
+src/cmds/dotnet/dotnet_cmd.rs:2297:    fn test_format_report_summary_uses_fresh_report_file() {
+src/cmds/dotnet/dotnet_cmd.rs:2306:    fn test_cleanup_temp_file_removes_existing_file() {
+src/cmds/dotnet/dotnet_cmd.rs:2317:    fn test_cleanup_temp_file_ignores_missing_file() {
+src/cmds/git/gh_cmd.rs:27:fn filter_markdown_body(body: &str) -> String {
+src/cmds/git/gh_cmd.rs:100:fn filter_markdown_segment(text: &str) -> String {
+src/cmds/git/gh_cmd.rs:110:fn has_json_flag(args: &[String]) -> bool {
+src/cmds/git/gh_cmd.rs:117:fn extract_identifier_and_extra_args(args: &[String]) -> Option<(String, Vec<String>)> {
+src/cmds/git/gh_cmd.rs:164:pub fn run(subcommand: &str, args: &[String], verbose: u8, ultra_compact: bool) -> Result<()> {
+src/cmds/git/gh_cmd.rs:183:fn run_pr(args: &[String], verbose: u8, ultra_compact: bool) -> Result<()> {
+src/cmds/git/gh_cmd.rs:202:fn list_prs(args: &[String], _verbose: u8, ultra_compact: bool) -> Result<()> {
+src/cmds/git/gh_cmd.rs:286:fn should_passthrough_pr_view(extra_args: &[String]) -> bool {
+src/cmds/git/gh_cmd.rs:292:fn should_passthrough_issue_view(extra_args: &[String]) -> bool {
+src/cmds/git/gh_cmd.rs:298:fn view_pr(args: &[String], _verbose: u8, ultra_compact: bool) -> Result<()> {
+src/cmds/git/gh_cmd.rs:475:fn pr_checks(args: &[String], _verbose: u8, _ultra_compact: bool) -> Result<()> {
+src/cmds/git/gh_cmd.rs:563:fn pr_status(_verbose: u8, _ultra_compact: bool) -> Result<()> {
+src/cmds/git/gh_cmd.rs:607:fn run_issue(args: &[String], verbose: u8, ultra_compact: bool) -> Result<()> {
+src/cmds/git/gh_cmd.rs:619:fn list_issues(args: &[String], _verbose: u8, ultra_compact: bool) -> Result<()> {
+src/cmds/git/gh_cmd.rs:681:fn view_issue(args: &[String], _verbose: u8) -> Result<()> {
+src/cmds/git/gh_cmd.rs:781:fn run_workflow(args: &[String], verbose: u8, ultra_compact: bool) -> Result<()> {
+src/cmds/git/gh_cmd.rs:793:fn list_runs(args: &[String], _verbose: u8, ultra_compact: bool) -> Result<()> {
+src/cmds/git/gh_cmd.rs:879:fn should_passthrough_run_view(extra_args: &[String]) -> bool {
+src/cmds/git/gh_cmd.rs:885:fn view_run(args: &[String], _verbose: u8) -> Result<()> {
+src/cmds/git/gh_cmd.rs:960:fn run_repo(args: &[String], _verbose: u8, _ultra_compact: bool) -> Result<()> {
+src/cmds/git/gh_cmd.rs:1037:fn pr_create(args: &[String], _verbose: u8) -> Result<()> {
+src/cmds/git/gh_cmd.rs:1075:fn pr_merge(args: &[String], _verbose: u8) -> Result<()> {
+src/cmds/git/gh_cmd.rs:1123:fn has_non_diff_format_flag(args: &[String]) -> bool {
+src/cmds/git/gh_cmd.rs:1133:fn pr_diff(args: &[String], _verbose: u8) -> Result<()> {
+src/cmds/git/gh_cmd.rs:1181:fn pr_action(action: &str, args: &[String], _verbose: u8) -> Result<()> {
+src/cmds/git/gh_cmd.rs:1234:fn run_api(args: &[String], _verbose: u8) -> Result<()> {
+src/cmds/git/gh_cmd.rs:1242:fn run_passthrough_with_extra(cmd: &str, base_args: &[&str], extra_args: &[String]) -> Result<()> {
+src/cmds/git/gh_cmd.rs:1273:fn run_passthrough(cmd: &str, subcommand: &str, args: &[String]) -> Result<()> {
+src/cmds/git/gh_cmd.rs:1304:    fn test_truncate() {
+src/cmds/git/gh_cmd.rs:1313:    fn test_truncate_multibyte_utf8() {
+src/cmds/git/gh_cmd.rs:1323:    fn test_truncate_empty_and_short() {
+src/cmds/git/gh_cmd.rs:1330:    fn test_ok_confirmation_pr_create() {
+src/cmds/git/gh_cmd.rs:1337:    fn test_ok_confirmation_pr_merge() {
+src/cmds/git/gh_cmd.rs:1343:    fn test_ok_confirmation_pr_comment() {
+src/cmds/git/gh_cmd.rs:1349:    fn test_ok_confirmation_pr_edit() {
+src/cmds/git/gh_cmd.rs:1355:    fn test_has_json_flag_present() {
+src/cmds/git/gh_cmd.rs:1364:    fn test_has_json_flag_absent() {
+src/cmds/git/gh_cmd.rs:1369:    fn test_extract_identifier_simple() {
+src/cmds/git/gh_cmd.rs:1377:    fn test_extract_identifier_with_repo_flag_after() {
+src/cmds/git/gh_cmd.rs:1386:    fn test_extract_identifier_with_repo_flag_before() {
+src/cmds/git/gh_cmd.rs:1395:    fn test_extract_identifier_with_long_repo_flag() {
+src/cmds/git/gh_cmd.rs:1403:    fn test_extract_identifier_empty() {
+src/cmds/git/gh_cmd.rs:1409:    fn test_extract_identifier_only_flags() {
+src/cmds/git/gh_cmd.rs:1416:    fn test_extract_identifier_with_web_flag() {
+src/cmds/git/gh_cmd.rs:1424:    fn test_run_view_passthrough_log_failed() {
+src/cmds/git/gh_cmd.rs:1429:    fn test_run_view_passthrough_log() {
+src/cmds/git/gh_cmd.rs:1434:    fn test_run_view_passthrough_json() {
+src/cmds/git/gh_cmd.rs:1442:    fn test_run_view_no_passthrough_empty() {
+src/cmds/git/gh_cmd.rs:1447:    fn test_run_view_no_passthrough_other_flags() {
+src/cmds/git/gh_cmd.rs:1452:    fn test_extract_identifier_with_job_flag_after() {
+src/cmds/git/gh_cmd.rs:1461:    fn test_extract_identifier_with_job_flag_before() {
+src/cmds/git/gh_cmd.rs:1470:    fn test_extract_identifier_with_job_and_log_failed() {
+src/cmds/git/gh_cmd.rs:1484:    fn test_extract_identifier_with_attempt_flag() {
+src/cmds/git/gh_cmd.rs:1495:    fn test_should_passthrough_pr_view_json() {
+src/cmds/git/gh_cmd.rs:1503:    fn test_should_passthrough_pr_view_jq() {
+src/cmds/git/gh_cmd.rs:1508:    fn test_should_passthrough_pr_view_web() {
+src/cmds/git/gh_cmd.rs:1513:    fn test_should_passthrough_pr_view_default() {
+src/cmds/git/gh_cmd.rs:1518:    fn test_should_passthrough_pr_view_comments() {
+src/cmds/git/gh_cmd.rs:1525:    fn test_should_passthrough_issue_view_comments() {
+src/cmds/git/gh_cmd.rs:1530:    fn test_should_passthrough_issue_view_json() {
+src/cmds/git/gh_cmd.rs:1538:    fn test_should_passthrough_issue_view_jq() {
+src/cmds/git/gh_cmd.rs:1546:    fn test_should_passthrough_issue_view_web() {
+src/cmds/git/gh_cmd.rs:1551:    fn test_should_passthrough_issue_view_default() {
+src/cmds/git/gh_cmd.rs:1558:    fn test_non_diff_format_flag_name_only() {
+src/cmds/git/gh_cmd.rs:1563:    fn test_non_diff_format_flag_stat() {
+src/cmds/git/gh_cmd.rs:1568:    fn test_non_diff_format_flag_name_status() {
+src/cmds/git/gh_cmd.rs:1573:    fn test_non_diff_format_flag_numstat() {
+src/cmds/git/gh_cmd.rs:1578:    fn test_non_diff_format_flag_shortstat() {
+src/cmds/git/gh_cmd.rs:1583:    fn test_non_diff_format_flag_absent() {
+src/cmds/git/gh_cmd.rs:1588:    fn test_non_diff_format_flag_regular_args() {
+src/cmds/git/gh_cmd.rs:1598:    fn test_filter_markdown_body_html_comment_single_line() {
+src/cmds/git/gh_cmd.rs:1607:    fn test_filter_markdown_body_html_comment_multiline() {
+src/cmds/git/gh_cmd.rs:1617:    fn test_filter_markdown_body_badge_lines() {
+src/cmds/git/gh_cmd.rs:1626:    fn test_filter_markdown_body_image_only_lines() {
+src/cmds/git/gh_cmd.rs:1635:    fn test_filter_markdown_body_horizontal_rules() {
+src/cmds/git/gh_cmd.rs:1647:    fn test_filter_markdown_body_blank_lines_collapse() {
+src/cmds/git/gh_cmd.rs:1657:    fn test_filter_markdown_body_code_block_preserved() {
+src/cmds/git/gh_cmd.rs:1669:    fn test_filter_markdown_body_empty() {
+src/cmds/git/gh_cmd.rs:1674:    fn test_filter_markdown_body_meaningful_content_preserved() {
+src/cmds/git/gh_cmd.rs:1685:    fn test_filter_markdown_body_token_savings() {
+src/cmds/git/gh_cmd.rs:1723:        fn count_tokens(text: &str) -> usize {
+src/cmds/dotnet/binlog.rs:171:pub fn parse_build(binlog_path: &Path) -> Result<BuildSummary> {
+src/cmds/dotnet/binlog.rs:197:fn select_best_issues(primary: Vec<BinlogIssue>, fallback: Vec<BinlogIssue>) -> Vec<BinlogIssue> {
+src/cmds/dotnet/binlog.rs:214:fn issues_quality_score(issues: &[BinlogIssue]) -> usize {
+src/cmds/dotnet/binlog.rs:218:fn issue_quality_score(issue: &BinlogIssue) -> usize {
+src/cmds/dotnet/binlog.rs:238:fn is_contextual_issue(issue: &BinlogIssue) -> bool {
+src/cmds/dotnet/binlog.rs:242:fn is_suspicious_issue(issue: &BinlogIssue) -> bool {
+src/cmds/dotnet/binlog.rs:246:pub fn parse_test(binlog_path: &Path) -> Result<TestSummary> {
+src/cmds/dotnet/binlog.rs:258:pub fn parse_restore(binlog_path: &Path) -> Result<RestoreSummary> {
+src/cmds/dotnet/binlog.rs:288:fn parse_events_from_binlog(path: &Path) -> Result<ParsedBinlog> {
+src/cmds/dotnet/binlog.rs:369:fn parse_event_record(
+src/cmds/dotnet/binlog.rs:449:fn read_event_fields(
+src/cmds/dotnet/binlog.rs:491:fn skip_build_event_context(reader: &mut BinReader<'_>, file_format_version: i32) -> Result<()> {
+src/cmds/dotnet/binlog.rs:499:fn skip_string_dictionary(reader: &mut BinReader<'_>, file_format_version: i32) -> Result<()> {
+src/cmds/dotnet/binlog.rs:508:fn read_optional_string(
+src/cmds/dotnet/binlog.rs:515:fn read_deduplicated_string(
+src/cmds/dotnet/binlog.rs:538:fn format_ticks_duration(ticks: i64) -> String {
+src/cmds/dotnet/binlog.rs:555:    fn new(bytes: &'a [u8]) -> Self {
+src/cmds/dotnet/binlog.rs:561:    fn is_eof(&self) -> bool {
+src/cmds/dotnet/binlog.rs:565:    fn read_exact(&mut self, len: usize) -> Result<&'a [u8]> {
+src/cmds/dotnet/binlog.rs:575:    fn skip(&mut self, len: usize) -> Result<()> {
+src/cmds/dotnet/binlog.rs:580:    fn read_u8(&mut self) -> Result<u8> {
+src/cmds/dotnet/binlog.rs:584:    fn read_bool(&mut self) -> Result<bool> {
+src/cmds/dotnet/binlog.rs:588:    fn read_i32_le(&mut self) -> Result<i32> {
+src/cmds/dotnet/binlog.rs:593:    fn read_i64_le(&mut self) -> Result<i64> {
+src/cmds/dotnet/binlog.rs:600:    fn read_7bit_i32(&mut self) -> Result<i32> {
+src/cmds/dotnet/binlog.rs:617:    fn read_dotnet_string(&mut self) -> Result<String> {
+src/cmds/dotnet/binlog.rs:627:pub fn scrub_sensitive_env_vars(input: &str) -> String {
+src/cmds/dotnet/binlog.rs:633:pub fn parse_build_from_text(text: &str) -> BuildSummary {
+src/cmds/dotnet/binlog.rs:841:pub fn parse_test_from_text(text: &str) -> TestSummary {
+src/cmds/dotnet/binlog.rs:962:pub fn parse_restore_from_text(text: &str) -> RestoreSummary {
+src/cmds/dotnet/binlog.rs:976:pub fn parse_restore_issues_from_text(text: &str) -> (Vec<BinlogIssue>, Vec<BinlogIssue>) {
+src/cmds/dotnet/binlog.rs:1032:fn count_projects(text: &str) -> usize {
+src/cmds/dotnet/binlog.rs:1036:fn extract_duration(text: &str) -> Option<String> {
+src/cmds/dotnet/binlog.rs:1043:fn extract_printable_runs(text: &str) -> Vec<String> {
+src/cmds/dotnet/binlog.rs:1059:fn extract_binary_like_issues(text: &str) -> Vec<BinlogIssue> {
+src/cmds/dotnet/binlog.rs:1119:fn is_likely_diagnostic_code(code: &str) -> bool {
+src/cmds/dotnet/binlog.rs:1136:    fn write_7bit_i32(buf: &mut Vec<u8>, value: i32) {
+src/cmds/dotnet/binlog.rs:1145:    fn write_dotnet_string(buf: &mut Vec<u8>, value: &str) {
+src/cmds/dotnet/binlog.rs:1150:    fn write_event_record(target: &mut Vec<u8>, kind: i32, payload: &[u8]) {
+src/cmds/dotnet/binlog.rs:1156:    fn build_minimal_binlog(records: &[u8]) -> Vec<u8> {
+src/cmds/dotnet/binlog.rs:1168:    fn test_scrub_sensitive_env_vars_masks_values() {
+src/cmds/dotnet/binlog.rs:1180:    fn test_scrub_sensitive_env_vars_masks_token_and_connection_values() {
+src/cmds/dotnet/binlog.rs:1193:    fn test_parse_build_from_text_extracts_issues() {
+src/cmds/dotnet/binlog.rs:1213:    fn test_parse_build_from_text_extracts_warning_without_code() {
+src/cmds/dotnet/binlog.rs:1229:    fn test_parse_build_from_text_extracts_inline_warning_counts() {
+src/cmds/dotnet/binlog.rs:1240:    fn test_parse_build_from_text_extracts_msbuild_global_error() {
+src/cmds/dotnet/binlog.rs:1256:    fn test_parse_test_from_text_extracts_failure_summary() {
+src/cmds/dotnet/binlog.rs:1279:    fn test_parse_test_from_text_keeps_multiline_failure_details() {
+src/cmds/dotnet/binlog.rs:1302:    fn test_parse_test_from_text_ignores_non_test_failed_prefix_lines() {
+src/cmds/dotnet/binlog.rs:1314:    fn test_parse_test_from_text_aggregates_multiple_project_summaries() {
+src/cmds/dotnet/binlog.rs:1330:    fn test_parse_test_from_text_prefers_test_summary_duration_and_counts() {
+src/cmds/dotnet/binlog.rs:1346:    fn test_parse_restore_from_text_extracts_project_count() {
+src/cmds/dotnet/binlog.rs:1358:    fn test_parse_restore_from_text_extracts_nuget_error_diagnostic() {
+src/cmds/dotnet/binlog.rs:1371:    fn test_parse_restore_issues_ignores_summary_warning_error_counts() {
+src/cmds/dotnet/binlog.rs:1385:    fn test_parse_build_fails_when_binlog_is_unparseable() {
+src/cmds/dotnet/binlog.rs:1400:    fn test_parse_build_fails_when_binlog_missing() {
+src/cmds/dotnet/binlog.rs:1413:    fn test_parse_build_reads_structured_events() {
+src/cmds/dotnet/binlog.rs:1485:    fn test_parse_test_reads_message_events() {
+src/cmds/dotnet/binlog.rs:1513:    fn test_parse_test_fails_when_binlog_missing() {
+src/cmds/dotnet/binlog.rs:1526:    fn test_parse_restore_fails_when_binlog_missing() {
+src/cmds/dotnet/binlog.rs:1539:    fn test_parse_build_from_fixture_text() {
+src/cmds/dotnet/binlog.rs:1549:    fn test_parse_build_sets_project_count_floor() {
+src/cmds/dotnet/binlog.rs:1566:    fn test_parse_build_does_not_infer_binary_errors_on_successful_build() {
+src/cmds/dotnet/binlog.rs:1575:    fn test_parse_test_from_fixture_text() {
+src/cmds/dotnet/binlog.rs:1589:    fn test_extract_binary_like_issues_recovers_code_message_and_path() {
+src/cmds/dotnet/binlog.rs:1601:    fn test_is_likely_diagnostic_code_filters_framework_monikers() {
+src/cmds/dotnet/binlog.rs:1609:    fn test_select_best_issues_prefers_fallback_when_primary_loses_context() {
+src/cmds/dotnet/binlog.rs:1631:    fn test_select_best_issues_keeps_primary_when_context_is_good() {
+src/analytics/session_cmd.rs:20:    fn adoption_pct(&self) -> f64 {
+src/analytics/session_cmd.rs:35:fn count_rtk_commands(cmds: &[ExtractedCommand]) -> (usize, usize, usize) {
+src/analytics/session_cmd.rs:53:fn progress_bar(pct: f64, width: usize) -> String {
+src/analytics/session_cmd.rs:59:pub fn run(_verbose: u8) -> Result<()> {
+src/analytics/session_cmd.rs:198:    fn make_cmd(command: &str, output_len: Option<usize>) -> ExtractedCommand {
+src/analytics/session_cmd.rs:212:    fn test_progress_bar_boundaries() {
+src/analytics/session_cmd.rs:221:    fn test_count_all_rtk() {
+src/analytics/session_cmd.rs:234:    fn test_count_hook_rewritten_commands() {
+src/analytics/session_cmd.rs:250:    fn test_count_mixed_explicit_and_hook() {
+src/analytics/session_cmd.rs:264:    fn test_count_unsupported_commands_not_counted() {
+src/analytics/session_cmd.rs:276:    fn test_count_empty_commands() {
+src/analytics/session_cmd.rs:287:    fn test_count_chained_commands_split() {
+src/analytics/session_cmd.rs:297:    fn test_count_chained_all_supported() {
+src/analytics/session_cmd.rs:306:    fn test_count_chained_with_semicolon() {
+src/analytics/session_cmd.rs:314:    fn test_count_chained_no_false_inflation() {
+src/analytics/session_cmd.rs:325:    fn test_adoption_pct_zero_division() {
+src/analytics/session_cmd.rs:337:    fn test_adoption_pct_75_percent() {
+src/analytics/session_cmd.rs:351:    fn test_parse_jsonl_session_and_count() {
+src/analytics/session_cmd.rs:377:    fn test_parse_jsonl_ignores_non_bash_tools() {
+src/analytics/session_cmd.rs:400:    fn test_parse_empty_session() {
+src/analytics/session_cmd.rs:419:    fn test_parse_jsonl_chained_command() {
+src/analytics/ccusage.rs:87:fn binary_exists() -> bool {
+src/analytics/ccusage.rs:92:fn build_command() -> Option<Command> {
+src/analytics/ccusage.rs:116:pub fn is_available() -> bool {
+src/analytics/ccusage.rs:125:pub fn fetch(granularity: Granularity) -> Result<Option<Vec<CcusagePeriod>>> {
+src/analytics/ccusage.rs:174:fn parse_json(json: &str, granularity: Granularity) -> Result<Vec<CcusagePeriod>> {
+src/analytics/ccusage.rs:220:    fn test_parse_monthly_valid() {
+src/analytics/ccusage.rs:245:    fn test_parse_daily_valid() {
+src/analytics/ccusage.rs:268:    fn test_parse_weekly_valid() {
+src/analytics/ccusage.rs:291:    fn test_parse_malformed_json() {
+src/analytics/ccusage.rs:298:    fn test_parse_missing_required_fields() {
+src/analytics/ccusage.rs:312:    fn test_parse_default_cache_fields() {
+src/analytics/ccusage.rs:333:    fn test_is_available() {
+src/analytics/cc_economics.rs:55:    fn new(label: &str) -> Self {
+src/analytics/cc_economics.rs:77:    fn set_ccusage(&mut self, metrics: &ccusage::CcusageMetrics) {
+src/analytics/cc_economics.rs:92:    fn set_rtk_from_day(&mut self, stats: &DayStats) {
+src/analytics/cc_economics.rs:98:    fn set_rtk_from_week(&mut self, stats: &WeekStats) {
+src/analytics/cc_economics.rs:104:    fn set_rtk_from_month(&mut self, stats: &MonthStats) {
+src/analytics/cc_economics.rs:116:    fn compute_weighted_metrics(&mut self) {
+src/analytics/cc_economics.rs:142:    fn compute_dual_metrics(&mut self) {
+src/analytics/cc_economics.rs:185:pub fn run(
+src/analytics/cc_economics.rs:204:fn merge_daily(cc: Option<Vec<CcusagePeriod>>, rtk: Vec<DayStats>) -> Vec<PeriodEconomics> {
+src/analytics/cc_economics.rs:234:fn merge_weekly(cc: Option<Vec<CcusagePeriod>>, rtk: Vec<WeekStats>) -> Vec<PeriodEconomics> {
+src/analytics/cc_economics.rs:272:fn merge_monthly(cc: Option<Vec<CcusagePeriod>>, rtk: Vec<MonthStats>) -> Vec<PeriodEconomics> {
+src/analytics/cc_economics.rs:305:fn convert_saturday_to_monday(saturday: &str) -> Option<String> {
+src/analytics/cc_economics.rs:315:fn compute_totals(periods: &[PeriodEconomics]) -> Totals {
+src/analytics/cc_economics.rs:403:fn display_text(
+src/analytics/cc_economics.rs:430:fn display_summary(tracker: &Tracker, verbose: u8) -> Result<()> {
+src/analytics/cc_economics.rs:545:fn display_daily(tracker: &Tracker, verbose: u8) -> Result<()> {
+src/analytics/cc_economics.rs:559:fn display_weekly(tracker: &Tracker, verbose: u8) -> Result<()> {
+src/analytics/cc_economics.rs:573:fn display_monthly(tracker: &Tracker, verbose: u8) -> Result<()> {
+src/analytics/cc_economics.rs:587:fn print_period_table(periods: &[PeriodEconomics], verbose: u8) {
+src/analytics/cc_economics.rs:666:fn export_json(
+src/analytics/cc_economics.rs:725:fn export_csv(
+src/analytics/cc_economics.rs:774:fn print_csv_row(p: &PeriodEconomics) {
+src/analytics/cc_economics.rs:835:    fn test_convert_saturday_to_monday() {
+src/analytics/cc_economics.rs:847:    fn test_period_economics_new() {
+src/analytics/cc_economics.rs:855:    fn test_compute_dual_metrics_with_data() {
+src/analytics/cc_economics.rs:878:    fn test_compute_dual_metrics_zero_tokens() {
+src/analytics/cc_economics.rs:897:    fn test_compute_dual_metrics_no_ccusage_data() {
+src/analytics/cc_economics.rs:911:    fn test_merge_monthly_both_present() {
+src/analytics/cc_economics.rs:943:    fn test_merge_monthly_only_ccusage() {
+src/analytics/cc_economics.rs:963:    fn test_merge_monthly_only_rtk() {
+src/analytics/cc_economics.rs:982:    fn test_merge_monthly_sorted() {
+src/analytics/cc_economics.rs:1013:    fn test_compute_weighted_input_cpt() {
+src/analytics/cc_economics.rs:1038:    fn test_compute_weighted_metrics_zero_tokens() {
+src/analytics/cc_economics.rs:1054:    fn test_compute_weighted_metrics_no_cache() {
+src/analytics/cc_economics.rs:1079:    fn test_set_ccusage_stores_per_type_tokens() {
+src/analytics/cc_economics.rs:1101:    fn test_compute_totals() {
+src/analytics/gain.rs:15:pub fn run(
+src/analytics/gain.rs:309:fn styled(text: &str, strong: bool) -> String {
+src/analytics/gain.rs:321:fn print_kpi(label: &str, value: String) {
+src/analytics/gain.rs:326:fn colorize_pct_cell(pct: f64, padded: &str) -> String {
+src/analytics/gain.rs:340:fn truncate_for_column(text: &str, width: usize) -> String {
+src/analytics/gain.rs:357:fn style_command_cell(cmd: &str) -> String {
+src/analytics/gain.rs:365:fn mini_bar(value: usize, max: usize, width: usize) -> String {
+src/analytics/gain.rs:381:fn print_efficiency_meter(pct: f64) {
+src/analytics/gain.rs:401:fn resolve_project_scope(project: bool) -> Result<Option<String>> {
+src/analytics/gain.rs:411:fn shorten_path(path: &str) -> String {
+src/analytics/gain.rs:433:fn print_ascii_graph(data: &[(String, usize)]) {
+src/analytics/gain.rs:463:fn print_daily_full(tracker: &Tracker, project_scope: Option<&str>) -> Result<()> {
+src/analytics/gain.rs:470:fn print_weekly(tracker: &Tracker, project_scope: Option<&str>) -> Result<()> {
+src/analytics/gain.rs:477:fn print_monthly(tracker: &Tracker, project_scope: Option<&str>) -> Result<()> {
+src/analytics/gain.rs:506:fn export_json(
+src/analytics/gain.rs:551:fn export_csv(
+src/analytics/gain.rs:627:fn check_rtk_disabled_bypass() -> Option<String> {
+src/analytics/gain.rs:673:fn show_failures(tracker: &Tracker) -> Result<()> {
