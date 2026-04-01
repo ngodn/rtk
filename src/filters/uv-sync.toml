@@ -1,6 +1,6 @@
 [filters.uv-sync]
 description = "Compact uv sync/pip install output — strip downloads, short-circuit when up-to-date"
-match_command = "^uv\\s+(sync|pip\\s+install)\\b"
+match_command = "^uv\\s+(sync|pip\\s+install|lock|add|remove)\\b"
 strip_ansi = true
 strip_lines_matching = [
   "^\\s*$",
@@ -11,7 +11,8 @@ strip_lines_matching = [
 match_output = [
   { pattern = "Audited \\d+ package", message = "ok (up to date)" },
 ]
-max_lines = 20
+max_lines = 30
+on_empty = "uv: completed successfully"
 
 [[tests.uv-sync]]
 name = "audited packages short-circuits to ok"
