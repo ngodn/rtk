@@ -35,6 +35,37 @@
 
 rtk filters and compresses command outputs before they reach your LLM context. Single Rust binary, 100+ supported commands, <10ms overhead.
 
+## Fork Improvements
+
+This fork adds improvements based on analysis of 356 real commands tracked across 12 projects. Changes are on the `feat/improvements-from-usage-analysis` branch.
+
+**Fixes:**
+- `grep -r`, `grep -E`, `grep -rn`, `grep -ri` no longer fail with clap parse errors (15 failures per session eliminated)
+- Combined short flags like `-ri` and `-rn` properly handled (previously could trigger rg's `--replace` mode)
+
+**Improved savings:**
+- grep: 8.5% average to 94%+ (file grouping, path compaction, deduplication, per-file limits)
+- read: 58% average to 99%+ for data files (format-specific truncation for JSON, CSV, YAML, log files)
+- curl: 51-80% to 85%+ for JSON API responses (array truncation, object key summarization)
+
+**New filters:**
+- `uv` (Python package manager)
+- `pacman` and `makepkg` (Arch Linux package management and kernel builds)
+- `sqlite3` (database queries)
+- `python3 -c` (inline script output)
+
+**Real-world results from a single test session:**
+
+| Command | Input Tokens | Output Tokens | Savings |
+|---------|-------------|---------------|---------|
+| `rtk read` (3154-line CSV) | 185,220 | 475 | 99.7% |
+| `rtk grep -ri "cloud"` | 7,065 | 379 | 94.6% |
+| `rtk grep -rn "SELECT"` | 164 | 27 | 83.5% |
+
+Global stats after improvements: 957K tokens saved across 745 commands at 85.3% average efficiency.
+
+Detailed plans in `improvements/` directory.
+
 ## Token Savings (30-min Claude Code Session)
 
 | Operation | Frequency | Standard | rtk | Savings |
