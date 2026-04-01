@@ -1,0 +1,501 @@
+id,name,email,department,salary,hire_date,location,manager_id,performance_score,is_active
+1,Employee 0001,employee1@company.com,Marketing,151559,2001-02-02,San Francisco,1,3.53,true
+2,Employee 0002,employee2@company.com,Sales,189566,2002-03-03,Austin,1,3.43,true
+3,Employee 0003,employee3@company.com,HR,176171,2003-04-04,Chicago,1,4.43,false
+4,Employee 0004,employee4@company.com,Finance,62817,2004-05-05,Seattle,1,1.97,true
+5,Employee 0005,employee5@company.com,Operations,66466,2005-06-06,Boston,1,3.03,true
+6,Employee 0006,employee6@company.com,Engineering,167445,2006-07-07,New York,1,1.98,false
+7,Employee 0007,employee7@company.com,Marketing,70494,2007-08-08,San Francisco,1,2.66,true
+8,Employee 0008,employee8@company.com,Sales,195811,2008-09-09,Austin,1,4.47,true
+9,Employee 0009,employee9@company.com,HR,142925,2009-10-10,Chicago,1,1.13,false
+10,Employee 0010,employee10@company.com,Finance,82740,2010-11-11,Seattle,2,3.48,true
+11,Employee 0011,employee11@company.com,Operations,67330,2011-12-12,Boston,2,1.41,true
+12,Employee 0012,employee12@company.com,Engineering,91758,2012-01-13,New York,2,2.55,false
+13,Employee 0013,employee13@company.com,Marketing,136439,2013-02-14,San Francisco,2,3.1,true
+14,Employee 0014,employee14@company.com,Sales,71198,2014-03-15,Austin,2,1.86,true
+15,Employee 0015,employee15@company.com,HR,193694,2015-04-16,Chicago,2,2.14,false
+16,Employee 0016,employee16@company.com,Finance,134996,2016-05-17,Seattle,2,2.97,true
+17,Employee 0017,employee17@company.com,Operations,193584,2017-06-18,Boston,2,2.06,true
+18,Employee 0018,employee18@company.com,Engineering,121448,2018-07-19,New York,2,2.21,false
+19,Employee 0019,employee19@company.com,Marketing,101119,2019-08-20,San Francisco,2,2.97,true
+20,Employee 0020,employee20@company.com,Sales,143244,2020-09-21,Austin,3,3.91,true
+21,Employee 0021,employee21@company.com,HR,56180,2021-10-22,Chicago,3,4.32,false
+22,Employee 0022,employee22@company.com,Finance,59903,2022-11-23,Seattle,3,4.54,true
+23,Employee 0023,employee23@company.com,Operations,67068,2023-12-24,Boston,3,2.82,true
+24,Employee 0024,employee24@company.com,Engineering,128472,2000-01-25,New York,3,1.54,false
+25,Employee 0025,employee25@company.com,Marketing,59947,2001-02-26,San Francisco,3,1.99,true
+26,Employee 0026,employee26@company.com,Sales,176115,2002-03-27,Austin,3,2.16,true
+27,Employee 0027,employee27@company.com,HR,198153,2003-04-28,Chicago,3,3.35,false
+28,Employee 0028,employee28@company.com,Finance,99697,2004-05-01,Seattle,3,3.7,true
+29,Employee 0029,employee29@company.com,Operations,153549,2005-06-02,Boston,3,1.98,true
+30,Employee 0030,employee30@company.com,Engineering,198237,2006-07-03,New York,4,3.99,false
+31,Employee 0031,employee31@company.com,Marketing,86564,2007-08-04,San Francisco,4,4.68,true
+32,Employee 0032,employee32@company.com,Sales,124179,2008-09-05,Austin,4,3.49,true
+33,Employee 0033,employee33@company.com,HR,85553,2009-10-06,Chicago,4,2.07,false
+34,Employee 0034,employee34@company.com,Finance,189171,2010-11-07,Seattle,4,1.07,true
+35,Employee 0035,employee35@company.com,Operations,75775,2011-12-08,Boston,4,3.88,true
+36,Employee 0036,employee36@company.com,Engineering,195856,2012-01-09,New York,4,1.03,false
+37,Employee 0037,employee37@company.com,Marketing,85112,2013-02-10,San Francisco,4,2.15,true
+38,Employee 0038,employee38@company.com,Sales,128427,2014-03-11,Austin,4,3.67,true
+39,Employee 0039,employee39@company.com,HR,127060,2015-04-12,Chicago,4,4.32,false
+40,Employee 0040,employee40@company.com,Finance,142970,2016-05-13,Seattle,5,1.16,true
+41,Employee 0041,employee41@company.com,Operations,106334,2017-06-14,Boston,5,4.83,true
+42,Employee 0042,employee42@company.com,Engineering,114472,2018-07-15,New York,5,2.75,false
+43,Employee 0043,employee43@company.com,Marketing,104714,2019-08-16,San Francisco,5,3.94,true
+44,Employee 0044,employee44@company.com,Sales,60539,2020-09-17,Austin,5,1.68,true
+45,Employee 0045,employee45@company.com,HR,150249,2021-10-18,Chicago,5,4.21,false
+46,Employee 0046,employee46@company.com,Finance,78011,2022-11-19,Seattle,5,3.09,true
+47,Employee 0047,employee47@company.com,Operations,185827,2023-12-20,Boston,5,3.96,true
+48,Employee 0048,employee48@company.com,Engineering,102629,2000-01-21,New York,5,1.44,false
+49,Employee 0049,employee49@company.com,Marketing,91007,2001-02-22,San Francisco,5,2.04,true
+50,Employee 0050,employee50@company.com,Sales,77545,2002-03-23,Austin,6,1.89,true
+51,Employee 0051,employee51@company.com,HR,194903,2003-04-24,Chicago,6,3.6,false
+52,Employee 0052,employee52@company.com,Finance,162373,2004-05-25,Seattle,6,2.62,true
+53,Employee 0053,employee53@company.com,Operations,153052,2005-06-26,Boston,6,4.59,true
+54,Employee 0054,employee54@company.com,Engineering,180536,2006-07-27,New York,6,1.84,false
+55,Employee 0055,employee55@company.com,Marketing,186434,2007-08-28,San Francisco,6,4.16,true
+56,Employee 0056,employee56@company.com,Sales,144427,2008-09-01,Austin,6,1.96,true
+57,Employee 0057,employee57@company.com,HR,85394,2009-10-02,Chicago,6,3.77,false
+58,Employee 0058,employee58@company.com,Finance,138200,2010-11-03,Seattle,6,3.79,true
+59,Employee 0059,employee59@company.com,Operations,84058,2011-12-04,Boston,6,2.62,true
+60,Employee 0060,employee60@company.com,Engineering,157920,2012-01-05,New York,7,1.3,false
+61,Employee 0061,employee61@company.com,Marketing,76974,2013-02-06,San Francisco,7,1.42,true
+62,Employee 0062,employee62@company.com,Sales,144883,2014-03-07,Austin,7,1.99,true
+63,Employee 0063,employee63@company.com,HR,102496,2015-04-08,Chicago,7,1.53,false
+64,Employee 0064,employee64@company.com,Finance,131677,2016-05-09,Seattle,7,1.64,true
+65,Employee 0065,employee65@company.com,Operations,152400,2017-06-10,Boston,7,3.7,true
+66,Employee 0066,employee66@company.com,Engineering,131255,2018-07-11,New York,7,3.9,false
+67,Employee 0067,employee67@company.com,Marketing,190599,2019-08-12,San Francisco,7,1.37,true
+68,Employee 0068,employee68@company.com,Sales,77975,2020-09-13,Austin,7,3.99,true
+69,Employee 0069,employee69@company.com,HR,190846,2021-10-14,Chicago,7,2.81,false
+70,Employee 0070,employee70@company.com,Finance,136944,2022-11-15,Seattle,8,1.99,true
+71,Employee 0071,employee71@company.com,Operations,100408,2023-12-16,Boston,8,2.41,true
+72,Employee 0072,employee72@company.com,Engineering,165335,2000-01-17,New York,8,2.78,false
+73,Employee 0073,employee73@company.com,Marketing,142677,2001-02-18,San Francisco,8,3.9,true
+74,Employee 0074,employee74@company.com,Sales,137301,2002-03-19,Austin,8,2.99,true
+75,Employee 0075,employee75@company.com,HR,147759,2003-04-20,Chicago,8,2.03,false
+76,Employee 0076,employee76@company.com,Finance,197187,2004-05-21,Seattle,8,2.09,true
+77,Employee 0077,employee77@company.com,Operations,167324,2005-06-22,Boston,8,3.46,true
+78,Employee 0078,employee78@company.com,Engineering,135542,2006-07-23,New York,8,4.21,false
+79,Employee 0079,employee79@company.com,Marketing,159225,2007-08-24,San Francisco,8,2.42,true
+80,Employee 0080,employee80@company.com,Sales,84790,2008-09-25,Austin,9,4.36,true
+81,Employee 0081,employee81@company.com,HR,172874,2009-10-26,Chicago,9,2.71,false
+82,Employee 0082,employee82@company.com,Finance,136071,2010-11-27,Seattle,9,3.32,true
+83,Employee 0083,employee83@company.com,Operations,126332,2011-12-28,Boston,9,3.2,true
+84,Employee 0084,employee84@company.com,Engineering,139812,2012-01-01,New York,9,1.09,false
+85,Employee 0085,employee85@company.com,Marketing,119826,2013-02-02,San Francisco,9,1.91,true
+86,Employee 0086,employee86@company.com,Sales,174000,2014-03-03,Austin,9,4.57,true
+87,Employee 0087,employee87@company.com,HR,119140,2015-04-04,Chicago,9,1.65,false
+88,Employee 0088,employee88@company.com,Finance,100200,2016-05-05,Seattle,9,1.08,true
+89,Employee 0089,employee89@company.com,Operations,102854,2017-06-06,Boston,9,4.43,true
+90,Employee 0090,employee90@company.com,Engineering,178161,2018-07-07,New York,10,2.34,false
+91,Employee 0091,employee91@company.com,Marketing,136628,2019-08-08,San Francisco,10,4.23,true
+92,Employee 0092,employee92@company.com,Sales,190028,2020-09-09,Austin,10,3.33,true
+93,Employee 0093,employee93@company.com,HR,185959,2021-10-10,Chicago,10,2.61,false
+94,Employee 0094,employee94@company.com,Finance,72784,2022-11-11,Seattle,10,1.4,true
+95,Employee 0095,employee95@company.com,Operations,89127,2023-12-12,Boston,10,4.4,true
+96,Employee 0096,employee96@company.com,Engineering,189525,2000-01-13,New York,10,3.8,false
+97,Employee 0097,employee97@company.com,Marketing,142438,2001-02-14,San Francisco,10,4.18,true
+98,Employee 0098,employee98@company.com,Sales,103364,2002-03-15,Austin,10,2.78,true
+99,Employee 0099,employee99@company.com,HR,54975,2003-04-16,Chicago,10,4.31,false
+100,Employee 0100,employee100@company.com,Finance,56424,2004-05-17,Seattle,11,4.39,true
+101,Employee 0101,employee101@company.com,Operations,167397,2005-06-18,Boston,11,2.31,true
+102,Employee 0102,employee102@company.com,Engineering,184124,2006-07-19,New York,11,4.59,false
+103,Employee 0103,employee103@company.com,Marketing,92906,2007-08-20,San Francisco,11,3.38,true
+104,Employee 0104,employee104@company.com,Sales,121157,2008-09-21,Austin,11,3.68,true
+105,Employee 0105,employee105@company.com,HR,100017,2009-10-22,Chicago,11,4.12,false
+106,Employee 0106,employee106@company.com,Finance,146312,2010-11-23,Seattle,11,4.03,true
+107,Employee 0107,employee107@company.com,Operations,186420,2011-12-24,Boston,11,2.74,true
+108,Employee 0108,employee108@company.com,Engineering,143289,2012-01-25,New York,11,3.74,false
+109,Employee 0109,employee109@company.com,Marketing,112726,2013-02-26,San Francisco,11,3.95,true
+110,Employee 0110,employee110@company.com,Sales,61427,2014-03-27,Austin,12,1.23,true
+111,Employee 0111,employee111@company.com,HR,143285,2015-04-28,Chicago,12,4.69,false
+112,Employee 0112,employee112@company.com,Finance,57232,2016-05-01,Seattle,12,1.06,true
+113,Employee 0113,employee113@company.com,Operations,185822,2017-06-02,Boston,12,4.22,true
+114,Employee 0114,employee114@company.com,Engineering,187379,2018-07-03,New York,12,3.1,false
+115,Employee 0115,employee115@company.com,Marketing,112067,2019-08-04,San Francisco,12,1.8,true
+116,Employee 0116,employee116@company.com,Sales,59378,2020-09-05,Austin,12,1.89,true
+117,Employee 0117,employee117@company.com,HR,137396,2021-10-06,Chicago,12,2.33,false
+118,Employee 0118,employee118@company.com,Finance,198201,2022-11-07,Seattle,12,1.22,true
+119,Employee 0119,employee119@company.com,Operations,171139,2023-12-08,Boston,12,2.93,true
+120,Employee 0120,employee120@company.com,Engineering,126708,2000-01-09,New York,13,4.86,false
+121,Employee 0121,employee121@company.com,Marketing,167000,2001-02-10,San Francisco,13,1.4,true
+122,Employee 0122,employee122@company.com,Sales,89322,2002-03-11,Austin,13,3.93,true
+123,Employee 0123,employee123@company.com,HR,63151,2003-04-12,Chicago,13,1.1,false
+124,Employee 0124,employee124@company.com,Finance,194450,2004-05-13,Seattle,13,4.03,true
+125,Employee 0125,employee125@company.com,Operations,105021,2005-06-14,Boston,13,3.04,true
+126,Employee 0126,employee126@company.com,Engineering,149740,2006-07-15,New York,13,4.28,false
+127,Employee 0127,employee127@company.com,Marketing,133002,2007-08-16,San Francisco,13,3.25,true
+128,Employee 0128,employee128@company.com,Sales,95306,2008-09-17,Austin,13,4.96,true
+129,Employee 0129,employee129@company.com,HR,94715,2009-10-18,Chicago,13,2.03,false
+130,Employee 0130,employee130@company.com,Finance,162365,2010-11-19,Seattle,14,4.49,true
+131,Employee 0131,employee131@company.com,Operations,116281,2011-12-20,Boston,14,4.26,true
+132,Employee 0132,employee132@company.com,Engineering,110023,2012-01-21,New York,14,2.47,false
+133,Employee 0133,employee133@company.com,Marketing,109490,2013-02-22,San Francisco,14,1.16,true
+134,Employee 0134,employee134@company.com,Sales,100226,2014-03-23,Austin,14,3.73,true
+135,Employee 0135,employee135@company.com,HR,181170,2015-04-24,Chicago,14,1.08,false
+136,Employee 0136,employee136@company.com,Finance,95037,2016-05-25,Seattle,14,4.02,true
+137,Employee 0137,employee137@company.com,Operations,118225,2017-06-26,Boston,14,2.57,true
+138,Employee 0138,employee138@company.com,Engineering,62230,2018-07-27,New York,14,3.88,false
+139,Employee 0139,employee139@company.com,Marketing,197966,2019-08-28,San Francisco,14,1.53,true
+140,Employee 0140,employee140@company.com,Sales,171732,2020-09-01,Austin,15,1.43,true
+141,Employee 0141,employee141@company.com,HR,120664,2021-10-02,Chicago,15,3.43,false
+142,Employee 0142,employee142@company.com,Finance,157060,2022-11-03,Seattle,15,1.56,true
+143,Employee 0143,employee143@company.com,Operations,64743,2023-12-04,Boston,15,3.79,true
+144,Employee 0144,employee144@company.com,Engineering,94424,2000-01-05,New York,15,4.93,false
+145,Employee 0145,employee145@company.com,Marketing,107712,2001-02-06,San Francisco,15,1.05,true
+146,Employee 0146,employee146@company.com,Sales,134645,2002-03-07,Austin,15,1.55,true
+147,Employee 0147,employee147@company.com,HR,145414,2003-04-08,Chicago,15,2.97,false
+148,Employee 0148,employee148@company.com,Finance,52162,2004-05-09,Seattle,15,4.29,true
+149,Employee 0149,employee149@company.com,Operations,83015,2005-06-10,Boston,15,4.11,true
+150,Employee 0150,employee150@company.com,Engineering,93300,2006-07-11,New York,16,4.58,false
+151,Employee 0151,employee151@company.com,Marketing,124629,2007-08-12,San Francisco,16,3.54,true
+152,Employee 0152,employee152@company.com,Sales,173238,2008-09-13,Austin,16,1.89,true
+153,Employee 0153,employee153@company.com,HR,119997,2009-10-14,Chicago,16,2.09,false
+154,Employee 0154,employee154@company.com,Finance,194415,2010-11-15,Seattle,16,4.64,true
+155,Employee 0155,employee155@company.com,Operations,68731,2011-12-16,Boston,16,1.32,true
+156,Employee 0156,employee156@company.com,Engineering,86122,2012-01-17,New York,16,2.97,false
+157,Employee 0157,employee157@company.com,Marketing,128764,2013-02-18,San Francisco,16,2.54,true
+158,Employee 0158,employee158@company.com,Sales,108854,2014-03-19,Austin,16,4.41,true
+159,Employee 0159,employee159@company.com,HR,83727,2015-04-20,Chicago,16,1.37,false
+160,Employee 0160,employee160@company.com,Finance,55045,2016-05-21,Seattle,17,4.73,true
+161,Employee 0161,employee161@company.com,Operations,65051,2017-06-22,Boston,17,4.54,true
+162,Employee 0162,employee162@company.com,Engineering,102342,2018-07-23,New York,17,1.31,false
+163,Employee 0163,employee163@company.com,Marketing,155024,2019-08-24,San Francisco,17,3.89,true
+164,Employee 0164,employee164@company.com,Sales,191057,2020-09-25,Austin,17,1.65,true
+165,Employee 0165,employee165@company.com,HR,192219,2021-10-26,Chicago,17,4.47,false
+166,Employee 0166,employee166@company.com,Finance,149187,2022-11-27,Seattle,17,4.94,true
+167,Employee 0167,employee167@company.com,Operations,97890,2023-12-28,Boston,17,2.44,true
+168,Employee 0168,employee168@company.com,Engineering,62380,2000-01-01,New York,17,2.1,false
+169,Employee 0169,employee169@company.com,Marketing,123821,2001-02-02,San Francisco,17,1.73,true
+170,Employee 0170,employee170@company.com,Sales,182392,2002-03-03,Austin,18,2.07,true
+171,Employee 0171,employee171@company.com,HR,59376,2003-04-04,Chicago,18,2.73,false
+172,Employee 0172,employee172@company.com,Finance,172262,2004-05-05,Seattle,18,2.83,true
+173,Employee 0173,employee173@company.com,Operations,136718,2005-06-06,Boston,18,1.69,true
+174,Employee 0174,employee174@company.com,Engineering,183333,2006-07-07,New York,18,4.8,false
+175,Employee 0175,employee175@company.com,Marketing,124213,2007-08-08,San Francisco,18,3.84,true
+176,Employee 0176,employee176@company.com,Sales,124441,2008-09-09,Austin,18,2.06,true
+177,Employee 0177,employee177@company.com,HR,71252,2009-10-10,Chicago,18,1.01,false
+178,Employee 0178,employee178@company.com,Finance,166092,2010-11-11,Seattle,18,3.39,true
+179,Employee 0179,employee179@company.com,Operations,190781,2011-12-12,Boston,18,4.04,true
+180,Employee 0180,employee180@company.com,Engineering,125359,2012-01-13,New York,19,1.24,false
+181,Employee 0181,employee181@company.com,Marketing,103859,2013-02-14,San Francisco,19,1.53,true
+182,Employee 0182,employee182@company.com,Sales,94977,2014-03-15,Austin,19,4.17,true
+183,Employee 0183,employee183@company.com,HR,165043,2015-04-16,Chicago,19,2.28,false
+184,Employee 0184,employee184@company.com,Finance,183697,2016-05-17,Seattle,19,2.8,true
+185,Employee 0185,employee185@company.com,Operations,199963,2017-06-18,Boston,19,1.61,true
+186,Employee 0186,employee186@company.com,Engineering,157267,2018-07-19,New York,19,2.74,false
+187,Employee 0187,employee187@company.com,Marketing,185622,2019-08-20,San Francisco,19,4.73,true
+188,Employee 0188,employee188@company.com,Sales,143589,2020-09-21,Austin,19,2.34,true
+189,Employee 0189,employee189@company.com,HR,100395,2021-10-22,Chicago,19,3.76,false
+190,Employee 0190,employee190@company.com,Finance,168612,2022-11-23,Seattle,20,4.28,true
+191,Employee 0191,employee191@company.com,Operations,113613,2023-12-24,Boston,20,4.96,true
+192,Employee 0192,employee192@company.com,Engineering,95190,2000-01-25,New York,20,4.75,false
+193,Employee 0193,employee193@company.com,Marketing,175648,2001-02-26,San Francisco,20,2.24,true
+194,Employee 0194,employee194@company.com,Sales,177572,2002-03-27,Austin,20,1.85,true
+195,Employee 0195,employee195@company.com,HR,176567,2003-04-28,Chicago,20,1.37,false
+196,Employee 0196,employee196@company.com,Finance,60890,2004-05-01,Seattle,20,1.33,true
+197,Employee 0197,employee197@company.com,Operations,122391,2005-06-02,Boston,20,4.42,true
+198,Employee 0198,employee198@company.com,Engineering,110860,2006-07-03,New York,20,3.06,false
+199,Employee 0199,employee199@company.com,Marketing,83508,2007-08-04,San Francisco,20,1.08,true
+200,Employee 0200,employee200@company.com,Sales,130806,2008-09-05,Austin,21,4.17,true
+201,Employee 0201,employee201@company.com,HR,157776,2009-10-06,Chicago,21,4.04,false
+202,Employee 0202,employee202@company.com,Finance,89068,2010-11-07,Seattle,21,3.45,true
+203,Employee 0203,employee203@company.com,Operations,65208,2011-12-08,Boston,21,3.25,true
+204,Employee 0204,employee204@company.com,Engineering,185126,2012-01-09,New York,21,2.51,false
+205,Employee 0205,employee205@company.com,Marketing,152911,2013-02-10,San Francisco,21,3.46,true
+206,Employee 0206,employee206@company.com,Sales,106345,2014-03-11,Austin,21,2.8,true
+207,Employee 0207,employee207@company.com,HR,121027,2015-04-12,Chicago,21,2.17,false
+208,Employee 0208,employee208@company.com,Finance,67043,2016-05-13,Seattle,21,4.32,true
+209,Employee 0209,employee209@company.com,Operations,192801,2017-06-14,Boston,21,1.09,true
+210,Employee 0210,employee210@company.com,Engineering,193625,2018-07-15,New York,22,3.27,false
+211,Employee 0211,employee211@company.com,Marketing,63417,2019-08-16,San Francisco,22,2.41,true
+212,Employee 0212,employee212@company.com,Sales,142976,2020-09-17,Austin,22,4.1,true
+213,Employee 0213,employee213@company.com,HR,130188,2021-10-18,Chicago,22,2.89,false
+214,Employee 0214,employee214@company.com,Finance,128831,2022-11-19,Seattle,22,2.71,true
+215,Employee 0215,employee215@company.com,Operations,91081,2023-12-20,Boston,22,1.81,true
+216,Employee 0216,employee216@company.com,Engineering,111937,2000-01-21,New York,22,1.03,false
+217,Employee 0217,employee217@company.com,Marketing,150781,2001-02-22,San Francisco,22,3.84,true
+218,Employee 0218,employee218@company.com,Sales,139525,2002-03-23,Austin,22,1.07,true
+219,Employee 0219,employee219@company.com,HR,117577,2003-04-24,Chicago,22,4.75,false
+220,Employee 0220,employee220@company.com,Finance,96294,2004-05-25,Seattle,23,3.07,true
+221,Employee 0221,employee221@company.com,Operations,136677,2005-06-26,Boston,23,2.87,true
+222,Employee 0222,employee222@company.com,Engineering,93896,2006-07-27,New York,23,4.51,false
+223,Employee 0223,employee223@company.com,Marketing,158383,2007-08-28,San Francisco,23,3.37,true
+224,Employee 0224,employee224@company.com,Sales,75183,2008-09-01,Austin,23,1.21,true
+225,Employee 0225,employee225@company.com,HR,88278,2009-10-02,Chicago,23,3.27,false
+226,Employee 0226,employee226@company.com,Finance,116510,2010-11-03,Seattle,23,1.31,true
+227,Employee 0227,employee227@company.com,Operations,156337,2011-12-04,Boston,23,1.28,true
+228,Employee 0228,employee228@company.com,Engineering,118992,2012-01-05,New York,23,3.45,false
+229,Employee 0229,employee229@company.com,Marketing,137375,2013-02-06,San Francisco,23,3.12,true
+230,Employee 0230,employee230@company.com,Sales,96958,2014-03-07,Austin,24,2.06,true
+231,Employee 0231,employee231@company.com,HR,174123,2015-04-08,Chicago,24,1.04,false
+232,Employee 0232,employee232@company.com,Finance,65696,2016-05-09,Seattle,24,2.77,true
+233,Employee 0233,employee233@company.com,Operations,123330,2017-06-10,Boston,24,2.85,true
+234,Employee 0234,employee234@company.com,Engineering,106397,2018-07-11,New York,24,1.2,false
+235,Employee 0235,employee235@company.com,Marketing,121346,2019-08-12,San Francisco,24,3.41,true
+236,Employee 0236,employee236@company.com,Sales,73794,2020-09-13,Austin,24,4.3,true
+237,Employee 0237,employee237@company.com,HR,128864,2021-10-14,Chicago,24,4.35,false
+238,Employee 0238,employee238@company.com,Finance,91962,2022-11-15,Seattle,24,4.23,true
+239,Employee 0239,employee239@company.com,Operations,102688,2023-12-16,Boston,24,1.18,true
+240,Employee 0240,employee240@company.com,Engineering,124424,2000-01-17,New York,25,4.24,false
+241,Employee 0241,employee241@company.com,Marketing,179733,2001-02-18,San Francisco,25,2.5,true
+242,Employee 0242,employee242@company.com,Sales,142006,2002-03-19,Austin,25,3.81,true
+243,Employee 0243,employee243@company.com,HR,75766,2003-04-20,Chicago,25,1.58,false
+244,Employee 0244,employee244@company.com,Finance,133822,2004-05-21,Seattle,25,3.74,true
+245,Employee 0245,employee245@company.com,Operations,197779,2005-06-22,Boston,25,4.24,true
+246,Employee 0246,employee246@company.com,Engineering,61308,2006-07-23,New York,25,1.49,false
+247,Employee 0247,employee247@company.com,Marketing,187218,2007-08-24,San Francisco,25,4.92,true
+248,Employee 0248,employee248@company.com,Sales,89518,2008-09-25,Austin,25,3.07,true
+249,Employee 0249,employee249@company.com,HR,159762,2009-10-26,Chicago,25,3.26,false
+250,Employee 0250,employee250@company.com,Finance,188773,2010-11-27,Seattle,26,2.15,true
+251,Employee 0251,employee251@company.com,Operations,161375,2011-12-28,Boston,26,3.76,true
+252,Employee 0252,employee252@company.com,Engineering,64330,2012-01-01,New York,26,2.63,false
+253,Employee 0253,employee253@company.com,Marketing,186535,2013-02-02,San Francisco,26,3.74,true
+254,Employee 0254,employee254@company.com,Sales,60336,2014-03-03,Austin,26,4.8,true
+255,Employee 0255,employee255@company.com,HR,124648,2015-04-04,Chicago,26,2.95,false
+256,Employee 0256,employee256@company.com,Finance,95657,2016-05-05,Seattle,26,4.81,true
+257,Employee 0257,employee257@company.com,Operations,174621,2017-06-06,Boston,26,4.87,true
+258,Employee 0258,employee258@company.com,Engineering,104668,2018-07-07,New York,26,2.56,false
+259,Employee 0259,employee259@company.com,Marketing,164364,2019-08-08,San Francisco,26,4.04,true
+260,Employee 0260,employee260@company.com,Sales,84076,2020-09-09,Austin,27,2.88,true
+261,Employee 0261,employee261@company.com,HR,171737,2021-10-10,Chicago,27,3.52,false
+262,Employee 0262,employee262@company.com,Finance,107831,2022-11-11,Seattle,27,1.34,true
+263,Employee 0263,employee263@company.com,Operations,148323,2023-12-12,Boston,27,2.58,true
+264,Employee 0264,employee264@company.com,Engineering,134892,2000-01-13,New York,27,2.27,false
+265,Employee 0265,employee265@company.com,Marketing,100135,2001-02-14,San Francisco,27,4.65,true
+266,Employee 0266,employee266@company.com,Sales,174359,2002-03-15,Austin,27,4.45,true
+267,Employee 0267,employee267@company.com,HR,133792,2003-04-16,Chicago,27,2.36,false
+268,Employee 0268,employee268@company.com,Finance,105552,2004-05-17,Seattle,27,1.11,true
+269,Employee 0269,employee269@company.com,Operations,136001,2005-06-18,Boston,27,4.94,true
+270,Employee 0270,employee270@company.com,Engineering,86889,2006-07-19,New York,28,2.64,false
+271,Employee 0271,employee271@company.com,Marketing,110475,2007-08-20,San Francisco,28,1.49,true
+272,Employee 0272,employee272@company.com,Sales,194275,2008-09-21,Austin,28,4.01,true
+273,Employee 0273,employee273@company.com,HR,192509,2009-10-22,Chicago,28,2.06,false
+274,Employee 0274,employee274@company.com,Finance,160357,2010-11-23,Seattle,28,1.13,true
+275,Employee 0275,employee275@company.com,Operations,61063,2011-12-24,Boston,28,1.12,true
+276,Employee 0276,employee276@company.com,Engineering,131588,2012-01-25,New York,28,2.88,false
+277,Employee 0277,employee277@company.com,Marketing,100471,2013-02-26,San Francisco,28,3.23,true
+278,Employee 0278,employee278@company.com,Sales,183418,2014-03-27,Austin,28,3.51,true
+279,Employee 0279,employee279@company.com,HR,71290,2015-04-28,Chicago,28,3.06,false
+280,Employee 0280,employee280@company.com,Finance,110513,2016-05-01,Seattle,29,1.4,true
+281,Employee 0281,employee281@company.com,Operations,108872,2017-06-02,Boston,29,1.56,true
+282,Employee 0282,employee282@company.com,Engineering,104070,2018-07-03,New York,29,1.77,false
+283,Employee 0283,employee283@company.com,Marketing,78663,2019-08-04,San Francisco,29,4.38,true
+284,Employee 0284,employee284@company.com,Sales,95713,2020-09-05,Austin,29,1.79,true
+285,Employee 0285,employee285@company.com,HR,71124,2021-10-06,Chicago,29,1.47,false
+286,Employee 0286,employee286@company.com,Finance,125555,2022-11-07,Seattle,29,2.68,true
+287,Employee 0287,employee287@company.com,Operations,112526,2023-12-08,Boston,29,3.62,true
+288,Employee 0288,employee288@company.com,Engineering,146802,2000-01-09,New York,29,4.3,false
+289,Employee 0289,employee289@company.com,Marketing,119256,2001-02-10,San Francisco,29,1.36,true
+290,Employee 0290,employee290@company.com,Sales,79605,2002-03-11,Austin,30,3.52,true
+291,Employee 0291,employee291@company.com,HR,134095,2003-04-12,Chicago,30,4.62,false
+292,Employee 0292,employee292@company.com,Finance,188677,2004-05-13,Seattle,30,4.23,true
+293,Employee 0293,employee293@company.com,Operations,124583,2005-06-14,Boston,30,4.31,true
+294,Employee 0294,employee294@company.com,Engineering,157090,2006-07-15,New York,30,2.42,false
+295,Employee 0295,employee295@company.com,Marketing,87983,2007-08-16,San Francisco,30,3.87,true
+296,Employee 0296,employee296@company.com,Sales,163884,2008-09-17,Austin,30,4.39,true
+297,Employee 0297,employee297@company.com,HR,89074,2009-10-18,Chicago,30,4.19,false
+298,Employee 0298,employee298@company.com,Finance,67892,2010-11-19,Seattle,30,2.29,true
+299,Employee 0299,employee299@company.com,Operations,194311,2011-12-20,Boston,30,4.78,true
+300,Employee 0300,employee300@company.com,Engineering,106937,2012-01-21,New York,31,1.83,false
+301,Employee 0301,employee301@company.com,Marketing,180959,2013-02-22,San Francisco,31,3.93,true
+302,Employee 0302,employee302@company.com,Sales,115685,2014-03-23,Austin,31,1.35,true
+303,Employee 0303,employee303@company.com,HR,140676,2015-04-24,Chicago,31,3.02,false
+304,Employee 0304,employee304@company.com,Finance,125103,2016-05-25,Seattle,31,3.43,true
+305,Employee 0305,employee305@company.com,Operations,173401,2017-06-26,Boston,31,2.4,true
+306,Employee 0306,employee306@company.com,Engineering,81494,2018-07-27,New York,31,3.64,false
+307,Employee 0307,employee307@company.com,Marketing,196993,2019-08-28,San Francisco,31,2.58,true
+308,Employee 0308,employee308@company.com,Sales,111814,2020-09-01,Austin,31,5.0,true
+309,Employee 0309,employee309@company.com,HR,98182,2021-10-02,Chicago,31,4.57,false
+310,Employee 0310,employee310@company.com,Finance,163055,2022-11-03,Seattle,32,4.94,true
+311,Employee 0311,employee311@company.com,Operations,90073,2023-12-04,Boston,32,4.59,true
+312,Employee 0312,employee312@company.com,Engineering,144013,2000-01-05,New York,32,1.67,false
+313,Employee 0313,employee313@company.com,Marketing,188169,2001-02-06,San Francisco,32,2.57,true
+314,Employee 0314,employee314@company.com,Sales,152788,2002-03-07,Austin,32,1.56,true
+315,Employee 0315,employee315@company.com,HR,85644,2003-04-08,Chicago,32,1.82,false
+316,Employee 0316,employee316@company.com,Finance,166461,2004-05-09,Seattle,32,2.66,true
+317,Employee 0317,employee317@company.com,Operations,153108,2005-06-10,Boston,32,2.78,true
+318,Employee 0318,employee318@company.com,Engineering,153019,2006-07-11,New York,32,4.86,false
+319,Employee 0319,employee319@company.com,Marketing,119104,2007-08-12,San Francisco,32,2.4,true
+320,Employee 0320,employee320@company.com,Sales,108804,2008-09-13,Austin,33,4.38,true
+321,Employee 0321,employee321@company.com,HR,69831,2009-10-14,Chicago,33,2.1,false
+322,Employee 0322,employee322@company.com,Finance,140913,2010-11-15,Seattle,33,2.85,true
+323,Employee 0323,employee323@company.com,Operations,165551,2011-12-16,Boston,33,4.6,true
+324,Employee 0324,employee324@company.com,Engineering,124366,2012-01-17,New York,33,2.91,false
+325,Employee 0325,employee325@company.com,Marketing,148598,2013-02-18,San Francisco,33,4.32,true
+326,Employee 0326,employee326@company.com,Sales,165518,2014-03-19,Austin,33,4.66,true
+327,Employee 0327,employee327@company.com,HR,87994,2015-04-20,Chicago,33,4.7,false
+328,Employee 0328,employee328@company.com,Finance,106376,2016-05-21,Seattle,33,4.24,true
+329,Employee 0329,employee329@company.com,Operations,181191,2017-06-22,Boston,33,4.26,true
+330,Employee 0330,employee330@company.com,Engineering,146758,2018-07-23,New York,34,2.41,false
+331,Employee 0331,employee331@company.com,Marketing,62484,2019-08-24,San Francisco,34,2.1,true
+332,Employee 0332,employee332@company.com,Sales,101022,2020-09-25,Austin,34,3.14,true
+333,Employee 0333,employee333@company.com,HR,122155,2021-10-26,Chicago,34,2.24,false
+334,Employee 0334,employee334@company.com,Finance,86165,2022-11-27,Seattle,34,3.4,true
+335,Employee 0335,employee335@company.com,Operations,105848,2023-12-28,Boston,34,4.3,true
+336,Employee 0336,employee336@company.com,Engineering,157521,2000-01-01,New York,34,1.62,false
+337,Employee 0337,employee337@company.com,Marketing,61201,2001-02-02,San Francisco,34,2.9,true
+338,Employee 0338,employee338@company.com,Sales,176361,2002-03-03,Austin,34,2.57,true
+339,Employee 0339,employee339@company.com,HR,87713,2003-04-04,Chicago,34,3.88,false
+340,Employee 0340,employee340@company.com,Finance,163154,2004-05-05,Seattle,35,1.13,true
+341,Employee 0341,employee341@company.com,Operations,101341,2005-06-06,Boston,35,2.2,true
+342,Employee 0342,employee342@company.com,Engineering,157189,2006-07-07,New York,35,3.72,false
+343,Employee 0343,employee343@company.com,Marketing,167211,2007-08-08,San Francisco,35,4.59,true
+344,Employee 0344,employee344@company.com,Sales,119715,2008-09-09,Austin,35,3.43,true
+345,Employee 0345,employee345@company.com,HR,120746,2009-10-10,Chicago,35,3.63,false
+346,Employee 0346,employee346@company.com,Finance,71739,2010-11-11,Seattle,35,1.06,true
+347,Employee 0347,employee347@company.com,Operations,68844,2011-12-12,Boston,35,1.05,true
+348,Employee 0348,employee348@company.com,Engineering,144435,2012-01-13,New York,35,3.73,false
+349,Employee 0349,employee349@company.com,Marketing,51810,2013-02-14,San Francisco,35,2.4,true
+350,Employee 0350,employee350@company.com,Sales,60919,2014-03-15,Austin,36,3.02,true
+351,Employee 0351,employee351@company.com,HR,126716,2015-04-16,Chicago,36,4.78,false
+352,Employee 0352,employee352@company.com,Finance,162547,2016-05-17,Seattle,36,2.93,true
+353,Employee 0353,employee353@company.com,Operations,141809,2017-06-18,Boston,36,4.9,true
+354,Employee 0354,employee354@company.com,Engineering,77825,2018-07-19,New York,36,4.12,false
+355,Employee 0355,employee355@company.com,Marketing,82173,2019-08-20,San Francisco,36,4.14,true
+356,Employee 0356,employee356@company.com,Sales,183496,2020-09-21,Austin,36,4.37,true
+357,Employee 0357,employee357@company.com,HR,85178,2021-10-22,Chicago,36,4.77,false
+358,Employee 0358,employee358@company.com,Finance,195662,2022-11-23,Seattle,36,3.37,true
+359,Employee 0359,employee359@company.com,Operations,193940,2023-12-24,Boston,36,2.26,true
+360,Employee 0360,employee360@company.com,Engineering,195171,2000-01-25,New York,37,2.3,false
+361,Employee 0361,employee361@company.com,Marketing,95158,2001-02-26,San Francisco,37,4.06,true
+362,Employee 0362,employee362@company.com,Sales,50491,2002-03-27,Austin,37,3.72,true
+363,Employee 0363,employee363@company.com,HR,139970,2003-04-28,Chicago,37,2.45,false
+364,Employee 0364,employee364@company.com,Finance,183659,2004-05-01,Seattle,37,3.28,true
+365,Employee 0365,employee365@company.com,Operations,111522,2005-06-02,Boston,37,4.5,true
+366,Employee 0366,employee366@company.com,Engineering,164545,2006-07-03,New York,37,1.71,false
+367,Employee 0367,employee367@company.com,Marketing,170591,2007-08-04,San Francisco,37,2.74,true
+368,Employee 0368,employee368@company.com,Sales,152177,2008-09-05,Austin,37,3.55,true
+369,Employee 0369,employee369@company.com,HR,163891,2009-10-06,Chicago,37,1.58,false
+370,Employee 0370,employee370@company.com,Finance,78938,2010-11-07,Seattle,38,2.16,true
+371,Employee 0371,employee371@company.com,Operations,165564,2011-12-08,Boston,38,3.73,true
+372,Employee 0372,employee372@company.com,Engineering,121540,2012-01-09,New York,38,3.1,false
+373,Employee 0373,employee373@company.com,Marketing,71617,2013-02-10,San Francisco,38,1.29,true
+374,Employee 0374,employee374@company.com,Sales,187003,2014-03-11,Austin,38,3.66,true
+375,Employee 0375,employee375@company.com,HR,155251,2015-04-12,Chicago,38,2.3,false
+376,Employee 0376,employee376@company.com,Finance,198432,2016-05-13,Seattle,38,2.16,true
+377,Employee 0377,employee377@company.com,Operations,114601,2017-06-14,Boston,38,2.02,true
+378,Employee 0378,employee378@company.com,Engineering,67119,2018-07-15,New York,38,2.05,false
+379,Employee 0379,employee379@company.com,Marketing,91215,2019-08-16,San Francisco,38,1.7,true
+380,Employee 0380,employee380@company.com,Sales,56729,2020-09-17,Austin,39,4.16,true
+381,Employee 0381,employee381@company.com,HR,171319,2021-10-18,Chicago,39,3.86,false
+382,Employee 0382,employee382@company.com,Finance,136881,2022-11-19,Seattle,39,2.69,true
+383,Employee 0383,employee383@company.com,Operations,83607,2023-12-20,Boston,39,2.49,true
+384,Employee 0384,employee384@company.com,Engineering,66677,2000-01-21,New York,39,1.47,false
+385,Employee 0385,employee385@company.com,Marketing,102903,2001-02-22,San Francisco,39,3.84,true
+386,Employee 0386,employee386@company.com,Sales,98834,2002-03-23,Austin,39,1.88,true
+387,Employee 0387,employee387@company.com,HR,117533,2003-04-24,Chicago,39,1.14,false
+388,Employee 0388,employee388@company.com,Finance,70620,2004-05-25,Seattle,39,2.63,true
+389,Employee 0389,employee389@company.com,Operations,111896,2005-06-26,Boston,39,3.31,true
+390,Employee 0390,employee390@company.com,Engineering,199482,2006-07-27,New York,40,3.9,false
+391,Employee 0391,employee391@company.com,Marketing,136770,2007-08-28,San Francisco,40,4.75,true
+392,Employee 0392,employee392@company.com,Sales,136649,2008-09-01,Austin,40,3.28,true
+393,Employee 0393,employee393@company.com,HR,166021,2009-10-02,Chicago,40,3.13,false
+394,Employee 0394,employee394@company.com,Finance,93178,2010-11-03,Seattle,40,2.45,true
+395,Employee 0395,employee395@company.com,Operations,128575,2011-12-04,Boston,40,3.63,true
+396,Employee 0396,employee396@company.com,Engineering,137145,2012-01-05,New York,40,2.74,false
+397,Employee 0397,employee397@company.com,Marketing,57040,2013-02-06,San Francisco,40,1.64,true
+398,Employee 0398,employee398@company.com,Sales,125296,2014-03-07,Austin,40,3.93,true
+399,Employee 0399,employee399@company.com,HR,155890,2015-04-08,Chicago,40,1.16,false
+400,Employee 0400,employee400@company.com,Finance,109181,2016-05-09,Seattle,41,2.0,true
+401,Employee 0401,employee401@company.com,Operations,79357,2017-06-10,Boston,41,2.54,true
+402,Employee 0402,employee402@company.com,Engineering,152840,2018-07-11,New York,41,3.37,false
+403,Employee 0403,employee403@company.com,Marketing,174088,2019-08-12,San Francisco,41,1.84,true
+404,Employee 0404,employee404@company.com,Sales,109107,2020-09-13,Austin,41,2.53,true
+405,Employee 0405,employee405@company.com,HR,64095,2021-10-14,Chicago,41,2.91,false
+406,Employee 0406,employee406@company.com,Finance,136748,2022-11-15,Seattle,41,3.86,true
+407,Employee 0407,employee407@company.com,Operations,166364,2023-12-16,Boston,41,4.58,true
+408,Employee 0408,employee408@company.com,Engineering,197526,2000-01-17,New York,41,1.65,false
+409,Employee 0409,employee409@company.com,Marketing,134982,2001-02-18,San Francisco,41,4.24,true
+410,Employee 0410,employee410@company.com,Sales,80586,2002-03-19,Austin,42,1.03,true
+411,Employee 0411,employee411@company.com,HR,108626,2003-04-20,Chicago,42,2.36,false
+412,Employee 0412,employee412@company.com,Finance,50981,2004-05-21,Seattle,42,3.44,true
+413,Employee 0413,employee413@company.com,Operations,157246,2005-06-22,Boston,42,2.41,true
+414,Employee 0414,employee414@company.com,Engineering,125331,2006-07-23,New York,42,4.66,false
+415,Employee 0415,employee415@company.com,Marketing,190925,2007-08-24,San Francisco,42,4.85,true
+416,Employee 0416,employee416@company.com,Sales,188252,2008-09-25,Austin,42,2.18,true
+417,Employee 0417,employee417@company.com,HR,185472,2009-10-26,Chicago,42,2.56,false
+418,Employee 0418,employee418@company.com,Finance,190059,2010-11-27,Seattle,42,3.58,true
+419,Employee 0419,employee419@company.com,Operations,163422,2011-12-28,Boston,42,4.4,true
+420,Employee 0420,employee420@company.com,Engineering,145899,2012-01-01,New York,43,4.07,false
+421,Employee 0421,employee421@company.com,Marketing,154191,2013-02-02,San Francisco,43,2.91,true
+422,Employee 0422,employee422@company.com,Sales,186153,2014-03-03,Austin,43,2.72,true
+423,Employee 0423,employee423@company.com,HR,171300,2015-04-04,Chicago,43,3.13,false
+424,Employee 0424,employee424@company.com,Finance,119021,2016-05-05,Seattle,43,1.37,true
+425,Employee 0425,employee425@company.com,Operations,90369,2017-06-06,Boston,43,4.48,true
+426,Employee 0426,employee426@company.com,Engineering,86674,2018-07-07,New York,43,3.97,false
+427,Employee 0427,employee427@company.com,Marketing,59258,2019-08-08,San Francisco,43,2.26,true
+428,Employee 0428,employee428@company.com,Sales,152022,2020-09-09,Austin,43,2.4,true
+429,Employee 0429,employee429@company.com,HR,148588,2021-10-10,Chicago,43,1.08,false
+430,Employee 0430,employee430@company.com,Finance,149246,2022-11-11,Seattle,44,2.37,true
+431,Employee 0431,employee431@company.com,Operations,147308,2023-12-12,Boston,44,2.54,true
+432,Employee 0432,employee432@company.com,Engineering,107800,2000-01-13,New York,44,1.84,false
+433,Employee 0433,employee433@company.com,Marketing,175822,2001-02-14,San Francisco,44,4.11,true
+434,Employee 0434,employee434@company.com,Sales,130255,2002-03-15,Austin,44,2.81,true
+435,Employee 0435,employee435@company.com,HR,75932,2003-04-16,Chicago,44,3.18,false
+436,Employee 0436,employee436@company.com,Finance,128997,2004-05-17,Seattle,44,2.11,true
+437,Employee 0437,employee437@company.com,Operations,146138,2005-06-18,Boston,44,2.68,true
+438,Employee 0438,employee438@company.com,Engineering,197959,2006-07-19,New York,44,1.06,false
+439,Employee 0439,employee439@company.com,Marketing,183513,2007-08-20,San Francisco,44,3.11,true
+440,Employee 0440,employee440@company.com,Sales,117994,2008-09-21,Austin,45,2.7,true
+441,Employee 0441,employee441@company.com,HR,92149,2009-10-22,Chicago,45,4.01,false
+442,Employee 0442,employee442@company.com,Finance,119971,2010-11-23,Seattle,45,1.07,true
+443,Employee 0443,employee443@company.com,Operations,136821,2011-12-24,Boston,45,2.89,true
+444,Employee 0444,employee444@company.com,Engineering,133574,2012-01-25,New York,45,3.72,false
+445,Employee 0445,employee445@company.com,Marketing,100042,2013-02-26,San Francisco,45,2.05,true
+446,Employee 0446,employee446@company.com,Sales,175935,2014-03-27,Austin,45,1.12,true
+447,Employee 0447,employee447@company.com,HR,166771,2015-04-28,Chicago,45,1.13,false
+448,Employee 0448,employee448@company.com,Finance,53775,2016-05-01,Seattle,45,4.7,true
+449,Employee 0449,employee449@company.com,Operations,91704,2017-06-02,Boston,45,4.52,true
+450,Employee 0450,employee450@company.com,Engineering,77993,2018-07-03,New York,46,1.55,false
+451,Employee 0451,employee451@company.com,Marketing,84133,2019-08-04,San Francisco,46,4.55,true
+452,Employee 0452,employee452@company.com,Sales,80370,2020-09-05,Austin,46,4.42,true
+453,Employee 0453,employee453@company.com,HR,91153,2021-10-06,Chicago,46,3.24,false
+454,Employee 0454,employee454@company.com,Finance,138482,2022-11-07,Seattle,46,2.89,true
+455,Employee 0455,employee455@company.com,Operations,100282,2023-12-08,Boston,46,4.25,true
+456,Employee 0456,employee456@company.com,Engineering,175518,2000-01-09,New York,46,4.99,false
+457,Employee 0457,employee457@company.com,Marketing,116422,2001-02-10,San Francisco,46,4.31,true
+458,Employee 0458,employee458@company.com,Sales,140927,2002-03-11,Austin,46,3.69,true
+459,Employee 0459,employee459@company.com,HR,121557,2003-04-12,Chicago,46,3.07,false
+460,Employee 0460,employee460@company.com,Finance,162457,2004-05-13,Seattle,47,1.96,true
+461,Employee 0461,employee461@company.com,Operations,130800,2005-06-14,Boston,47,3.42,true
+462,Employee 0462,employee462@company.com,Engineering,143247,2006-07-15,New York,47,4.95,false
+463,Employee 0463,employee463@company.com,Marketing,88556,2007-08-16,San Francisco,47,3.19,true
+464,Employee 0464,employee464@company.com,Sales,59836,2008-09-17,Austin,47,3.5,true
+465,Employee 0465,employee465@company.com,HR,183961,2009-10-18,Chicago,47,4.71,false
+466,Employee 0466,employee466@company.com,Finance,130458,2010-11-19,Seattle,47,1.98,true
+467,Employee 0467,employee467@company.com,Operations,60221,2011-12-20,Boston,47,3.76,true
+468,Employee 0468,employee468@company.com,Engineering,196714,2012-01-21,New York,47,4.15,false
+469,Employee 0469,employee469@company.com,Marketing,186083,2013-02-22,San Francisco,47,4.33,true
+470,Employee 0470,employee470@company.com,Sales,149000,2014-03-23,Austin,48,4.15,true
+471,Employee 0471,employee471@company.com,HR,140071,2015-04-24,Chicago,48,3.15,false
+472,Employee 0472,employee472@company.com,Finance,159248,2016-05-25,Seattle,48,1.2,true
+473,Employee 0473,employee473@company.com,Operations,187083,2017-06-26,Boston,48,2.82,true
+474,Employee 0474,employee474@company.com,Engineering,131887,2018-07-27,New York,48,1.53,false
+475,Employee 0475,employee475@company.com,Marketing,173855,2019-08-28,San Francisco,48,2.8,true
+476,Employee 0476,employee476@company.com,Sales,171215,2020-09-01,Austin,48,3.31,true
+477,Employee 0477,employee477@company.com,HR,115707,2021-10-02,Chicago,48,2.56,false
+478,Employee 0478,employee478@company.com,Finance,139294,2022-11-03,Seattle,48,3.32,true
+479,Employee 0479,employee479@company.com,Operations,143557,2023-12-04,Boston,48,2.82,true
+480,Employee 0480,employee480@company.com,Engineering,110521,2000-01-05,New York,49,3.25,false
+481,Employee 0481,employee481@company.com,Marketing,93738,2001-02-06,San Francisco,49,3.15,true
+482,Employee 0482,employee482@company.com,Sales,185731,2002-03-07,Austin,49,1.53,true
+483,Employee 0483,employee483@company.com,HR,130346,2003-04-08,Chicago,49,2.65,false
+484,Employee 0484,employee484@company.com,Finance,59708,2004-05-09,Seattle,49,4.02,true
+485,Employee 0485,employee485@company.com,Operations,155664,2005-06-10,Boston,49,4.57,true
+486,Employee 0486,employee486@company.com,Engineering,144560,2006-07-11,New York,49,4.06,false
+487,Employee 0487,employee487@company.com,Marketing,55010,2007-08-12,San Francisco,49,4.5,true
+488,Employee 0488,employee488@company.com,Sales,73746,2008-09-13,Austin,49,2.02,true
+489,Employee 0489,employee489@company.com,HR,199621,2009-10-14,Chicago,49,2.77,false
+490,Employee 0490,employee490@company.com,Finance,129211,2010-11-15,Seattle,50,3.4,true
+491,Employee 0491,employee491@company.com,Operations,126595,2011-12-16,Boston,50,4.66,true
+492,Employee 0492,employee492@company.com,Engineering,53805,2012-01-17,New York,50,1.04,false
+493,Employee 0493,employee493@company.com,Marketing,57946,2013-02-18,San Francisco,50,2.39,true
+494,Employee 0494,employee494@company.com,Sales,116410,2014-03-19,Austin,50,4.46,true
+495,Employee 0495,employee495@company.com,HR,97747,2015-04-20,Chicago,50,2.98,false
+496,Employee 0496,employee496@company.com,Finance,69614,2016-05-21,Seattle,50,2.97,true
+497,Employee 0497,employee497@company.com,Operations,121245,2017-06-22,Boston,50,2.87,true
+498,Employee 0498,employee498@company.com,Engineering,132188,2018-07-23,New York,50,4.51,false
+499,Employee 0499,employee499@company.com,Marketing,120750,2019-08-24,San Francisco,50,1.96,true
+500,Employee 0500,employee500@company.com,Sales,116059,2020-09-25,Austin,51,4.53,true

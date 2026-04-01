@@ -1,0 +1,3402 @@
+[
+  {
+    "id": 0,
+    "name": "Item 0",
+    "description": "This is a description for item number 0 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-01T12:00:00Z",
+      "updated_at": "2024-02-01T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 271.98
+  },
+  {
+    "id": 1,
+    "name": "Item 1",
+    "description": "This is a description for item number 1 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-02T12:00:00Z",
+      "updated_at": "2024-02-02T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 218.17
+  },
+  {
+    "id": 2,
+    "name": "Item 2",
+    "description": "This is a description for item number 2 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-03T12:00:00Z",
+      "updated_at": "2024-02-03T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 197.88
+  },
+  {
+    "id": 3,
+    "name": "Item 3",
+    "description": "This is a description for item number 3 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-04T12:00:00Z",
+      "updated_at": "2024-02-04T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 473.23
+  },
+  {
+    "id": 4,
+    "name": "Item 4",
+    "description": "This is a description for item number 4 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-05T12:00:00Z",
+      "updated_at": "2024-02-05T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 478.27
+  },
+  {
+    "id": 5,
+    "name": "Item 5",
+    "description": "This is a description for item number 5 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-06T12:00:00Z",
+      "updated_at": "2024-02-06T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 851.91
+  },
+  {
+    "id": 6,
+    "name": "Item 6",
+    "description": "This is a description for item number 6 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-07T12:00:00Z",
+      "updated_at": "2024-02-07T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 597.33
+  },
+  {
+    "id": 7,
+    "name": "Item 7",
+    "description": "This is a description for item number 7 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-08T12:00:00Z",
+      "updated_at": "2024-02-08T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 123.16
+  },
+  {
+    "id": 8,
+    "name": "Item 8",
+    "description": "This is a description for item number 8 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-09T12:00:00Z",
+      "updated_at": "2024-02-09T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 382.66
+  },
+  {
+    "id": 9,
+    "name": "Item 9",
+    "description": "This is a description for item number 9 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-10T12:00:00Z",
+      "updated_at": "2024-02-10T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 194.32
+  },
+  {
+    "id": 10,
+    "name": "Item 10",
+    "description": "This is a description for item number 10 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-11T12:00:00Z",
+      "updated_at": "2024-02-11T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 326.75
+  },
+  {
+    "id": 11,
+    "name": "Item 11",
+    "description": "This is a description for item number 11 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-12T12:00:00Z",
+      "updated_at": "2024-02-12T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 274.64
+  },
+  {
+    "id": 12,
+    "name": "Item 12",
+    "description": "This is a description for item number 12 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-13T12:00:00Z",
+      "updated_at": "2024-02-13T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 461.23
+  },
+  {
+    "id": 13,
+    "name": "Item 13",
+    "description": "This is a description for item number 13 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-14T12:00:00Z",
+      "updated_at": "2024-02-14T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 304.15
+  },
+  {
+    "id": 14,
+    "name": "Item 14",
+    "description": "This is a description for item number 14 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-15T12:00:00Z",
+      "updated_at": "2024-02-15T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 62.61
+  },
+  {
+    "id": 15,
+    "name": "Item 15",
+    "description": "This is a description for item number 15 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-16T12:00:00Z",
+      "updated_at": "2024-02-16T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 335.07
+  },
+  {
+    "id": 16,
+    "name": "Item 16",
+    "description": "This is a description for item number 16 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-17T12:00:00Z",
+      "updated_at": "2024-02-17T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 941.15
+  },
+  {
+    "id": 17,
+    "name": "Item 17",
+    "description": "This is a description for item number 17 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-18T12:00:00Z",
+      "updated_at": "2024-02-18T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 38.38
+  },
+  {
+    "id": 18,
+    "name": "Item 18",
+    "description": "This is a description for item number 18 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-19T12:00:00Z",
+      "updated_at": "2024-02-19T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 215.8
+  },
+  {
+    "id": 19,
+    "name": "Item 19",
+    "description": "This is a description for item number 19 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-20T12:00:00Z",
+      "updated_at": "2024-02-20T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 51.69
+  },
+  {
+    "id": 20,
+    "name": "Item 20",
+    "description": "This is a description for item number 20 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-21T12:00:00Z",
+      "updated_at": "2024-02-21T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 726.48
+  },
+  {
+    "id": 21,
+    "name": "Item 21",
+    "description": "This is a description for item number 21 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-22T12:00:00Z",
+      "updated_at": "2024-02-22T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 589.92
+  },
+  {
+    "id": 22,
+    "name": "Item 22",
+    "description": "This is a description for item number 22 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-23T12:00:00Z",
+      "updated_at": "2024-02-23T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 889.86
+  },
+  {
+    "id": 23,
+    "name": "Item 23",
+    "description": "This is a description for item number 23 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-24T12:00:00Z",
+      "updated_at": "2024-02-24T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 899.09
+  },
+  {
+    "id": 24,
+    "name": "Item 24",
+    "description": "This is a description for item number 24 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-25T12:00:00Z",
+      "updated_at": "2024-02-25T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 762.67
+  },
+  {
+    "id": 25,
+    "name": "Item 25",
+    "description": "This is a description for item number 25 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-26T12:00:00Z",
+      "updated_at": "2024-02-26T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 889.91
+  },
+  {
+    "id": 26,
+    "name": "Item 26",
+    "description": "This is a description for item number 26 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-27T12:00:00Z",
+      "updated_at": "2024-02-27T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 345.6
+  },
+  {
+    "id": 27,
+    "name": "Item 27",
+    "description": "This is a description for item number 27 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-28T12:00:00Z",
+      "updated_at": "2024-02-28T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 270.86
+  },
+  {
+    "id": 28,
+    "name": "Item 28",
+    "description": "This is a description for item number 28 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-01T12:00:00Z",
+      "updated_at": "2024-02-01T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 96.93
+  },
+  {
+    "id": 29,
+    "name": "Item 29",
+    "description": "This is a description for item number 29 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-02T12:00:00Z",
+      "updated_at": "2024-02-02T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 720.2
+  },
+  {
+    "id": 30,
+    "name": "Item 30",
+    "description": "This is a description for item number 30 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-03T12:00:00Z",
+      "updated_at": "2024-02-03T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 443.73
+  },
+  {
+    "id": 31,
+    "name": "Item 31",
+    "description": "This is a description for item number 31 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-04T12:00:00Z",
+      "updated_at": "2024-02-04T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 403.84
+  },
+  {
+    "id": 32,
+    "name": "Item 32",
+    "description": "This is a description for item number 32 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-05T12:00:00Z",
+      "updated_at": "2024-02-05T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 380.86
+  },
+  {
+    "id": 33,
+    "name": "Item 33",
+    "description": "This is a description for item number 33 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-06T12:00:00Z",
+      "updated_at": "2024-02-06T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 775.93
+  },
+  {
+    "id": 34,
+    "name": "Item 34",
+    "description": "This is a description for item number 34 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-07T12:00:00Z",
+      "updated_at": "2024-02-07T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 757.63
+  },
+  {
+    "id": 35,
+    "name": "Item 35",
+    "description": "This is a description for item number 35 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-08T12:00:00Z",
+      "updated_at": "2024-02-08T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 339.94
+  },
+  {
+    "id": 36,
+    "name": "Item 36",
+    "description": "This is a description for item number 36 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-09T12:00:00Z",
+      "updated_at": "2024-02-09T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 714.62
+  },
+  {
+    "id": 37,
+    "name": "Item 37",
+    "description": "This is a description for item number 37 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-10T12:00:00Z",
+      "updated_at": "2024-02-10T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 33.34
+  },
+  {
+    "id": 38,
+    "name": "Item 38",
+    "description": "This is a description for item number 38 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-11T12:00:00Z",
+      "updated_at": "2024-02-11T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 683.82
+  },
+  {
+    "id": 39,
+    "name": "Item 39",
+    "description": "This is a description for item number 39 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-12T12:00:00Z",
+      "updated_at": "2024-02-12T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 232.06
+  },
+  {
+    "id": 40,
+    "name": "Item 40",
+    "description": "This is a description for item number 40 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-13T12:00:00Z",
+      "updated_at": "2024-02-13T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 339.01
+  },
+  {
+    "id": 41,
+    "name": "Item 41",
+    "description": "This is a description for item number 41 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-14T12:00:00Z",
+      "updated_at": "2024-02-14T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 7.22
+  },
+  {
+    "id": 42,
+    "name": "Item 42",
+    "description": "This is a description for item number 42 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-15T12:00:00Z",
+      "updated_at": "2024-02-15T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 232.44
+  },
+  {
+    "id": 43,
+    "name": "Item 43",
+    "description": "This is a description for item number 43 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-16T12:00:00Z",
+      "updated_at": "2024-02-16T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 101.89
+  },
+  {
+    "id": 44,
+    "name": "Item 44",
+    "description": "This is a description for item number 44 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-17T12:00:00Z",
+      "updated_at": "2024-02-17T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 815.18
+  },
+  {
+    "id": 45,
+    "name": "Item 45",
+    "description": "This is a description for item number 45 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-18T12:00:00Z",
+      "updated_at": "2024-02-18T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 770.6
+  },
+  {
+    "id": 46,
+    "name": "Item 46",
+    "description": "This is a description for item number 46 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-19T12:00:00Z",
+      "updated_at": "2024-02-19T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 228.69
+  },
+  {
+    "id": 47,
+    "name": "Item 47",
+    "description": "This is a description for item number 47 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-20T12:00:00Z",
+      "updated_at": "2024-02-20T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 928.59
+  },
+  {
+    "id": 48,
+    "name": "Item 48",
+    "description": "This is a description for item number 48 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-21T12:00:00Z",
+      "updated_at": "2024-02-21T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 251.1
+  },
+  {
+    "id": 49,
+    "name": "Item 49",
+    "description": "This is a description for item number 49 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-22T12:00:00Z",
+      "updated_at": "2024-02-22T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 277.55
+  },
+  {
+    "id": 50,
+    "name": "Item 50",
+    "description": "This is a description for item number 50 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-23T12:00:00Z",
+      "updated_at": "2024-02-23T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 273.24
+  },
+  {
+    "id": 51,
+    "name": "Item 51",
+    "description": "This is a description for item number 51 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-24T12:00:00Z",
+      "updated_at": "2024-02-24T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 697.67
+  },
+  {
+    "id": 52,
+    "name": "Item 52",
+    "description": "This is a description for item number 52 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-25T12:00:00Z",
+      "updated_at": "2024-02-25T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 751.35
+  },
+  {
+    "id": 53,
+    "name": "Item 53",
+    "description": "This is a description for item number 53 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-26T12:00:00Z",
+      "updated_at": "2024-02-26T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 877.52
+  },
+  {
+    "id": 54,
+    "name": "Item 54",
+    "description": "This is a description for item number 54 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-27T12:00:00Z",
+      "updated_at": "2024-02-27T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 569.98
+  },
+  {
+    "id": 55,
+    "name": "Item 55",
+    "description": "This is a description for item number 55 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-28T12:00:00Z",
+      "updated_at": "2024-02-28T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 445.35
+  },
+  {
+    "id": 56,
+    "name": "Item 56",
+    "description": "This is a description for item number 56 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-01T12:00:00Z",
+      "updated_at": "2024-02-01T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 662.85
+  },
+  {
+    "id": 57,
+    "name": "Item 57",
+    "description": "This is a description for item number 57 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-02T12:00:00Z",
+      "updated_at": "2024-02-02T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 165.97
+  },
+  {
+    "id": 58,
+    "name": "Item 58",
+    "description": "This is a description for item number 58 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-03T12:00:00Z",
+      "updated_at": "2024-02-03T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 274.81
+  },
+  {
+    "id": 59,
+    "name": "Item 59",
+    "description": "This is a description for item number 59 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-04T12:00:00Z",
+      "updated_at": "2024-02-04T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 144.11
+  },
+  {
+    "id": 60,
+    "name": "Item 60",
+    "description": "This is a description for item number 60 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-05T12:00:00Z",
+      "updated_at": "2024-02-05T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 955.92
+  },
+  {
+    "id": 61,
+    "name": "Item 61",
+    "description": "This is a description for item number 61 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-06T12:00:00Z",
+      "updated_at": "2024-02-06T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 644.67
+  },
+  {
+    "id": 62,
+    "name": "Item 62",
+    "description": "This is a description for item number 62 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-07T12:00:00Z",
+      "updated_at": "2024-02-07T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 263.64
+  },
+  {
+    "id": 63,
+    "name": "Item 63",
+    "description": "This is a description for item number 63 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-08T12:00:00Z",
+      "updated_at": "2024-02-08T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 43.71
+  },
+  {
+    "id": 64,
+    "name": "Item 64",
+    "description": "This is a description for item number 64 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-09T12:00:00Z",
+      "updated_at": "2024-02-09T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 15.34
+  },
+  {
+    "id": 65,
+    "name": "Item 65",
+    "description": "This is a description for item number 65 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-10T12:00:00Z",
+      "updated_at": "2024-02-10T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 807.82
+  },
+  {
+    "id": 66,
+    "name": "Item 66",
+    "description": "This is a description for item number 66 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-11T12:00:00Z",
+      "updated_at": "2024-02-11T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 705.2
+  },
+  {
+    "id": 67,
+    "name": "Item 67",
+    "description": "This is a description for item number 67 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-12T12:00:00Z",
+      "updated_at": "2024-02-12T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 578.81
+  },
+  {
+    "id": 68,
+    "name": "Item 68",
+    "description": "This is a description for item number 68 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-13T12:00:00Z",
+      "updated_at": "2024-02-13T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 696.35
+  },
+  {
+    "id": 69,
+    "name": "Item 69",
+    "description": "This is a description for item number 69 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-14T12:00:00Z",
+      "updated_at": "2024-02-14T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 276.98
+  },
+  {
+    "id": 70,
+    "name": "Item 70",
+    "description": "This is a description for item number 70 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-15T12:00:00Z",
+      "updated_at": "2024-02-15T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 94.67
+  },
+  {
+    "id": 71,
+    "name": "Item 71",
+    "description": "This is a description for item number 71 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-16T12:00:00Z",
+      "updated_at": "2024-02-16T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 93.11
+  },
+  {
+    "id": 72,
+    "name": "Item 72",
+    "description": "This is a description for item number 72 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-17T12:00:00Z",
+      "updated_at": "2024-02-17T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 923.04
+  },
+  {
+    "id": 73,
+    "name": "Item 73",
+    "description": "This is a description for item number 73 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-18T12:00:00Z",
+      "updated_at": "2024-02-18T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 437.76
+  },
+  {
+    "id": 74,
+    "name": "Item 74",
+    "description": "This is a description for item number 74 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-19T12:00:00Z",
+      "updated_at": "2024-02-19T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 893.69
+  },
+  {
+    "id": 75,
+    "name": "Item 75",
+    "description": "This is a description for item number 75 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-20T12:00:00Z",
+      "updated_at": "2024-02-20T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 109.67
+  },
+  {
+    "id": 76,
+    "name": "Item 76",
+    "description": "This is a description for item number 76 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-21T12:00:00Z",
+      "updated_at": "2024-02-21T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 103.23
+  },
+  {
+    "id": 77,
+    "name": "Item 77",
+    "description": "This is a description for item number 77 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-22T12:00:00Z",
+      "updated_at": "2024-02-22T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 535.33
+  },
+  {
+    "id": 78,
+    "name": "Item 78",
+    "description": "This is a description for item number 78 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-23T12:00:00Z",
+      "updated_at": "2024-02-23T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 128.65
+  },
+  {
+    "id": 79,
+    "name": "Item 79",
+    "description": "This is a description for item number 79 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-24T12:00:00Z",
+      "updated_at": "2024-02-24T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 891.94
+  },
+  {
+    "id": 80,
+    "name": "Item 80",
+    "description": "This is a description for item number 80 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-25T12:00:00Z",
+      "updated_at": "2024-02-25T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 657.89
+  },
+  {
+    "id": 81,
+    "name": "Item 81",
+    "description": "This is a description for item number 81 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-26T12:00:00Z",
+      "updated_at": "2024-02-26T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 502.14
+  },
+  {
+    "id": 82,
+    "name": "Item 82",
+    "description": "This is a description for item number 82 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-27T12:00:00Z",
+      "updated_at": "2024-02-27T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 169.63
+  },
+  {
+    "id": 83,
+    "name": "Item 83",
+    "description": "This is a description for item number 83 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-28T12:00:00Z",
+      "updated_at": "2024-02-28T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 535.36
+  },
+  {
+    "id": 84,
+    "name": "Item 84",
+    "description": "This is a description for item number 84 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-01T12:00:00Z",
+      "updated_at": "2024-02-01T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 51.81
+  },
+  {
+    "id": 85,
+    "name": "Item 85",
+    "description": "This is a description for item number 85 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-02T12:00:00Z",
+      "updated_at": "2024-02-02T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 703.09
+  },
+  {
+    "id": 86,
+    "name": "Item 86",
+    "description": "This is a description for item number 86 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-03T12:00:00Z",
+      "updated_at": "2024-02-03T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 967.64
+  },
+  {
+    "id": 87,
+    "name": "Item 87",
+    "description": "This is a description for item number 87 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-04T12:00:00Z",
+      "updated_at": "2024-02-04T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 220.15
+  },
+  {
+    "id": 88,
+    "name": "Item 88",
+    "description": "This is a description for item number 88 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-05T12:00:00Z",
+      "updated_at": "2024-02-05T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 45.99
+  },
+  {
+    "id": 89,
+    "name": "Item 89",
+    "description": "This is a description for item number 89 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-06T12:00:00Z",
+      "updated_at": "2024-02-06T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 703.13
+  },
+  {
+    "id": 90,
+    "name": "Item 90",
+    "description": "This is a description for item number 90 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-07T12:00:00Z",
+      "updated_at": "2024-02-07T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 527.54
+  },
+  {
+    "id": 91,
+    "name": "Item 91",
+    "description": "This is a description for item number 91 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-08T12:00:00Z",
+      "updated_at": "2024-02-08T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 607.45
+  },
+  {
+    "id": 92,
+    "name": "Item 92",
+    "description": "This is a description for item number 92 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-09T12:00:00Z",
+      "updated_at": "2024-02-09T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 882.61
+  },
+  {
+    "id": 93,
+    "name": "Item 93",
+    "description": "This is a description for item number 93 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-10T12:00:00Z",
+      "updated_at": "2024-02-10T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 853.63
+  },
+  {
+    "id": 94,
+    "name": "Item 94",
+    "description": "This is a description for item number 94 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-11T12:00:00Z",
+      "updated_at": "2024-02-11T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 90.94
+  },
+  {
+    "id": 95,
+    "name": "Item 95",
+    "description": "This is a description for item number 95 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-12T12:00:00Z",
+      "updated_at": "2024-02-12T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 763.45
+  },
+  {
+    "id": 96,
+    "name": "Item 96",
+    "description": "This is a description for item number 96 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-13T12:00:00Z",
+      "updated_at": "2024-02-13T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 661.82
+  },
+  {
+    "id": 97,
+    "name": "Item 97",
+    "description": "This is a description for item number 97 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-14T12:00:00Z",
+      "updated_at": "2024-02-14T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 937.31
+  },
+  {
+    "id": 98,
+    "name": "Item 98",
+    "description": "This is a description for item number 98 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-15T12:00:00Z",
+      "updated_at": "2024-02-15T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 560.17
+  },
+  {
+    "id": 99,
+    "name": "Item 99",
+    "description": "This is a description for item number 99 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-16T12:00:00Z",
+      "updated_at": "2024-02-16T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 745.89
+  },
+  {
+    "id": 100,
+    "name": "Item 100",
+    "description": "This is a description for item number 100 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-17T12:00:00Z",
+      "updated_at": "2024-02-17T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 560.94
+  },
+  {
+    "id": 101,
+    "name": "Item 101",
+    "description": "This is a description for item number 101 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-18T12:00:00Z",
+      "updated_at": "2024-02-18T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 804.02
+  },
+  {
+    "id": 102,
+    "name": "Item 102",
+    "description": "This is a description for item number 102 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-19T12:00:00Z",
+      "updated_at": "2024-02-19T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 743.71
+  },
+  {
+    "id": 103,
+    "name": "Item 103",
+    "description": "This is a description for item number 103 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-20T12:00:00Z",
+      "updated_at": "2024-02-20T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 577.87
+  },
+  {
+    "id": 104,
+    "name": "Item 104",
+    "description": "This is a description for item number 104 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-21T12:00:00Z",
+      "updated_at": "2024-02-21T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 434.61
+  },
+  {
+    "id": 105,
+    "name": "Item 105",
+    "description": "This is a description for item number 105 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-22T12:00:00Z",
+      "updated_at": "2024-02-22T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 521.76
+  },
+  {
+    "id": 106,
+    "name": "Item 106",
+    "description": "This is a description for item number 106 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-23T12:00:00Z",
+      "updated_at": "2024-02-23T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 539.5
+  },
+  {
+    "id": 107,
+    "name": "Item 107",
+    "description": "This is a description for item number 107 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-24T12:00:00Z",
+      "updated_at": "2024-02-24T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 931.17
+  },
+  {
+    "id": 108,
+    "name": "Item 108",
+    "description": "This is a description for item number 108 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-25T12:00:00Z",
+      "updated_at": "2024-02-25T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 667.61
+  },
+  {
+    "id": 109,
+    "name": "Item 109",
+    "description": "This is a description for item number 109 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-26T12:00:00Z",
+      "updated_at": "2024-02-26T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 379.1
+  },
+  {
+    "id": 110,
+    "name": "Item 110",
+    "description": "This is a description for item number 110 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-27T12:00:00Z",
+      "updated_at": "2024-02-27T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 47.32
+  },
+  {
+    "id": 111,
+    "name": "Item 111",
+    "description": "This is a description for item number 111 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-28T12:00:00Z",
+      "updated_at": "2024-02-28T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 985.17
+  },
+  {
+    "id": 112,
+    "name": "Item 112",
+    "description": "This is a description for item number 112 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-01T12:00:00Z",
+      "updated_at": "2024-02-01T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 822.72
+  },
+  {
+    "id": 113,
+    "name": "Item 113",
+    "description": "This is a description for item number 113 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-02T12:00:00Z",
+      "updated_at": "2024-02-02T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 237.92
+  },
+  {
+    "id": 114,
+    "name": "Item 114",
+    "description": "This is a description for item number 114 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-03T12:00:00Z",
+      "updated_at": "2024-02-03T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 870.47
+  },
+  {
+    "id": 115,
+    "name": "Item 115",
+    "description": "This is a description for item number 115 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-04T12:00:00Z",
+      "updated_at": "2024-02-04T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 166.58
+  },
+  {
+    "id": 116,
+    "name": "Item 116",
+    "description": "This is a description for item number 116 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-05T12:00:00Z",
+      "updated_at": "2024-02-05T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 738.14
+  },
+  {
+    "id": 117,
+    "name": "Item 117",
+    "description": "This is a description for item number 117 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-06T12:00:00Z",
+      "updated_at": "2024-02-06T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 429.6
+  },
+  {
+    "id": 118,
+    "name": "Item 118",
+    "description": "This is a description for item number 118 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-07T12:00:00Z",
+      "updated_at": "2024-02-07T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 820.09
+  },
+  {
+    "id": 119,
+    "name": "Item 119",
+    "description": "This is a description for item number 119 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-08T12:00:00Z",
+      "updated_at": "2024-02-08T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 848.8
+  },
+  {
+    "id": 120,
+    "name": "Item 120",
+    "description": "This is a description for item number 120 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-09T12:00:00Z",
+      "updated_at": "2024-02-09T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 486.27
+  },
+  {
+    "id": 121,
+    "name": "Item 121",
+    "description": "This is a description for item number 121 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-10T12:00:00Z",
+      "updated_at": "2024-02-10T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 337.9
+  },
+  {
+    "id": 122,
+    "name": "Item 122",
+    "description": "This is a description for item number 122 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-11T12:00:00Z",
+      "updated_at": "2024-02-11T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 908.29
+  },
+  {
+    "id": 123,
+    "name": "Item 123",
+    "description": "This is a description for item number 123 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-12T12:00:00Z",
+      "updated_at": "2024-02-12T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 354.09
+  },
+  {
+    "id": 124,
+    "name": "Item 124",
+    "description": "This is a description for item number 124 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-13T12:00:00Z",
+      "updated_at": "2024-02-13T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 97.9
+  },
+  {
+    "id": 125,
+    "name": "Item 125",
+    "description": "This is a description for item number 125 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-14T12:00:00Z",
+      "updated_at": "2024-02-14T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 613.55
+  },
+  {
+    "id": 126,
+    "name": "Item 126",
+    "description": "This is a description for item number 126 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-15T12:00:00Z",
+      "updated_at": "2024-02-15T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 841.23
+  },
+  {
+    "id": 127,
+    "name": "Item 127",
+    "description": "This is a description for item number 127 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-16T12:00:00Z",
+      "updated_at": "2024-02-16T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 10.53
+  },
+  {
+    "id": 128,
+    "name": "Item 128",
+    "description": "This is a description for item number 128 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-17T12:00:00Z",
+      "updated_at": "2024-02-17T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 201.91
+  },
+  {
+    "id": 129,
+    "name": "Item 129",
+    "description": "This is a description for item number 129 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-18T12:00:00Z",
+      "updated_at": "2024-02-18T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 870.43
+  },
+  {
+    "id": 130,
+    "name": "Item 130",
+    "description": "This is a description for item number 130 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-19T12:00:00Z",
+      "updated_at": "2024-02-19T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 551.78
+  },
+  {
+    "id": 131,
+    "name": "Item 131",
+    "description": "This is a description for item number 131 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-20T12:00:00Z",
+      "updated_at": "2024-02-20T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 413.1
+  },
+  {
+    "id": 132,
+    "name": "Item 132",
+    "description": "This is a description for item number 132 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-21T12:00:00Z",
+      "updated_at": "2024-02-21T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 827.0
+  },
+  {
+    "id": 133,
+    "name": "Item 133",
+    "description": "This is a description for item number 133 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-22T12:00:00Z",
+      "updated_at": "2024-02-22T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 934.53
+  },
+  {
+    "id": 134,
+    "name": "Item 134",
+    "description": "This is a description for item number 134 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-23T12:00:00Z",
+      "updated_at": "2024-02-23T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 359.87
+  },
+  {
+    "id": 135,
+    "name": "Item 135",
+    "description": "This is a description for item number 135 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-24T12:00:00Z",
+      "updated_at": "2024-02-24T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 778.34
+  },
+  {
+    "id": 136,
+    "name": "Item 136",
+    "description": "This is a description for item number 136 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-25T12:00:00Z",
+      "updated_at": "2024-02-25T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 269.22
+  },
+  {
+    "id": 137,
+    "name": "Item 137",
+    "description": "This is a description for item number 137 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-26T12:00:00Z",
+      "updated_at": "2024-02-26T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 760.35
+  },
+  {
+    "id": 138,
+    "name": "Item 138",
+    "description": "This is a description for item number 138 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-27T12:00:00Z",
+      "updated_at": "2024-02-27T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 443.78
+  },
+  {
+    "id": 139,
+    "name": "Item 139",
+    "description": "This is a description for item number 139 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-28T12:00:00Z",
+      "updated_at": "2024-02-28T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 726.95
+  },
+  {
+    "id": 140,
+    "name": "Item 140",
+    "description": "This is a description for item number 140 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-01T12:00:00Z",
+      "updated_at": "2024-02-01T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 511.64
+  },
+  {
+    "id": 141,
+    "name": "Item 141",
+    "description": "This is a description for item number 141 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-02T12:00:00Z",
+      "updated_at": "2024-02-02T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 4.61
+  },
+  {
+    "id": 142,
+    "name": "Item 142",
+    "description": "This is a description for item number 142 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-03T12:00:00Z",
+      "updated_at": "2024-02-03T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 73.79
+  },
+  {
+    "id": 143,
+    "name": "Item 143",
+    "description": "This is a description for item number 143 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-04T12:00:00Z",
+      "updated_at": "2024-02-04T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 741.58
+  },
+  {
+    "id": 144,
+    "name": "Item 144",
+    "description": "This is a description for item number 144 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-05T12:00:00Z",
+      "updated_at": "2024-02-05T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 35.55
+  },
+  {
+    "id": 145,
+    "name": "Item 145",
+    "description": "This is a description for item number 145 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-06T12:00:00Z",
+      "updated_at": "2024-02-06T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 333.44
+  },
+  {
+    "id": 146,
+    "name": "Item 146",
+    "description": "This is a description for item number 146 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-07T12:00:00Z",
+      "updated_at": "2024-02-07T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 680.96
+  },
+  {
+    "id": 147,
+    "name": "Item 147",
+    "description": "This is a description for item number 147 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-08T12:00:00Z",
+      "updated_at": "2024-02-08T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 669.46
+  },
+  {
+    "id": 148,
+    "name": "Item 148",
+    "description": "This is a description for item number 148 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-09T12:00:00Z",
+      "updated_at": "2024-02-09T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 413.11
+  },
+  {
+    "id": 149,
+    "name": "Item 149",
+    "description": "This is a description for item number 149 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-10T12:00:00Z",
+      "updated_at": "2024-02-10T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 341.46
+  },
+  {
+    "id": 150,
+    "name": "Item 150",
+    "description": "This is a description for item number 150 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-11T12:00:00Z",
+      "updated_at": "2024-02-11T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 741.65
+  },
+  {
+    "id": 151,
+    "name": "Item 151",
+    "description": "This is a description for item number 151 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-12T12:00:00Z",
+      "updated_at": "2024-02-12T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 399.5
+  },
+  {
+    "id": 152,
+    "name": "Item 152",
+    "description": "This is a description for item number 152 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-13T12:00:00Z",
+      "updated_at": "2024-02-13T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 456.78
+  },
+  {
+    "id": 153,
+    "name": "Item 153",
+    "description": "This is a description for item number 153 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-14T12:00:00Z",
+      "updated_at": "2024-02-14T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 56.64
+  },
+  {
+    "id": 154,
+    "name": "Item 154",
+    "description": "This is a description for item number 154 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-15T12:00:00Z",
+      "updated_at": "2024-02-15T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 559.38
+  },
+  {
+    "id": 155,
+    "name": "Item 155",
+    "description": "This is a description for item number 155 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-16T12:00:00Z",
+      "updated_at": "2024-02-16T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 785.32
+  },
+  {
+    "id": 156,
+    "name": "Item 156",
+    "description": "This is a description for item number 156 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-17T12:00:00Z",
+      "updated_at": "2024-02-17T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 283.09
+  },
+  {
+    "id": 157,
+    "name": "Item 157",
+    "description": "This is a description for item number 157 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-18T12:00:00Z",
+      "updated_at": "2024-02-18T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 911.93
+  },
+  {
+    "id": 158,
+    "name": "Item 158",
+    "description": "This is a description for item number 158 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-19T12:00:00Z",
+      "updated_at": "2024-02-19T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 258.77
+  },
+  {
+    "id": 159,
+    "name": "Item 159",
+    "description": "This is a description for item number 159 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-20T12:00:00Z",
+      "updated_at": "2024-02-20T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 502.08
+  },
+  {
+    "id": 160,
+    "name": "Item 160",
+    "description": "This is a description for item number 160 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-21T12:00:00Z",
+      "updated_at": "2024-02-21T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 721.71
+  },
+  {
+    "id": 161,
+    "name": "Item 161",
+    "description": "This is a description for item number 161 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-22T12:00:00Z",
+      "updated_at": "2024-02-22T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 274.89
+  },
+  {
+    "id": 162,
+    "name": "Item 162",
+    "description": "This is a description for item number 162 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-23T12:00:00Z",
+      "updated_at": "2024-02-23T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 400.71
+  },
+  {
+    "id": 163,
+    "name": "Item 163",
+    "description": "This is a description for item number 163 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-24T12:00:00Z",
+      "updated_at": "2024-02-24T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 261.77
+  },
+  {
+    "id": 164,
+    "name": "Item 164",
+    "description": "This is a description for item number 164 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-25T12:00:00Z",
+      "updated_at": "2024-02-25T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 380.45
+  },
+  {
+    "id": 165,
+    "name": "Item 165",
+    "description": "This is a description for item number 165 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-26T12:00:00Z",
+      "updated_at": "2024-02-26T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 123.16
+  },
+  {
+    "id": 166,
+    "name": "Item 166",
+    "description": "This is a description for item number 166 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-27T12:00:00Z",
+      "updated_at": "2024-02-27T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 870.12
+  },
+  {
+    "id": 167,
+    "name": "Item 167",
+    "description": "This is a description for item number 167 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-28T12:00:00Z",
+      "updated_at": "2024-02-28T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 785.47
+  },
+  {
+    "id": 168,
+    "name": "Item 168",
+    "description": "This is a description for item number 168 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-01T12:00:00Z",
+      "updated_at": "2024-02-01T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 470.22
+  },
+  {
+    "id": 169,
+    "name": "Item 169",
+    "description": "This is a description for item number 169 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-02T12:00:00Z",
+      "updated_at": "2024-02-02T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 580.9
+  },
+  {
+    "id": 170,
+    "name": "Item 170",
+    "description": "This is a description for item number 170 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-03T12:00:00Z",
+      "updated_at": "2024-02-03T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 446.1
+  },
+  {
+    "id": 171,
+    "name": "Item 171",
+    "description": "This is a description for item number 171 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-04T12:00:00Z",
+      "updated_at": "2024-02-04T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 155.27
+  },
+  {
+    "id": 172,
+    "name": "Item 172",
+    "description": "This is a description for item number 172 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-05T12:00:00Z",
+      "updated_at": "2024-02-05T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 174.86
+  },
+  {
+    "id": 173,
+    "name": "Item 173",
+    "description": "This is a description for item number 173 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-06T12:00:00Z",
+      "updated_at": "2024-02-06T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 177.46
+  },
+  {
+    "id": 174,
+    "name": "Item 174",
+    "description": "This is a description for item number 174 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-07T12:00:00Z",
+      "updated_at": "2024-02-07T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 388.68
+  },
+  {
+    "id": 175,
+    "name": "Item 175",
+    "description": "This is a description for item number 175 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-08T12:00:00Z",
+      "updated_at": "2024-02-08T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 947.38
+  },
+  {
+    "id": 176,
+    "name": "Item 176",
+    "description": "This is a description for item number 176 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-09T12:00:00Z",
+      "updated_at": "2024-02-09T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 631.51
+  },
+  {
+    "id": 177,
+    "name": "Item 177",
+    "description": "This is a description for item number 177 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-10T12:00:00Z",
+      "updated_at": "2024-02-10T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 791.77
+  },
+  {
+    "id": 178,
+    "name": "Item 178",
+    "description": "This is a description for item number 178 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-11T12:00:00Z",
+      "updated_at": "2024-02-11T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 988.99
+  },
+  {
+    "id": 179,
+    "name": "Item 179",
+    "description": "This is a description for item number 179 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-12T12:00:00Z",
+      "updated_at": "2024-02-12T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 509.41
+  },
+  {
+    "id": 180,
+    "name": "Item 180",
+    "description": "This is a description for item number 180 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-13T12:00:00Z",
+      "updated_at": "2024-02-13T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 716.82
+  },
+  {
+    "id": 181,
+    "name": "Item 181",
+    "description": "This is a description for item number 181 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-14T12:00:00Z",
+      "updated_at": "2024-02-14T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 684.84
+  },
+  {
+    "id": 182,
+    "name": "Item 182",
+    "description": "This is a description for item number 182 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-15T12:00:00Z",
+      "updated_at": "2024-02-15T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 65.88
+  },
+  {
+    "id": 183,
+    "name": "Item 183",
+    "description": "This is a description for item number 183 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-16T12:00:00Z",
+      "updated_at": "2024-02-16T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 507.42
+  },
+  {
+    "id": 184,
+    "name": "Item 184",
+    "description": "This is a description for item number 184 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-17T12:00:00Z",
+      "updated_at": "2024-02-17T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 493.83
+  },
+  {
+    "id": 185,
+    "name": "Item 185",
+    "description": "This is a description for item number 185 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-18T12:00:00Z",
+      "updated_at": "2024-02-18T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 867.81
+  },
+  {
+    "id": 186,
+    "name": "Item 186",
+    "description": "This is a description for item number 186 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-19T12:00:00Z",
+      "updated_at": "2024-02-19T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 379.8
+  },
+  {
+    "id": 187,
+    "name": "Item 187",
+    "description": "This is a description for item number 187 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-20T12:00:00Z",
+      "updated_at": "2024-02-20T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 479.73
+  },
+  {
+    "id": 188,
+    "name": "Item 188",
+    "description": "This is a description for item number 188 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-21T12:00:00Z",
+      "updated_at": "2024-02-21T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 465.12
+  },
+  {
+    "id": 189,
+    "name": "Item 189",
+    "description": "This is a description for item number 189 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-22T12:00:00Z",
+      "updated_at": "2024-02-22T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 615.58
+  },
+  {
+    "id": 190,
+    "name": "Item 190",
+    "description": "This is a description for item number 190 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-23T12:00:00Z",
+      "updated_at": "2024-02-23T15:30:00Z",
+      "version": 0,
+      "active": true
+    },
+    "value": 213.28
+  },
+  {
+    "id": 191,
+    "name": "Item 191",
+    "description": "This is a description for item number 191 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-24T12:00:00Z",
+      "updated_at": "2024-02-24T15:30:00Z",
+      "version": 1,
+      "active": false
+    },
+    "value": 685.89
+  },
+  {
+    "id": 192,
+    "name": "Item 192",
+    "description": "This is a description for item number 192 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-25T12:00:00Z",
+      "updated_at": "2024-02-25T15:30:00Z",
+      "version": 2,
+      "active": true
+    },
+    "value": 158.73
+  },
+  {
+    "id": 193,
+    "name": "Item 193",
+    "description": "This is a description for item number 193 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-26T12:00:00Z",
+      "updated_at": "2024-02-26T15:30:00Z",
+      "version": 3,
+      "active": false
+    },
+    "value": 680.17
+  },
+  {
+    "id": 194,
+    "name": "Item 194",
+    "description": "This is a description for item number 194 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-27T12:00:00Z",
+      "updated_at": "2024-02-27T15:30:00Z",
+      "version": 4,
+      "active": true
+    },
+    "value": 136.21
+  },
+  {
+    "id": 195,
+    "name": "Item 195",
+    "description": "This is a description for item number 195 with some additional detail",
+    "tags": [
+      "tag_0"
+    ],
+    "metadata": {
+      "created_at": "2024-01-28T12:00:00Z",
+      "updated_at": "2024-02-28T15:30:00Z",
+      "version": 5,
+      "active": false
+    },
+    "value": 22.16
+  },
+  {
+    "id": 196,
+    "name": "Item 196",
+    "description": "This is a description for item number 196 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1"
+    ],
+    "metadata": {
+      "created_at": "2024-01-01T12:00:00Z",
+      "updated_at": "2024-02-01T15:30:00Z",
+      "version": 6,
+      "active": true
+    },
+    "value": 118.47
+  },
+  {
+    "id": 197,
+    "name": "Item 197",
+    "description": "This is a description for item number 197 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2"
+    ],
+    "metadata": {
+      "created_at": "2024-01-02T12:00:00Z",
+      "updated_at": "2024-02-02T15:30:00Z",
+      "version": 7,
+      "active": false
+    },
+    "value": 206.38
+  },
+  {
+    "id": 198,
+    "name": "Item 198",
+    "description": "This is a description for item number 198 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3"
+    ],
+    "metadata": {
+      "created_at": "2024-01-03T12:00:00Z",
+      "updated_at": "2024-02-03T15:30:00Z",
+      "version": 8,
+      "active": true
+    },
+    "value": 955.99
+  },
+  {
+    "id": 199,
+    "name": "Item 199",
+    "description": "This is a description for item number 199 with some additional detail",
+    "tags": [
+      "tag_0",
+      "tag_1",
+      "tag_2",
+      "tag_3",
+      "tag_4"
+    ],
+    "metadata": {
+      "created_at": "2024-01-04T12:00:00Z",
+      "updated_at": "2024-02-04T15:30:00Z",
+      "version": 9,
+      "active": false
+    },
+    "value": 983.92
+  }
+]
