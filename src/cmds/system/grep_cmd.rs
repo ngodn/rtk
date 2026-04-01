@@ -39,6 +39,15 @@ pub fn run(
         if arg == "-r" || arg == "--recursive" {
             continue;
         }
+        // Fix: strip 'r' from combined short flags (e.g. -ri → -i, -rn → -n, -rin → -in)
+        if arg.starts_with('-') && !arg.starts_with("--") && arg.contains('r') {
+            let stripped: String = arg.chars().filter(|&c| c != 'r').collect();
+            // stripped is e.g. "-i"; skip if only the dash remains (was "-r" variant)
+            if stripped != "-" {
+                rg_cmd.arg(stripped);
+            }
+            continue;
+        }
         rg_cmd.arg(arg);
     }
 
@@ -280,6 +289,64 @@ mod tests {
             .collect();
         assert_eq!(filtered.len(), 1);
         assert_eq!(filtered[0], "-i");
+    }
+
+    // Fix: combined short flags containing 'r' (e.g. -ri, -rn, -rin) have 'r' stripped
+    #[test]
+    fn test_combined_r_flag_stripped() {
+        fn strip_r_from_extra_args(extra_args: &[String]) -> Vec<String> {
+            let mut result = Vec::new();
+            for arg in extra_args {
+                if arg == "-r" || arg == "--recursive" {
+                    continue;
+                }
+                if arg.starts_with('-') && !arg.starts_with("--") && arg.contains('r') {
+                    let stripped: String = arg.chars().filter(|&c| c != 'r').collect();
+                    if stripped != "-" {
+                        result.push(stripped);
+                    }
+                    continue;
+                }
+                result.push(arg.clone());
+            }
+            result
+        }
+
+        // -ri → -i
+        assert_eq!(
+            strip_r_from_extra_args(&["-ri".to_string()]),
+            vec!["-i".to_string()]
+        );
+        // -rn → -n
+        assert_eq!(
+            strip_r_from_extra_args(&["-rn".to_string()]),
+            vec!["-n".to_string()]
+        );
+        // -rin → -in
+        assert_eq!(
+            strip_r_from_extra_args(&["-rin".to_string()]),
+            vec!["-in".to_string()]
+        );
+        // standalone -r still dropped
+        assert_eq!(
+            strip_r_from_extra_args(&["-r".to_string()]),
+            Vec::<String>::new()
+        );
+        // --recursive still dropped
+        assert_eq!(
+            strip_r_from_extra_args(&["--recursive".to_string()]),
+            Vec::<String>::new()
+        );
+        // unrelated flags pass through unchanged
+        assert_eq!(
+            strip_r_from_extra_args(&["-i".to_string(), "-A".to_string(), "3".to_string()]),
+            vec!["-i".to_string(), "-A".to_string(), "3".to_string()]
+        );
+        // long flags with 'r' in name pass through unchanged (e.g. --sort)
+        assert_eq!(
+            strip_r_from_extra_args(&["--sort".to_string()]),
+            vec!["--sort".to_string()]
+        );
     }
 
     // --- truncation accuracy ---
