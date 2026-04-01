@@ -1,17 +1,20 @@
-//! PowerPoint (.pptx) inspection command.
+//! PowerPoint (.pptx) inspection and modification command.
 //!
-//! Reads PPTX files (which are ZIP archives of XML) to extract slide content,
-//! metadata, and shape information in a token-optimized format.
+//! Reads and writes PPTX files (which are ZIP archives of XML) to extract and
+//! modify slide content, metadata, and shape information in a token-optimized format.
 
 use crate::core::tracking;
 use anyhow::{bail, Context, Result};
+use lazy_static::lazy_static;
 use quick_xml::events::Event;
 use quick_xml::Reader;
+use regex::Regex;
 use std::collections::BTreeMap;
 use std::fs::File;
-use std::io::Read as IoRead;
+use std::io::{Read as IoRead, Write as IoWrite};
 use std::path::Path;
-use zip::ZipArchive;
+use zip::write::SimpleFileOptions;
+use zip::{ZipArchive, ZipWriter};
 
 /// A shape extracted from a slide.
 #[derive(Debug)]
@@ -514,7 +517,8 @@ pub fn run_find(file: &Path, query: &str, verbose: u8) -> Result<()> {
         for (i, shape) in shapes.iter().enumerate() {
             if shape.text.to_lowercase().contains(&query_lower) {
                 let text_preview = if shape.text.len() > 80 {
-                    format!("{}...", &shape.text[..77])
+                    let truncated: String = shape.text.chars().take(77).collect();
+                    format!("{}...", truncated)
                 } else {
                     shape.text.clone()
                 };
@@ -572,6 +576,548 @@ fn parse_slide_range(spec: &str) -> Result<(u32, u32)> {
             .with_context(|| format!("Invalid slide number: {}", spec))?;
         Ok((num, num))
     }
+}
+
+// ── Write helpers ──────────────────────────────────────────────────────
+
+lazy_static! {
+    /// Match a cNvPr element with a specific name attribute.
+    /// Captures: (1) everything before the name value, (2) the name value.
+    static ref CNVPR_NAME_RE: Regex =
+        Regex::new(r#"<[^>]*cNvPr[^>]*\bname="([^"]*)"[^>]*/?\s*>"#).expect("valid regex");
+}
+
+/// Copy a PPTX zip, applying a transformation function to specific entries.
+/// `transform` is called for each entry name; if it returns Some(new_content),
+/// that content replaces the original. If it returns None, the entry is copied as-is.
+/// If `skip_entries` contains the entry name, the entry is omitted entirely.
+fn rewrite_pptx<F>(path: &Path, skip_entries: &[&str], transform: F) -> Result<()>
+where
+    F: Fn(&str, &[u8]) -> Result<Option<Vec<u8>>>,
+{
+    let file = File::open(path).with_context(|| format!("Failed to open: {}", path.display()))?;
+    let mut archive =
+        ZipArchive::new(file).with_context(|| format!("Not a valid PPTX: {}", path.display()))?;
+
+    let tmp_path = path.with_extension("pptx.tmp");
+    let tmp_file = File::create(&tmp_path)
+        .with_context(|| format!("Failed to create temp file: {}", tmp_path.display()))?;
+    let mut writer = ZipWriter::new(tmp_file);
+
+    for i in 0..archive.len() {
+        let mut entry = archive
+            .by_index(i)
+            .with_context(|| format!("Failed to read zip entry {}", i))?;
+        let name = entry.name().to_string();
+
+        if skip_entries.contains(&name.as_str()) {
+            continue;
+        }
+
+        let mut raw = Vec::new();
+        entry
+            .read_to_end(&mut raw)
+            .with_context(|| format!("Failed to read entry: {}", name))?;
+
+        let options = SimpleFileOptions::default().compression_method(entry.compression());
+
+        let final_bytes = transform(&name, &raw)?;
+
+        writer
+            .start_file(&name, options)
+            .with_context(|| format!("Failed to start writing entry: {}", name))?;
+        writer
+            .write_all(final_bytes.as_deref().unwrap_or(&raw))
+            .with_context(|| format!("Failed to write entry: {}", name))?;
+    }
+
+    writer.finish().context("Failed to finalize PPTX zip")?;
+
+    std::fs::rename(&tmp_path, path)
+        .with_context(|| format!("Failed to replace original file: {}", path.display()))?;
+
+    Ok(())
+}
+
+/// Find the XML range of a shape with the given name in slide XML.
+/// Returns the byte range of the `<p:sp>...</p:sp>` block and the shape's XML.
+fn find_shape_xml_by_name<'a>(xml: &'a str, shape_name: &str) -> Option<(usize, usize, &'a str)> {
+    // We need to find the <p:sp> block containing a cNvPr with the matching name.
+    // Strategy: find all <p:sp> blocks, check each for the name.
+    let sp_open_tag = "<p:sp>";
+    let sp_open_tag_with_attrs = "<p:sp ";
+    let sp_close_tag = "</p:sp>";
+
+    let mut search_from = 0;
+    loop {
+        // Find next <p:sp> or <p:sp ...>
+        let sp_start = {
+            let a = xml[search_from..]
+                .find(sp_open_tag)
+                .map(|p| search_from + p);
+            let b = xml[search_from..]
+                .find(sp_open_tag_with_attrs)
+                .map(|p| search_from + p);
+            match (a, b) {
+                (Some(x), Some(y)) => Some(x.min(y)),
+                (Some(x), None) => Some(x),
+                (None, Some(y)) => Some(y),
+                (None, None) => None,
+            }
+        };
+
+        let sp_start = sp_start?;
+
+        let sp_end = match xml[sp_start..].find(sp_close_tag) {
+            Some(p) => sp_start + p + sp_close_tag.len(),
+            None => return None,
+        };
+
+        let block = &xml[sp_start..sp_end];
+
+        // Check if this block contains a cNvPr with the target name
+        for caps in CNVPR_NAME_RE.captures_iter(block) {
+            if let Some(m) = caps.get(1) {
+                if m.as_str() == shape_name {
+                    return Some((sp_start, sp_end, block));
+                }
+            }
+        }
+
+        search_from = sp_end;
+    }
+}
+
+/// Replace all `<a:t>` content within a shape XML block with new text.
+/// The first `<a:t>` gets the full text; subsequent ones are emptied.
+/// This preserves all formatting (font, size, color, etc.).
+fn replace_text_in_shape_xml(shape_xml: &str, new_text: &str) -> String {
+    lazy_static! {
+        static ref AT_RE: Regex = Regex::new(r"(<a:t>)(.*?)(</a:t>)").expect("valid regex");
+    }
+
+    let mut first = true;
+    let result = AT_RE.replace_all(shape_xml, |caps: &regex::Captures| {
+        if first {
+            first = false;
+            format!(
+                "{}{}{}",
+                &caps[1],
+                quick_xml::escape::escape(new_text),
+                &caps[3]
+            )
+        } else {
+            format!("{}{}", &caps[1], &caps[3])
+        }
+    });
+    result.to_string()
+}
+
+/// Set or replace the solid fill color in a shape XML block.
+fn set_fill_in_shape_xml(shape_xml: &str, hex_color: &str) -> String {
+    let color = hex_color.trim_start_matches('#');
+    let fill_xml = format!("<a:solidFill><a:srgbClr val=\"{}\"/></a:solidFill>", color);
+
+    // Check if there's already a <a:solidFill> inside <p:spPr>
+    lazy_static! {
+        static ref SOLID_FILL_RE: Regex =
+            Regex::new(r"<a:solidFill>.*?</a:solidFill>").expect("valid regex");
+        static ref SPPR_OPEN_RE: Regex = Regex::new(r"<p:spPr[^>]*>").expect("valid regex");
+    }
+
+    // If there's already a solidFill, replace it
+    if SOLID_FILL_RE.is_match(shape_xml) {
+        return SOLID_FILL_RE
+            .replace(shape_xml, fill_xml.as_str())
+            .to_string();
+    }
+
+    // Otherwise, insert after <p:spPr...>
+    if let Some(m) = SPPR_OPEN_RE.find(shape_xml) {
+        let insert_pos = m.end();
+        let mut result = String::with_capacity(shape_xml.len() + fill_xml.len());
+        result.push_str(&shape_xml[..insert_pos]);
+        result.push_str(&fill_xml);
+        result.push_str(&shape_xml[insert_pos..]);
+        return result;
+    }
+
+    // Fallback: return unchanged
+    shape_xml.to_string()
+}
+
+// ── Write subcommand implementations ───────────────────────────────────
+
+/// `rtk pptx set-text <file> <slide> <shape-name> <new-text>`
+pub fn run_set_text(
+    file: &Path,
+    slide: u32,
+    shape_name: &str,
+    new_text: &str,
+    verbose: u8,
+) -> Result<()> {
+    let timer = tracking::TimedExecution::start();
+    let slide_entry = format!("ppt/slides/slide{}.xml", slide);
+    let shape_name_owned = shape_name.to_string();
+    let new_text_owned = new_text.to_string();
+
+    rewrite_pptx(file, &[], |name, raw| {
+        if name == slide_entry {
+            let xml =
+                std::str::from_utf8(raw).with_context(|| format!("Invalid UTF-8 in {}", name))?;
+
+            let (start, end, shape_block) = find_shape_xml_by_name(xml, &shape_name_owned)
+                .with_context(|| {
+                    format!("Shape '{}' not found on slide {}", shape_name_owned, slide)
+                })?;
+
+            let new_block = replace_text_in_shape_xml(shape_block, &new_text_owned);
+            let mut result = String::with_capacity(xml.len());
+            result.push_str(&xml[..start]);
+            result.push_str(&new_block);
+            result.push_str(&xml[end..]);
+            Ok(Some(result.into_bytes()))
+        } else {
+            Ok(None)
+        }
+    })?;
+
+    let output = format!(
+        "Set text on slide {} shape '{}' to '{}'",
+        slide, shape_name, new_text
+    );
+    println!("{}", output);
+
+    if verbose > 0 {
+        eprintln!("Modified: {}", file.display());
+    }
+
+    timer.track(
+        &format!("pptx set-text {}", file.display()),
+        "rtk pptx set-text",
+        "manual edit in PowerPoint",
+        &output,
+    );
+    Ok(())
+}
+
+/// `rtk pptx set-fill <file> <slide> <shape-name> <hex-color>`
+pub fn run_set_fill(
+    file: &Path,
+    slide: u32,
+    shape_name: &str,
+    hex_color: &str,
+    verbose: u8,
+) -> Result<()> {
+    let timer = tracking::TimedExecution::start();
+    let slide_entry = format!("ppt/slides/slide{}.xml", slide);
+    let shape_name_owned = shape_name.to_string();
+    let hex_color_owned = hex_color.to_string();
+
+    rewrite_pptx(file, &[], |name, raw| {
+        if name == slide_entry {
+            let xml =
+                std::str::from_utf8(raw).with_context(|| format!("Invalid UTF-8 in {}", name))?;
+
+            let (start, end, shape_block) = find_shape_xml_by_name(xml, &shape_name_owned)
+                .with_context(|| {
+                    format!("Shape '{}' not found on slide {}", shape_name_owned, slide)
+                })?;
+
+            let new_block = set_fill_in_shape_xml(shape_block, &hex_color_owned);
+            let mut result = String::with_capacity(xml.len());
+            result.push_str(&xml[..start]);
+            result.push_str(&new_block);
+            result.push_str(&xml[end..]);
+            Ok(Some(result.into_bytes()))
+        } else {
+            Ok(None)
+        }
+    })?;
+
+    let color = hex_color.trim_start_matches('#');
+    let output = format!(
+        "Set fill on slide {} shape '{}' to #{}",
+        slide, shape_name, color
+    );
+    println!("{}", output);
+
+    if verbose > 0 {
+        eprintln!("Modified: {}", file.display());
+    }
+
+    timer.track(
+        &format!("pptx set-fill {}", file.display()),
+        "rtk pptx set-fill",
+        "manual edit in PowerPoint",
+        &output,
+    );
+    Ok(())
+}
+
+/// `rtk pptx delete-slide <file> <slide-number>`
+pub fn run_delete_slide(file: &Path, slide: u32, verbose: u8) -> Result<()> {
+    let timer = tracking::TimedExecution::start();
+
+    // Verify the slide exists first
+    {
+        let mut archive = open_pptx(file)?;
+        let slides = slide_entries(&archive);
+        let entry_name = format!("ppt/slides/slide{}.xml", slide);
+        if !slides.contains(&entry_name) {
+            bail!(
+                "Slide {} not found in {} (has {} slides)",
+                slide,
+                file.display(),
+                slides.len()
+            );
+        }
+        // Don't allow deleting the last slide
+        if slides.len() <= 1 {
+            bail!("Cannot delete the only slide in the presentation");
+        }
+        // Read presentation.xml to find the rId for this slide
+        let _pres_xml = read_zip_entry(&mut archive, "ppt/presentation.xml")?;
+    }
+
+    let slide_entry = format!("ppt/slides/slide{}.xml", slide);
+    let slide_rels_entry = format!("ppt/slides/_rels/slide{}.xml.rels", slide);
+
+    // We need to:
+    // 1. Remove the slide XML and its rels
+    // 2. Update ppt/presentation.xml to remove the <p:sldIdLst> entry
+    // 3. Update [Content_Types].xml to remove the slide's override
+    // 4. Update ppt/_rels/presentation.xml.rels to remove the relationship
+
+    // First, find the rId for this slide in presentation.xml.rels
+    let rid_to_remove = {
+        let mut archive = open_pptx(file)?;
+        let rels_xml = read_zip_entry(&mut archive, "ppt/_rels/presentation.xml.rels")?;
+        find_rid_for_slide(&rels_xml, slide)?
+    };
+
+    let skip = vec![slide_entry.as_str(), slide_rels_entry.as_str()];
+
+    rewrite_pptx(file, &skip, |name, raw| match name {
+        "ppt/presentation.xml" => {
+            let xml = std::str::from_utf8(raw).context("Invalid UTF-8 in presentation.xml")?;
+            let updated = remove_slide_from_presentation_xml(xml, &rid_to_remove)?;
+            Ok(Some(updated.into_bytes()))
+        }
+        "[Content_Types].xml" => {
+            let xml = std::str::from_utf8(raw).context("Invalid UTF-8 in [Content_Types].xml")?;
+            let updated = remove_slide_from_content_types(xml, slide);
+            Ok(Some(updated.into_bytes()))
+        }
+        "ppt/_rels/presentation.xml.rels" => {
+            let xml = std::str::from_utf8(raw).context("Invalid UTF-8 in presentation.xml.rels")?;
+            let updated = remove_relationship(xml, &rid_to_remove);
+            Ok(Some(updated.into_bytes()))
+        }
+        _ => Ok(None),
+    })?;
+
+    let output = format!("Deleted slide {} from {}", slide, file.display());
+    println!("{}", output);
+
+    if verbose > 0 {
+        eprintln!("Modified: {}", file.display());
+    }
+
+    timer.track(
+        &format!("pptx delete-slide {}", file.display()),
+        "rtk pptx delete-slide",
+        "manual edit in PowerPoint",
+        &output,
+    );
+    Ok(())
+}
+
+/// Find the relationship ID (rId) for a given slide number in presentation.xml.rels.
+fn find_rid_for_slide(rels_xml: &str, slide: u32) -> Result<String> {
+    lazy_static! {
+        static ref REL_RE: Regex = Regex::new(
+            r#"<Relationship[^>]*\bId="([^"]*)"[^>]*Target="slides/slide(\d+)\.xml"[^>]*/?\s*>"#
+        )
+        .expect("valid regex");
+        // Also match when Target comes before Id
+        static ref REL_RE2: Regex = Regex::new(
+            r#"<Relationship[^>]*Target="slides/slide(\d+)\.xml"[^>]*\bId="([^"]*)"[^>]*/?\s*>"#
+        )
+        .expect("valid regex");
+    }
+
+    for caps in REL_RE.captures_iter(rels_xml) {
+        if let (Some(rid), Some(num)) = (caps.get(1), caps.get(2)) {
+            if num.as_str().parse::<u32>().ok() == Some(slide) {
+                return Ok(rid.as_str().to_string());
+            }
+        }
+    }
+    for caps in REL_RE2.captures_iter(rels_xml) {
+        if let (Some(num), Some(rid)) = (caps.get(1), caps.get(2)) {
+            if num.as_str().parse::<u32>().ok() == Some(slide) {
+                return Ok(rid.as_str().to_string());
+            }
+        }
+    }
+
+    bail!("Could not find relationship ID for slide {}", slide)
+}
+
+/// Remove the `<p:sldId>` entry for the given rId from presentation.xml.
+fn remove_slide_from_presentation_xml(xml: &str, rid: &str) -> Result<String> {
+    lazy_static! {
+        static ref SLDID_RE: Regex = Regex::new(r#"<p:sldId[^>]*/?\s*>"#).expect("valid regex");
+    }
+
+    // Remove any <p:sldId ... r:id="rIdXX" .../> that references our rid
+    let pattern = format!(r#"<p:sldId[^>]*r:id="{}"\s*/?\s*>"#, regex::escape(rid));
+    let specific_re = Regex::new(&pattern).context("Failed to build slide removal regex")?;
+    let result = specific_re.replace(xml, "").to_string();
+    Ok(result)
+}
+
+/// Remove the slide override from [Content_Types].xml.
+fn remove_slide_from_content_types(xml: &str, slide: u32) -> String {
+    let pattern = format!(
+        r#"<Override[^>]*PartName="/ppt/slides/slide{}\.xml"[^>]*/?\s*>"#,
+        slide
+    );
+    if let Ok(re) = Regex::new(&pattern) {
+        re.replace(xml, "").to_string()
+    } else {
+        xml.to_string()
+    }
+}
+
+/// Remove a <Relationship> entry by its Id from a .rels file.
+fn remove_relationship(xml: &str, rid: &str) -> String {
+    let pattern = format!(
+        r#"<Relationship[^>]*\bId="{}"\s*[^>]*/?\s*>"#,
+        regex::escape(rid)
+    );
+    if let Ok(re) = Regex::new(&pattern) {
+        re.replace(xml, "").to_string()
+    } else {
+        xml.to_string()
+    }
+}
+
+/// `rtk pptx move-slide <file> <from> <to>`
+pub fn run_move_slide(file: &Path, from: u32, to: u32, verbose: u8) -> Result<()> {
+    let timer = tracking::TimedExecution::start();
+
+    if from == to {
+        println!("Slide {} is already at position {}", from, to);
+        return Ok(());
+    }
+
+    // Verify slide count
+    let slide_count = {
+        let archive = open_pptx(file)?;
+        let slides = slide_entries(&archive);
+        let count = slides.len() as u32;
+        if from < 1 || from > count {
+            bail!("Slide {} out of range (1-{})", from, count);
+        }
+        if to < 1 || to > count {
+            bail!("Destination {} out of range (1-{})", to, count);
+        }
+        count
+    };
+
+    // The slide order is determined by <p:sldIdLst> in presentation.xml.
+    // We need to reorder the <p:sldId> elements.
+    rewrite_pptx(file, &[], |name, raw| {
+        if name == "ppt/presentation.xml" {
+            let xml = std::str::from_utf8(raw).context("Invalid UTF-8 in presentation.xml")?;
+            let updated = reorder_slides_in_presentation_xml(xml, from, to, slide_count)?;
+            Ok(Some(updated.into_bytes()))
+        } else {
+            Ok(None)
+        }
+    })?;
+
+    let output = format!(
+        "Moved slide {} to position {} in {}",
+        from,
+        to,
+        file.display()
+    );
+    println!("{}", output);
+
+    if verbose > 0 {
+        eprintln!("Modified: {}", file.display());
+    }
+
+    timer.track(
+        &format!("pptx move-slide {}", file.display()),
+        "rtk pptx move-slide",
+        "manual edit in PowerPoint",
+        &output,
+    );
+    Ok(())
+}
+
+/// Reorder `<p:sldId>` entries within `<p:sldIdLst>` in presentation.xml.
+fn reorder_slides_in_presentation_xml(
+    xml: &str,
+    from: u32,
+    to: u32,
+    _slide_count: u32,
+) -> Result<String> {
+    lazy_static! {
+        static ref SLDIDLST_RE: Regex =
+            Regex::new(r"(?s)<p:sldIdLst>(.*?)</p:sldIdLst>").expect("valid regex");
+        static ref SLDID_ENTRY_RE: Regex =
+            Regex::new(r#"<p:sldId[^>]*/?\s*>"#).expect("valid regex");
+    }
+
+    let list_match = SLDIDLST_RE
+        .captures(xml)
+        .context("Could not find <p:sldIdLst> in presentation.xml")?;
+    let list_content = list_match.get(1).context("Empty sldIdLst")?.as_str();
+
+    // Collect all <p:sldId .../> entries in order
+    let entries: Vec<&str> = SLDID_ENTRY_RE
+        .find_iter(list_content)
+        .map(|m| m.as_str())
+        .collect();
+
+    if entries.is_empty() {
+        bail!("No slide entries found in <p:sldIdLst>");
+    }
+
+    let from_idx = (from as usize)
+        .checked_sub(1)
+        .context("Invalid from index")?;
+    let to_idx = (to as usize).checked_sub(1).context("Invalid to index")?;
+
+    if from_idx >= entries.len() {
+        bail!(
+            "Slide {} out of range (presentation has {} slides in sldIdLst)",
+            from,
+            entries.len()
+        );
+    }
+
+    let mut reordered = entries.clone();
+    let item = reordered.remove(from_idx);
+    let insert_at = to_idx.min(reordered.len());
+    reordered.insert(insert_at, item);
+
+    // Rebuild the sldIdLst content
+    let new_list_content = reordered.join("\n    ");
+    let new_list = format!("<p:sldIdLst>\n    {}\n  </p:sldIdLst>", new_list_content);
+
+    let full_match = list_match.get(0).context("regex match")?;
+    let mut result = String::with_capacity(xml.len());
+    result.push_str(&xml[..full_match.start()]);
+    result.push_str(&new_list);
+    result.push_str(&xml[full_match.end()..]);
+
+    Ok(result)
 }
 
 #[cfg(test)]
@@ -737,5 +1283,178 @@ mod tests {
         // 12192000 / 12700 = 960, 6858000 / 12700 = 540
         assert_eq!(w, 960);
         assert_eq!(h, 540);
+    }
+
+    // ── Write function tests ───────────────────────────────────────────
+
+    #[test]
+    fn test_find_shape_xml_by_name() {
+        let xml = r#"<p:sld><p:cSld><p:spTree>
+<p:sp><p:nvSpPr><p:cNvPr id="2" name="Title 1"/></p:nvSpPr><p:txBody><a:t>Hello</a:t></p:txBody></p:sp>
+<p:sp><p:nvSpPr><p:cNvPr id="3" name="Rectangle 2"/></p:nvSpPr><p:txBody><a:t>World</a:t></p:txBody></p:sp>
+</p:spTree></p:cSld></p:sld>"#;
+
+        let result = find_shape_xml_by_name(xml, "Title 1");
+        assert!(result.is_some());
+        let (_, _, block) = result.expect("should find shape");
+        assert!(block.contains("Title 1"));
+        assert!(block.contains("Hello"));
+
+        let result = find_shape_xml_by_name(xml, "Rectangle 2");
+        assert!(result.is_some());
+        let (_, _, block) = result.expect("should find shape");
+        assert!(block.contains("Rectangle 2"));
+        assert!(block.contains("World"));
+
+        let result = find_shape_xml_by_name(xml, "Nonexistent");
+        assert!(result.is_none());
+    }
+
+    #[test]
+    fn test_replace_text_in_shape_xml() {
+        let shape = r#"<p:sp><p:txBody><a:p><a:r><a:rPr sz="2400"/><a:t>Old Text</a:t></a:r></a:p></p:txBody></p:sp>"#;
+        let result = replace_text_in_shape_xml(shape, "New Text");
+        assert!(result.contains("<a:t>New Text</a:t>"));
+        assert!(!result.contains("Old Text"));
+        // Formatting preserved
+        assert!(result.contains(r#"sz="2400""#));
+    }
+
+    #[test]
+    fn test_replace_text_multiple_runs() {
+        let shape = r#"<p:sp><p:txBody><a:p><a:r><a:t>Part 1</a:t></a:r><a:r><a:t>Part 2</a:t></a:r></a:p></p:txBody></p:sp>"#;
+        let result = replace_text_in_shape_xml(shape, "Full Replacement");
+        assert!(result.contains("<a:t>Full Replacement</a:t>"));
+        // Second <a:t> should be emptied
+        assert!(result.contains("<a:t></a:t>"));
+        assert!(!result.contains("Part 1"));
+        assert!(!result.contains("Part 2"));
+    }
+
+    #[test]
+    fn test_replace_text_escapes_special_chars() {
+        let shape = r#"<p:sp><p:txBody><a:t>Old</a:t></p:txBody></p:sp>"#;
+        let result = replace_text_in_shape_xml(shape, "A & B < C");
+        assert!(result.contains("A &amp; B &lt; C"));
+    }
+
+    #[test]
+    fn test_set_fill_replace_existing() {
+        let shape =
+            r#"<p:sp><p:spPr><a:solidFill><a:srgbClr val="4472C4"/></a:solidFill></p:spPr></p:sp>"#;
+        let result = set_fill_in_shape_xml(shape, "#FF0000");
+        assert!(result.contains(r#"val="FF0000""#));
+        assert!(!result.contains("4472C4"));
+    }
+
+    #[test]
+    fn test_set_fill_add_new() {
+        let shape = r#"<p:sp><p:spPr><a:xfrm><a:off x="0" y="0"/></a:xfrm></p:spPr></p:sp>"#;
+        let result = set_fill_in_shape_xml(shape, "00FF00");
+        assert!(result.contains(r#"<a:solidFill><a:srgbClr val="00FF00"/></a:solidFill>"#));
+        // Should be inserted after <p:spPr>
+        assert!(result.contains("<p:spPr><a:solidFill>"));
+    }
+
+    #[test]
+    fn test_set_fill_strips_hash() {
+        let shape = r#"<p:sp><p:spPr></p:spPr></p:sp>"#;
+        let result = set_fill_in_shape_xml(shape, "#AABBCC");
+        assert!(result.contains(r#"val="AABBCC""#));
+        assert!(!result.contains("#"));
+    }
+
+    #[test]
+    fn test_find_rid_for_slide() {
+        let rels = r#"<?xml version="1.0"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slide" Target="slides/slide1.xml"/>
+  <Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slide" Target="slides/slide2.xml"/>
+  <Relationship Id="rId4" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slide" Target="slides/slide3.xml"/>
+</Relationships>"#;
+
+        assert_eq!(find_rid_for_slide(rels, 1).expect("should find"), "rId2");
+        assert_eq!(find_rid_for_slide(rels, 3).expect("should find"), "rId4");
+        assert!(find_rid_for_slide(rels, 99).is_err());
+    }
+
+    #[test]
+    fn test_remove_slide_from_presentation_xml() {
+        let xml = r#"<p:presentation>
+  <p:sldIdLst>
+    <p:sldId id="256" r:id="rId2"/>
+    <p:sldId id="257" r:id="rId3"/>
+    <p:sldId id="258" r:id="rId4"/>
+  </p:sldIdLst>
+</p:presentation>"#;
+
+        let result = remove_slide_from_presentation_xml(xml, "rId3").expect("should succeed");
+        assert!(!result.contains("rId3"));
+        assert!(result.contains("rId2"));
+        assert!(result.contains("rId4"));
+    }
+
+    #[test]
+    fn test_remove_slide_from_content_types() {
+        let xml = r#"<Types>
+  <Override PartName="/ppt/slides/slide1.xml" ContentType="application/vnd.openxmlformats-officedocument.presentationml.slide+xml"/>
+  <Override PartName="/ppt/slides/slide2.xml" ContentType="application/vnd.openxmlformats-officedocument.presentationml.slide+xml"/>
+</Types>"#;
+
+        let result = remove_slide_from_content_types(xml, 1);
+        assert!(!result.contains("slide1.xml"));
+        assert!(result.contains("slide2.xml"));
+    }
+
+    #[test]
+    fn test_remove_relationship() {
+        let xml = r#"<Relationships>
+  <Relationship Id="rId2" Type="slide" Target="slides/slide1.xml"/>
+  <Relationship Id="rId3" Type="slide" Target="slides/slide2.xml"/>
+</Relationships>"#;
+
+        let result = remove_relationship(xml, "rId2");
+        assert!(!result.contains("rId2"));
+        assert!(result.contains("rId3"));
+    }
+
+    #[test]
+    fn test_reorder_slides_move_forward() {
+        let xml = r#"<p:presentation>
+  <p:sldIdLst>
+    <p:sldId id="256" r:id="rId2"/>
+    <p:sldId id="257" r:id="rId3"/>
+    <p:sldId id="258" r:id="rId4"/>
+  </p:sldIdLst>
+</p:presentation>"#;
+
+        // Move slide 1 to position 3
+        let result = reorder_slides_in_presentation_xml(xml, 1, 3, 3).expect("should succeed");
+        // After moving slide 1 to position 3: order should be rId3, rId4, rId2
+        let r2 = result.find("rId2").expect("rId2 present");
+        let r3 = result.find("rId3").expect("rId3 present");
+        let r4 = result.find("rId4").expect("rId4 present");
+        assert!(r3 < r4, "rId3 should come before rId4");
+        assert!(r4 < r2, "rId4 should come before rId2");
+    }
+
+    #[test]
+    fn test_reorder_slides_move_backward() {
+        let xml = r#"<p:presentation>
+  <p:sldIdLst>
+    <p:sldId id="256" r:id="rId2"/>
+    <p:sldId id="257" r:id="rId3"/>
+    <p:sldId id="258" r:id="rId4"/>
+  </p:sldIdLst>
+</p:presentation>"#;
+
+        // Move slide 3 to position 1
+        let result = reorder_slides_in_presentation_xml(xml, 3, 1, 3).expect("should succeed");
+        // After moving slide 3 to position 1: order should be rId4, rId2, rId3
+        let r2 = result.find("rId2").expect("rId2 present");
+        let r3 = result.find("rId3").expect("rId3 present");
+        let r4 = result.find("rId4").expect("rId4 present");
+        assert!(r4 < r2, "rId4 should come before rId2");
+        assert!(r2 < r3, "rId2 should come before rId3");
     }
 }

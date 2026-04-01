@@ -862,6 +862,44 @@ enum PptxCommands {
         /// Text to search for
         query: String,
     },
+    /// Replace text in a named shape
+    SetText {
+        /// PPTX file to modify
+        file: PathBuf,
+        /// Slide number
+        slide: u32,
+        /// Shape name (e.g. "Title 1")
+        shape_name: String,
+        /// New text content
+        new_text: String,
+    },
+    /// Set shape fill color (e.g. "#4472C4")
+    SetFill {
+        /// PPTX file to modify
+        file: PathBuf,
+        /// Slide number
+        slide: u32,
+        /// Shape name (e.g. "Rectangle 2")
+        shape_name: String,
+        /// Hex color (e.g. "#FF0000" or "FF0000")
+        hex_color: String,
+    },
+    /// Delete a slide by number
+    DeleteSlide {
+        /// PPTX file to modify
+        file: PathBuf,
+        /// Slide number to delete
+        slide: u32,
+    },
+    /// Move a slide to a new position
+    MoveSlide {
+        /// PPTX file to modify
+        file: PathBuf,
+        /// Slide number to move
+        from: u32,
+        /// Destination position
+        to: u32,
+    },
 }
 
 #[derive(Subcommand)]
@@ -1793,6 +1831,28 @@ fn main() -> Result<()> {
             }
             PptxCommands::Find { file, query } => {
                 pptx_cmd::run_find(&file, &query, cli.verbose)?;
+            }
+            PptxCommands::SetText {
+                file,
+                slide,
+                shape_name,
+                new_text,
+            } => {
+                pptx_cmd::run_set_text(&file, slide, &shape_name, &new_text, cli.verbose)?;
+            }
+            PptxCommands::SetFill {
+                file,
+                slide,
+                shape_name,
+                hex_color,
+            } => {
+                pptx_cmd::run_set_fill(&file, slide, &shape_name, &hex_color, cli.verbose)?;
+            }
+            PptxCommands::DeleteSlide { file, slide } => {
+                pptx_cmd::run_delete_slide(&file, slide, cli.verbose)?;
+            }
+            PptxCommands::MoveSlide { file, from, to } => {
+                pptx_cmd::run_move_slide(&file, from, to, cli.verbose)?;
             }
         },
 
