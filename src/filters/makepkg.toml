@@ -1,0 +1,59 @@
+[filters.makepkg]
+description = "Compact makepkg build output (keep errors/warnings only)"
+match_command = "^makepkg"
+strip_ansi = true
+match_output = [
+  { pattern = "Finished making:", message = "Build completed successfully" },
+]
+keep_lines_matching = [
+  "^==>",
+  "^->",
+  "^ERROR",
+  "^WARNING",
+  "^error",
+  "^warning",
+  "^make\\[\\d+\\]:\\s+\\*\\*\\*",
+  "^FAILED",
+  "^PKGBUILD",
+]
+max_lines = 50
+on_empty = "makepkg: build in progress (no errors)"
+
+[[tests.makepkg]]
+name = "finished making short-circuits"
+input = """
+==> Making package: mypkg 1.0-1 (Tue Jan  1 12:00:00 2025)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+==> Validating source files with sha256sums...
+==> Extracting sources...
+==> Starting build()...
+==> Entering fakeroot environment...
+==> Starting package()...
+==> Tidying install...
+==> Finished making: mypkg 1.0-1 (Tue Jan  1 12:00:01 2025)
+"""
+expected = "Build completed successfully"
+
+[[tests.makepkg]]
+name = "keeps errors and warnings, strips verbose build lines"
+input = """
+==> Making package: mypkg 1.0-1 (Tue Jan  1 12:00:00 2025)
+==> Checking runtime dependencies...
+checking for gcc... yes
+checking for make... yes
+warning: deprecated function used
+Makefile:42: warning: overriding recipe for target 'all'
+make[1]: *** [Makefile:10: foo.o] Error 1
+ERROR: package build failed
+"""
+expected = "==> Making package: mypkg 1.0-1 (Tue Jan  1 12:00:00 2025)\n==> Checking runtime dependencies...\nwarning: deprecated function used\nMakefile:42: warning: overriding recipe for target 'all'\nmake[1]: *** [Makefile:10: foo.o] Error 1\nERROR: package build failed"
+
+[[tests.makepkg]]
+name = "on_empty when no kept lines"
+input = """
+checking for gcc... yes
+checking for make... yes
+"""
+expected = "makepkg: build in progress (no errors)"

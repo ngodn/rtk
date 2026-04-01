@@ -1,0 +1,53 @@
+[filters.pacman-install]
+description = "Compact pacman install/upgrade output"
+match_command = "^(sudo\\s+)?pacman\\s+-(S|U|R)"
+strip_ansi = true
+match_output = [
+  { pattern = "there is nothing to do", message = "Already up to date" },
+]
+strip_lines_matching = [
+  "^(downloading|checking|loading|looking|resolving|retrieving)",
+  "^\\s*\\(\\d+/\\d+\\)\\s+(downloading|checking|installing|upgrading|removing)",
+]
+max_lines = 30
+on_empty = "pacman: completed successfully"
+
+[filters.pacman-query]
+description = "Compact pacman query output"
+match_command = "^pacman\\s+-Q"
+strip_ansi = true
+max_lines = 50
+
+[[tests.pacman-install]]
+name = "nothing to do short-circuits"
+input = """
+:: Synchronizing package databases...
+ core is up to date
+ extra is up to date
+:: Starting full system upgrade...
+ there is nothing to do
+"""
+expected = "Already up to date"
+
+[[tests.pacman-install]]
+name = "strips progress lines"
+input = """
+resolving dependencies...
+looking for conflicting packages...
+(1/1) checking keys in keyring
+(1/1) checking package integrity
+(1/1) loading package files
+(1/1) checking for file conflicts
+(1/1) checking available disk space
+(1/1) installing htop
+"""
+expected = "(1/1) installing htop"
+
+[[tests.pacman-query]]
+name = "passthrough with max_lines"
+input = """
+htop 3.3.0-1
+neovim 0.9.5-3
+git 2.43.0-1
+"""
+expected = "htop 3.3.0-1\nneovim 0.9.5-3\ngit 2.43.0-1"
