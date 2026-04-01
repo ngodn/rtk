@@ -293,7 +293,22 @@ enum Commands {
         /// Show line numbers (always on, accepted for grep/rg compatibility)
         #[arg(short = 'n', long)]
         line_numbers: bool,
-        /// Extra ripgrep arguments (e.g., -i, -A 3, -w, --glob)
+        /// Recursive search (silently ignored - rg is recursive by default)
+        #[arg(short = 'r', long)]
+        recursive: bool,
+        /// Extended regexp (silently ignored - rg uses Rust regex)
+        #[arg(short = 'E', long)]
+        extended_regexp: bool,
+        /// Case-insensitive search (passed to rg as -i)
+        #[arg(short = 'i', long)]
+        ignore_case: bool,
+        /// Word regexp (passed to rg as -w)
+        #[arg(short = 'w', long)]
+        word_regexp: bool,
+        /// Perl-compatible regexp (silently ignored - rg uses Rust regex)
+        #[arg(short = 'P', long)]
+        perl_regexp: bool,
+        /// Extra ripgrep arguments (e.g., -A 3, --glob)
         #[arg(trailing_var_arg = true, allow_hyphen_values = true)]
         extra_args: Vec<String>,
     },
@@ -1625,9 +1640,22 @@ fn main() -> Result<()> {
             max,
             context_only,
             file_type,
-            line_numbers: _, // no-op: line numbers always enabled in grep_cmd::run
+            line_numbers: _,    // no-op: line numbers always enabled in grep_cmd::run
+            recursive: _,       // no-op: rg is recursive by default
+            extended_regexp: _, // no-op: rg uses Rust regex
+            ignore_case,
+            word_regexp,
+            perl_regexp: _, // no-op: rg uses Rust regex
             extra_args,
         } => {
+            let mut all_extra: Vec<String> = Vec::new();
+            if ignore_case {
+                all_extra.push("-i".to_string());
+            }
+            if word_regexp {
+                all_extra.push("-w".to_string());
+            }
+            all_extra.extend(extra_args);
             grep_cmd::run(
                 &pattern,
                 &path,
@@ -1635,7 +1663,7 @@ fn main() -> Result<()> {
                 max,
                 context_only,
                 file_type.as_deref(),
-                &extra_args,
+                &all_extra,
                 cli.verbose,
             )?;
         }
