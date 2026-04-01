@@ -13,4 +13,4 @@ expected = "id|name|value\n1|test|42\n2|demo|100"
 [[tests.sqlite3]]
 name = "empty input shows on_empty message"
 input = ""
-expected = ""
+expected = "No results"

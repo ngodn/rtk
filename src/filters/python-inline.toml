@@ -13,4 +13,4 @@ expected = "Hello, World!"
 [[tests.python-inline]]
 name = "empty input shows on_empty message"
 input = ""
-expected = ""
+expected = "python: completed with no output"
